@@ -14,4 +14,4 @@ index.html: blog.html
 	pandoc $< -o $@ --latex-engine=xelatex --data-dir=. -H make-font-footnotesize.tex --highlight-style=espresso
 
 %.html: %.md
-	pandoc $< -o $@ -c github-pandoc.css -s --toc --highlight-style pygments --metadata title="Trusted Programming --"
+	pandoc $< -o $@ -c github-pandoc.css -s --toc --highlight-style pygments
