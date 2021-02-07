@@ -1,4 +1,4 @@
-# Trusted Programming: Our Rust Mission at Huawei
+# Our Rust Mission at Huawei
 
 *Yijun Yu*
 
