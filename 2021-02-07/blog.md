@@ -165,10 +165,10 @@ tweaking with extra help of experienced Rust programmers.
 
 To take advantage of the safety guarantees of the Rust language, we have
 chosen to leverage [TXL](http://txl.ca), an efficient source-to-source
-transformation tool. We have developed a robust Rust parser for TXL and
-used to develop automated refactoring patterns with a guarantee of
-correct semantics, which allows us to achieve much safer and more
-maintainable Rust code, e.g., 
+transformation tool. We have developed a robust [Rust parser for
+TXL](http://txl.ca/examples/Grammars/Rust/README.txt) and used it to develop
+automated refactoring patterns with a guarantee of correct semantics, which
+allows us to achieve much safer and more maintainable Rust code, e.g., 
 
 ```rust
 // #include <stdio.h>
