@@ -291,14 +291,14 @@ model. The preliminary results are quite promising, the detection algorithms in
 Rust can reach an accuracy as high as 85.5\%. This number is still climbing
 as we continue working on improving toolchains.
 
+A prototype of such an IDE is shown as an extension to the Visual Studio Code，where programmers are assisted with the recommendation of a suitable algorithm and an explanation of the choice.
+![](img/RustConChina2020-yu-v414.png)\
+
 ## Conclusion
 
 In summary, the Huawei Trustworthy Open-Source Software Engineering Lab is working
 hard to provide programmers an end-to-end IDE toolchain that intelligently assists 
-in maximizing safety and performance. A prototype of such an IDE is shown as an extension to the Visual Studio Code，where programmers are assisted with the recommendation of a suitable algorithm and an explanation of the choice.
-![](img/RustConChina2020-yu-v414.png)\
-
-
+in maximizing safety and performance. 
 
 A journey towards the vision of Trusted Programming has just begun and we hope
 to work collaboratively with the Rust community, and the upcoming Rust
