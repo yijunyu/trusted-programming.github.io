@@ -248,7 +248,7 @@ which crates have not been fully checked by the Rust compiler:
 As code bases from the Rust open-source community evolve and grow, new
 developers need to learn the best practices, including but not limited to the
 language itself. Statistical machine learning methods from large amount of
-source code, also known as [Big Code](https://arxiv.org/abs/1709.06182), has
+source code, also known as [Big Code](https://arxiv.org/abs/1709.06182), have
 been considered by software engineering research communities: similar to the
 machine learning problems for image processing and natural language processing
 where vast number of features requires deep neural networks (DNN) to extract,
