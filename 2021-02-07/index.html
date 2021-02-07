@@ -88,6 +88,7 @@
 <ul>
 <li><a href="#innovations-by-rust">Innovations by Rust</a></li>
 <li><a href="#initial-adoption-of-rust-at-huawei">Initial adoption of Rust at Huawei</a></li>
+<li><a href="#contributions-to-rust-community-from-huawei">Contributions to Rust community from Huawei</a></li>
 <li><a href="#c-to-rust-transpilation">C to Rust transpilation</a></li>
 <li><a href="#adapting-end-to-end-rust-tooling-for-huawei">Adapting end-to-end Rust tooling for Huawei</a>
 <ul>
@@ -121,13 +122,14 @@ Huawei Technology, Inc.</p>
 <h2 id="initial-adoption-of-rust-at-huawei">Initial adoption of Rust at Huawei</h2>
 <p>At Huawei, we aim to engineer trustworthy software systems in the world’s largest telecom industry.</p>
 <p>For example, we are working to migrate parts of our code base towards Rust, which is safer and as performant as C/C++. To assist our developers in this process, we are leveraging the open-source <a href="https://c2rust.com/">C2Rust</a> transpiler to generate Rust code directly from C. We have created automated tools to refactor and clean up this generated Rust code through source-to-source transformations.</p>
+<p>We are also developing a rich set of internal Rust libraries in Rust built around an actor-based concurrency paradigm. This simplifies asynchronuous programming by leveraging Rust language features such as <code>async</code>, <code>await</code>, etc.</p>
+<p>All these factors have led to increased adoption of Rust withing Huawei and a smooth migration from C/C++ programs, which are dominant in the telecom industry. As the leading company in this industry and a founding member of the Rust Foundation, Huawei is committed to the success of Rust and will continue contributing back to the Rust community.</p>
+<h2 id="contributions-to-rust-community-from-huawei">Contributions to Rust community from Huawei</h2>
 <p>We also contribute significant features back to the Rust community. For example, our recent contributions to the Rust compiler enable the compilation of Rust programs for big-endian and <a href="https://developer.arm.com/documentation/dai0490/latest/">ILP32</a> variants of AArch64. These changes enable Huawei and other hardware companies to run Rust code on networking hardware which commonly use these architecture variants. This contribution is achieved with the help of our Rust expert Amanieu d’Antras, who has pushed through these pull requests to <a href="https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc">the LLVM compiler</a>, <a href="https://github.com/rust-lang/libc/pull/2039">the libc crate</a>, and <a href="https://github.com/rust-lang/rust/pull/81455">the Rust compiler itself</a>. These changes introduce new end-to-end cross-compilation targets for the Rust compiler, making it easier to build Rust products for bespoke hardware using a single command:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</span></code></pre></div>
-<p>Finally, we are developing a rich set of internal Rust libraries in Rust built around an actor-based concurrency paradigm. This simplifies asynchronuous programming by leveraging Rust language features such as <code>async</code>, <code>await</code>, etc.</p>
 <p>With respect to community engagement, Huawei has been leading the effort in China, hosting the first Chinese Rust Conference during December 26-27 in Shenzhen. We have started to lead the community by carrying out a number of activities, including creating Rust tutorials and Rust coding conventions in Chinese for a vast number of developers who are interested in Rust.</p>
-<p>All these factors have led to increased adoption of Rust withing Huawei and a smooth migration from C/C++ programs, which are dominant in the telecom industry. As the leading company in this industry and a founding member of the Rust Foundation, Huawei is committed to the success of Rust and will continue contributing back to the Rust community.</p>
 <h2 id="c-to-rust-transpilation">C to Rust transpilation</h2>
 <p>To illustrate, one can take a close look at the following C program, implementing the `100 doors’ algorithm taken from Rosetta Code.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>

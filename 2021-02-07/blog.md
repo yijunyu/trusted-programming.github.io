@@ -42,6 +42,20 @@ developers in this process, we are leveraging the open-source
 from C. We have created automated tools to refactor and clean up this
 generated Rust code through source-to-source transformations.
 
+We are also developing a rich set of internal Rust libraries in Rust
+built around an actor-based concurrency paradigm. This simplifies
+asynchronuous programming by leveraging Rust language features such as
+`async`, `await`, etc.
+
+All these factors have led to increased adoption of Rust withing Huawei
+and a smooth migration from C/C++ programs, which are dominant in the
+telecom industry. As the leading company in this industry and a
+founding member of the Rust Foundation, Huawei is committed to the
+success of Rust and will continue contributing back to the Rust
+community.
+
+## Contributions to Rust community from Huawei
+
 We also contribute significant features back to the Rust community. For
 example, our recent contributions to the Rust compiler enable the
 compilation of Rust programs for big-endian and
@@ -63,23 +77,11 @@ cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
-Finally, we are developing a rich set of internal Rust libraries in Rust
-built around an actor-based concurrency paradigm. This simplifies
-asynchronuous programming by leveraging Rust language features such as
-`async`, `await`, etc.
-
 With respect to community engagement, Huawei has been leading the effort in
 China, hosting the first Chinese Rust Conference during December 26-27 in
 Shenzhen.  We have started to lead the community by carrying out a number of
 activities, including creating Rust tutorials and Rust coding conventions in
 Chinese for a vast number of developers who are interested in Rust. 
-
-All these factors have led to increased adoption of Rust withing Huawei
-and a smooth migration from C/C++ programs, which are dominant in the
-telecom industry. As the leading company in this industry and a
-founding member of the Rust Foundation, Huawei is committed to the
-success of Rust and will continue contributing back to the Rust
-community.
 
 ## C to Rust transpilation
 
@@ -240,8 +242,6 @@ which crates have not been fully checked by the Rust compiler:
 
 ![](img/RustConChina2020-yu-v412.png)\
 ![](img/RustConChina2020-yu-v413.png)\
-
-
 
 ## Research on Rust through Deep Code Learning
 
