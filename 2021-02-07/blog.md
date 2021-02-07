@@ -226,8 +226,8 @@ processing of recognized languages.
 
 ### `cargo-geiger`
 
-To improve safety, we would like as much code as possible to be checked
-by the Rust compiler. Fortunately,
+To improve safety, we would like to know much code has been checked by the Rust
+compiler. Fortunately,
 [`cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger) does almost
 this by counting the statistics of `unsafe` items such as `fn`, `expr`,
 `struct`, `impl`, `trait`, and their occurrences in various dependent crates:
