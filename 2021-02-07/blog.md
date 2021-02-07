@@ -205,6 +205,7 @@ started to benefit from the interactions with developers of these tools.
 Here are just a few examples. 
 
 ### `tokei`
+
 Because trustworthy programming typically involves migrating programming
 languages, we have adopted [`tokei`](https://github.com/XAMPPRocky/tokei) as our code
 complexity metric tool, which can recognise as many as 200 languages. For
@@ -224,6 +225,7 @@ in our projects, we have made a [pull request to
 processing of recognized languages.
 
 ### `cargo-geiger`
+
 To improve safety, we would like as much code as possible to be checked
 by the Rust compiler. Fortunately,
 [`cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger) does almost
