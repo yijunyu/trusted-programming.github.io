@@ -1,7 +1,7 @@
 all: index.html
 
 index.html: blog.html
-	cp blog.html index.html
+	mv blog.html index.html
 	
 ../blog.tar.bz2: blog.pdf blog.html
 	cd ..; tar cvfj blog.tar.bz2 blog
