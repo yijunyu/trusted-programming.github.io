@@ -14,4 +14,4 @@ index.html: blog.html
 	pandoc $< -o $@ --latex-engine=xelatex --data-dir=. -H make-font-footnotesize.tex --highlight-style=espresso
 
 %.html: %.md
-	pandoc $< -o $@
+	pandoc $< -o $@ --toc --highlight-style=espresso
