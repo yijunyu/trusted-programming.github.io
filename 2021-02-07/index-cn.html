@@ -92,8 +92,8 @@
 <li><a href="#c到rust转译">C到Rust转译</a></li>
 <li><a href="#配置华为的端到端rust工具链">配置华为的端到端Rust工具链</a>
 <ul>
-<li><a href="#tokei"><code>tokei</code></a></li>
-<li><a href="#cargo-geiger">`cargo-geiger’</a></li>
+<li><a href="#tokei">tokei</a></li>
+<li><a href="#cargo-geiger">cargo-geiger</a></li>
 </ul></li>
 <li><a href="#通过深度代码学习研究rust">通过深度代码学习研究Rust</a></li>
 <li><a href="#结论">结论</a></li>
@@ -220,7 +220,7 @@
 <p>这里的Rust代码不再有`unsafe’块，Rust程序员也完全可理解。</p>
 <h2 id="配置华为的端到端rust工具链">配置华为的端到端Rust工具链</h2>
 <p>华为已经开始Rust社区里已有的端到端工具受益，开发工具链帮助我们内部的开发人员。 这里仅举几个例子。</p>
-<h3 id="tokei"><code>tokei</code></h3>
+<h3 id="tokei">tokei</h3>
 <p>由于可信编程项目通常涉及多个编程语言，我们采用了<a href="https://github.com/XAMPPRocky/tokei"><code>tokei</code></a>作为多语言代码复杂性度量工具，识别多达250种编程语言。例如，开源的Fuchhia项目涉及了多种编程语言，下面的统计信息显示有多少行不同语种的代码：</p>
 <p><img src="img/RustConChina2020-yu-v49.png" /><br />
 </p>
@@ -228,7 +228,7 @@
 <p><img src="img/RustConChina2020-yu-v410.png" /><br />
 </p>
 <p>为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到<a href="https://github.com/XAMPPRocky/tokei/pull/678"><code>tokei</code></a>支持识别编程语言的批处理。</p>
-<h3 id="cargo-geiger">`cargo-geiger’</h3>
+<h3 id="cargo-geiger">cargo-geiger</h3>
 <p>为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计<code>不安全'项目，如</code>fn<code>、</code>expr<code>，</code>struct<code>、</code>impl<code>、</code>trait<code>及其在各相关库实现中的出现次数，[</code>cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。</p>
 <p><img src="img/RustConChina2020-yu-v411.png" /><br />
 </p>

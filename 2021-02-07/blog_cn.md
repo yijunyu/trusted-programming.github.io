@@ -165,7 +165,8 @@ fn main() {
 华为已经开始Rust社区里已有的端到端工具受益，开发工具链帮助我们内部的开发人员。
 这里仅举几个例子。
 
-### `tokei`
+
+### tokei
 
 由于可信编程项目通常涉及多个编程语言，我们采用了[`tokei`](https://github.com/XAMPPRocky/tokei)作为多语言代码复杂性度量工具，识别多达250种编程语言。例如，开源的Fuchhia项目涉及了多种编程语言，下面的统计信息显示有多少行不同语种的代码：
 
@@ -177,7 +178,7 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 
 为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到[`tokei`](https://github.com/XAMPPRocky/tokei/pull/678)支持识别编程语言的批处理。
 
-### `cargo-geiger'
+### cargo-geiger
 
 为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计`不安全'项目，如`fn`、`expr`，`struct`、`impl`、`trait`及其在各相关库实现中的出现次数，[`cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。
 
