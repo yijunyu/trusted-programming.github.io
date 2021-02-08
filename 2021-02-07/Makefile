@@ -1,7 +1,10 @@
-all: index.html
+all: index.html index-cn.html
 
 index.html: blog.html
 	mv blog.html index.html
+
+index-cn.html: blog_cn.html
+	mv blog_cn.html index-cn.html
 	
 ../blog.tar.bz2: blog.pdf blog.html
 	cd ..; tar cvfj blog.tar.bz2 blog

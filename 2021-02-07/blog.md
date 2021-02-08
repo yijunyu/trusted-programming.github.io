@@ -1,3 +1,5 @@
+[中文](index-cn.html)
+
 # Trusted Programming -- Our Rust Mission at Huawei
 
 *Yijun Yu*
