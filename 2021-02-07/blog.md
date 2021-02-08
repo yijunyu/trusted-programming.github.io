@@ -260,7 +260,9 @@ big code may also be used to train a DNN to reflect on statistical patterns of
 programs, which is called `Deep Code Learning'.
 
 In this respect, Huawei is pushing the limits by improving the state-of-the-art
-of `cross-language' deep code learning.
+of `cross-language' deep code learning, through technical collaboration with
+[The Open University, UK](https://mcs.open.ac.uk/yy66) and [Singapore
+Management University](http://www.mysmu.edu/faculty/lxjiang/).
 
 For example, initial deep code learning methods are trained and evaluated using
 the benchmarks of 52,000 C/C++ programs of 104 algorithm classes collected from
@@ -295,7 +297,9 @@ model. The preliminary results are quite promising, the detection algorithms in
 Rust can reach an accuracy as high as 85.5\%. This number is still climbing
 as we continue working on improving toolchains.
 
-A prototype of such an IDE is shown as an extension to the Visual Studio Code，where programmers are assisted with the recommendation of a suitable algorithm and an explanation of the choice.
+A prototype of such an IDE is shown as an extension to the Visual Studio
+Code，where programmers are assisted with the recommendation of a suitable
+algorithm and an explanation of the choice.
 ![](img/RustConChina2020-yu-v414.png)\
 
 ## Conclusion
