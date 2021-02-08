@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>blog_cn</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="github-pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#可信编程-华为引领rust语言开发的实践和愿景">可信编程 – 华为引领Rust语言开发的实践和愿景</a>
+<ul>
+<li><a href="#rust带来的创新">Rust带来的创新</a></li>
+<li><a href="#rust在华为的初步推进">Rust在华为的初步推进</a></li>
+<li><a href="#华为对rust社区的贡献">华为对Rust社区的贡献</a></li>
+<li><a href="#c到rust转译">C到Rust转译</a></li>
+<li><a href="#配置华为的端到端rust工具链">配置华为的端到端Rust工具链</a>
+<ul>
+<li><a href="#tokei"><code>tokei</code></a></li>
+<li><a href="#cargo-geiger">`cargo-geiger’</a></li>
+</ul></li>
+<li><a href="#通过深度代码学习研究rust">通过深度代码学习研究Rust</a></li>
+<li><a href="#结论">结论</a></li>
+</ul></li>
+</ul>
+</nav>
+<p><a href="index.html">English</a></p>
+<h1 id="可信编程-华为引领rust语言开发的实践和愿景">可信编程 – 华为引领Rust语言开发的实践和愿景</h1>
+<p><em>Yijun Yu</em></p>
+<p>可信编程首席专家<br />
+华为可信软件工程开源实验室</p>
+<p><em>Amanieu d’Antras</em></p>
+<p>Rust高级专家<br />
+华为可信软件工程开源实验室</p>
+<h2 id="rust带来的创新">Rust带来的创新</h2>
+<p>2015年以来的调查表明, Rust一直是StackOverflow 程序员的最爱。</p>
+<p><img src="img/RustConChina2020-yu-v42.png" width="500" /><br />
+</p>
+<p>学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文逐年增加。</p>
+<p><img src="img/RustConChina2020-yu-v43.png" /><br />
+</p>
+<p>更有甚者，在《自然》2020年岁尾的文章《Why Scientists are Turning to Rust》也强调指出, 科学家也极为推崇Rust。</p>
+<p><img src="img/RustConChina2020-yu-v41.png" width="500" /><br />
+</p>
+<h2 id="rust在华为的初步推进">Rust在华为的初步推进</h2>
+<p>华为的目标是引领通信系统软件可信平滑演进，其中Rust语言正在发挥很大的作用。</p>
+<p>例如，我们希望通过部分C/C++代码的迁移，达到更安全和同样的高性能。在此过程中， 我们为开发者提供一套自动化工具支持：基于开源的<a href="https://c2rust.com/">C2Rust</a>转译工具， 首先从C代码生成Rust代码, 然后通过源到源变换工具自动重构。</p>
+<p>在华为内部我们还基于actor的并发编程模式用Rust开发了一批程序库，方便程序员充分利用 Rust的语言特性, 比如<code>async</code>, <code>await</code>, 等等。</p>
+<p>以华为代表的通信系统软件的大量存量代码以C/C++代码为主, 这些C/C++到Rust的迁移技术措施将努力使我们的过渡更为平滑。 作为Rust基金会的创始成员，华为也将不遗余力地引领通信软件业界对Rust的应用，并持续对Rust社区做出贡献。</p>
+<h2 id="华为对rust社区的贡献">华为对Rust社区的贡献</h2>
+<p>虽然开始时间不长， 我们已经对Rust社区做出了一些贡献。值得提及的是， 我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体<a href="https://developer.arm.com/documentation/dai0490/latest/">ILP32</a>芯片组, 用于我们的通信产品中。 这些改进使得我们和友商可以在这些常用网络硬件架构上执行Rust原生程序。这些代码已经通过我们的Rust专家Amanieu d’Antras 提交给了<a href="https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc">LLVM 编译器</a>, <a href="https://github.com/rust-lang/libc/pull/2039">libc库</a>, 以及<a href="https://github.com/rust-lang/rust/pull/81455">Rust编译器</a>等开源社区。</p>
+<p>这些对Rust编译器的更改引入了新的端到端交叉编译目标，更容易针对定制硬件构建Rust产品,只需要简单的命令，比如：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</span></code></pre></div>
+<p>华为在中国Rust社区方面也引领在12月26日至27日中国深圳主办了第一届Rust大会，并推行多项 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。</p>
+<h2 id="c到rust转译">C到Rust转译</h2>
+<p>我们举个例子说明C到Rust转译这项能力。下面的C程序实现Rosetta Code中的“100门”算法。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span> is_open[<span class="dv">100</span>] = { <span class="dv">0</span> };</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> pass, door;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* do the 100 passes */</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (pass = <span class="dv">0</span>; pass &lt; <span class="dv">100</span>; ++pass)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (door = pass; door &lt; <span class="dv">100</span>; door += pass+<span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      is_open[door] = !is_open[door];</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* output the result */</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (door = <span class="dv">0</span>; door &lt; <span class="dv">100</span>; ++door)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    printf(<span class="st">&quot;door #%d is %s.</span><span class="sc">\n</span><span class="st">&quot;</span>, door+<span class="dv">1</span>, (is_open[door]? <span class="st">&quot;open&quot;</span> : <span class="st">&quot;closed&quot;</span>));</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>开源的<a href="https://github.com/immunant/c2rust">c2rust</a>转译器最初产生以下Rust代码：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">#![</span>allow<span class="at">(</span>dead_code<span class="op">,</span> mutable_transmutes<span class="op">,</span> non_camel_case_types<span class="op">,</span> non_snake_case<span class="op">,</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>         non_upper_case_globals<span class="op">,</span> unused_assignments<span class="op">,</span> unused_mut<span class="at">)]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">#![</span>register_tool<span class="at">(</span>c2rust<span class="at">)]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">#![</span>feature<span class="at">(</span>main<span class="op">,</span> register_tool<span class="at">)]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">extern</span> <span class="st">&quot;C&quot;</span> <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">#[</span>no_mangle<span class="at">]</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">fn</span> printf(_<span class="op">:</span> <span class="op">*</span><span class="kw">const</span> <span class="pp">libc::</span><span class="dt">c_char</span><span class="op">,</span> _<span class="op">:</span> <span class="op">...</span>) <span class="op">-&gt;</span> <span class="pp">libc::</span><span class="dt">c_int</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">unsafe</span> <span class="kw">fn</span> main_0() <span class="op">-&gt;</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> is_open<span class="op">:</span> [<span class="pp">libc::</span><span class="dt">c_char</span><span class="op">;</span> <span class="dv">100</span>] <span class="op">=</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">0</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_char</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>         <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>         <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>         <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>         <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> pass<span class="op">:</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> door<span class="op">:</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* do the 100 passes */</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    pass <span class="op">=</span> <span class="dv">0</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span><span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">while</span> pass <span class="op">&lt;</span> <span class="dv">100</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">{</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        door <span class="op">=</span> pass<span class="op">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">while</span> door <span class="op">&lt;</span> <span class="dv">100</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">{</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            is_open[door <span class="kw">as</span> <span class="dt">usize</span>] <span class="op">=</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                (is_open[door <span class="kw">as</span> <span class="dt">usize</span>] <span class="op">==</span> <span class="dv">0</span>) <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_char</span><span class="op">;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            door <span class="op">+=</span> pass <span class="op">+</span> <span class="dv">1</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        pass <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* output the result */</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    door <span class="op">=</span> <span class="dv">0</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span><span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">while</span> door <span class="op">&lt;</span> <span class="dv">100</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">{</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        printf(<span class="st">b&quot;door #%d is %s.</span><span class="sc">\n\x00</span><span class="st">&quot;</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="dt">u8</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="pp">libc::</span><span class="dt">c_char</span><span class="op">,</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>               door <span class="op">+</span> <span class="dv">1</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span><span class="op">,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>               <span class="kw">if</span> is_open[door <span class="kw">as</span> <span class="dt">usize</span>] <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>                   <span class="st">b&quot;open</span><span class="sc">\x00</span><span class="st">&quot;</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="dt">u8</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="pp">libc::</span><span class="dt">c_char</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>               <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span> <span class="st">b&quot;closed</span><span class="sc">\x00</span><span class="st">&quot;</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="dt">u8</span> <span class="kw">as</span> <span class="op">*</span><span class="kw">const</span> <span class="pp">libc::</span><span class="dt">c_char</span> <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        door <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="dv">0</span> <span class="kw">as</span> <span class="pp">libc::</span><span class="dt">c_int</span><span class="op">;</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="at">#[</span>main<span class="at">]</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">fn</span> main() <span class="op">{</span> <span class="kw">unsafe</span> <span class="op">{</span> <span class="pp">::std::process::</span>exit(main_0() <span class="kw">as</span> <span class="dt">i32</span>) <span class="op">}</span> <span class="op">}</span></span></code></pre></div>
+<p>虽然生成的Rust代码可编译，但是不易维护，其中所有函数都被标记为`unsafe’，必须由程序员负责它的安全性。虽然c2rust支持重构命令，但是它们需要由经验丰富的Rust程序员提供和调整才能奏效。</p>
+<p>为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于<a href="http://txl.ca">TXL</a>这个高效的源到源转换工具。我们给开源社区提供了一个健壮的<a href="http://txl.ca/examples/Grammars/Rust/README.txt">Rust TXL语法</a>，并用它来开发 有正确语义保证的自动重构模式，实现更安全、更可维护的Rust代码。例如</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// #include &lt;stdio.h&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> is_open<span class="op">:</span> [<span class="dt">i8</span><span class="op">;</span> <span class="dv">100</span>] <span class="op">=</span> [<span class="dv">0</span><span class="op">;</span> <span class="dv">100</span>]<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> pass <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">100</span> <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="kw">mut</span> door <span class="op">=</span> pass <span class="kw">as</span> <span class="dt">usize</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">while</span> door <span class="op">&lt;</span> <span class="dv">100</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            is_open[door] <span class="op">=</span> <span class="op">!</span>is_open[door]<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            door <span class="op">+=</span> pass <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> door <span class="kw">in</span> <span class="dv">0</span><span class="op">..</span><span class="dv">100</span> <span class="op">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="pp">print!</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;door #{} is {}.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            door <span class="op">+</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">if</span> (is_open[door]) <span class="op">!=</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;open&quot;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;closed&quot;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        )<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>这里的Rust代码不再有`unsafe’块，Rust程序员也完全可理解。</p>
+<h2 id="配置华为的端到端rust工具链">配置华为的端到端Rust工具链</h2>
+<p>华为已经开始Rust社区里已有的端到端工具受益，开发工具链帮助我们内部的开发人员。 这里仅举几个例子。</p>
+<h3 id="tokei"><code>tokei</code></h3>
+<p>由于可信编程项目通常涉及多个编程语言，我们采用了<a href="https://github.com/XAMPPRocky/tokei"><code>tokei</code></a>作为多语言代码复杂性度量工具，识别多达250种编程语言。例如，开源的Fuchhia项目涉及了多种编程语言，下面的统计信息显示有多少行不同语种的代码：</p>
+<p><img src="img/RustConChina2020-yu-v49.png" /><br />
+</p>
+<p>C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图：</p>
+<p><img src="img/RustConChina2020-yu-v410.png" /><br />
+</p>
+<p>为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到<a href="https://github.com/XAMPPRocky/tokei/pull/678"><code>tokei</code></a>支持识别编程语言的批处理。</p>
+<h3 id="cargo-geiger">`cargo-geiger’</h3>
+<p>为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计<code>不安全'项目，如</code>fn<code>、</code>expr<code>，</code>struct<code>、</code>impl<code>、</code>trait<code>及其在各相关库实现中的出现次数，[</code>cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。</p>
+<p><img src="img/RustConChina2020-yu-v411.png" /><br />
+</p>
+<p>不过，统计数字中并没有反映安全要素的比率展现Rust项目总体上取得了多少安全进展。因此，我们 提交了<a href="https://github.com/rust-secure-code/cargo-geiger/pull/167">代码</a>，在改进的<code>cargo-geiger</code>计数器报告中提供Rust项目的安全检查比率。随着这个代码提交的采纳，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。</p>
+<p><img src="img/RustConChina2020-yu-v412.png" /><br />
+<img src="img/RustConChina2020-yu-v413.png" /><br />
+</p>
+<h2 id="通过深度代码学习研究rust">通过深度代码学习研究Rust</h2>
+<p>随着Rust开源社区代码的演进和增长，新的开发人员需要学习掌握的最佳实践，包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为<a href="https://arxiv.org/abs/1709.06182">大代码</a>，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，Rust代码中的大量的特征需要深度神经网络来提取。 使用大代码训练深度神经网络以反映程序的特点，也被称为<code>深度代码学习'。在这方面，华为正在通过改进最先进的技术来突破开展</code>跨语言’的深度代码学习。</p>
+<p>例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%， <a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI’16)</a>。最近的SOTA在语句级使用抽象语法树 <a href="https://github.com/zhangj111/astnn">(ICSE ’19)</a>准确率达到98%。近期我们同英国开放大学和新加坡管理大学在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率<a href="https://arxiv.org/abs/2009.09777">(AAAI’21)</a>。</p>
+<p>早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，以Rosetta Code 算法从GitHub爬取的Java和C数据集跨语言深度代码学习，证明可以获得86%的算法分类准确度 <a href="https://github.com/bdqnghi/bi-tbcnn">(SANER’19)</a>，在Java到C#的跨语言API映射 问题也能发挥重要作用<a href="https://github.com/bdqnghi/SAR_API_mapping">(ESEC/FSE’19)</a>。这些统计语言模型在软件工程中可以应用于很多方面，比如代码分类、代码搜索、代码推荐、代码摘要、方法名称预测、代码克隆检测等等<a href="https://github.com/bdqnghi/infercode">(ICSE’21)</a>。</p>
+<p>为了进一步研究分析Rust项目，我们向<a href="https://github.com/tree-sitter/tree-sitter/pull/863">Rust解析器项目<code>tree-sitter</code></a>和XML序列化 <a href="https://github.com/tafia/quick-xml/pull/250"><code>quick-xml</code></a>等项目提交了代码，通过 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。</p>
+<p>在Visual Studio Code IDE上，我们开发了扩展插件，使得程序员可以得到合适的算法推荐和可解释性的帮助。</p>
+<h2 id="结论">结论</h2>
+<p>综上所述，华为可信开源软件工程实验室正在开展的Rust工作为程序员提供智能化端到端IDE工具链，以期最大限度地提高代码的安全性和高性能。走向可信编程远景的旅程刚刚开始，我们希望与Rust社区和即将成立的Rust基金会深度合作，引领电信软件产业的可信革新。</p>
+</body>
+</html>
