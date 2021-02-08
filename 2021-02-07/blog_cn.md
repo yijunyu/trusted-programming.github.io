@@ -14,35 +14,35 @@ Rust高级专家\
 
 ## Rust带来的创新
 
-2015年以来的调查表明, Rust一直是StackOverflow 程序员的最爱。
+StackOverflow的调查表明, 自2015年以来，Rust一直是开发者最爱的编程语言。
 
 ![](img/RustConChina2020-yu-v42.png){width=500px}\
 
-学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文逐年增加。
+学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文正逐年增加。
 
 ![](img/RustConChina2020-yu-v43.png)\
 
-更有甚者，在《自然》2020年岁尾的文章《Why Scientists are Turning to Rust》也强调指出, 科学家也极为推崇Rust。
+不仅如此，《自然》杂志2020年尾的文章《Why Scientists are Turning to Rust》中也强调：科学家极为推崇Rust。
 
 ![](img/RustConChina2020-yu-v41.png){width=500px}\
 
 ## Rust在华为的初步推进
 
-华为的目标是引领通信系统软件可信平滑演进，其中Rust语言正在发挥很大的作用。
+华为的目标是引领通信系统软件向安全可信演进，其中Rust语言正在发挥很大的作用。
 
-例如，我们希望通过部分C/C++代码的迁移，达到更安全和同样的高性能。在此过程中，
+例如，我们希望通过部分C/C++代码的迁移，在保证高性能的同时，拥有更高的安全性。在此过程中，
 我们为开发者提供一套自动化工具支持：基于开源的[C2Rust](https://c2rust.com/)转译工具，
 首先从C代码生成Rust代码, 然后通过源到源变换工具自动重构。
 
-在华为内部我们还基于actor的并发编程模式用Rust开发了一批程序库，方便程序员充分利用
-Rust的语言特性, 比如`async`, `await`, 等等。
+在华为内部我们还基于actor的并发编程模式开发了Rust库，方便程序员充分利用
+Rust的语言特性, 例如`async`, `await`等。
 
-以华为代表的通信系统软件的大量存量代码以C/C++代码为主, 这些C/C++到Rust的迁移技术措施将努力使我们的过渡更为平滑。
-作为Rust基金会的创始成员，华为也将不遗余力地引领通信软件业界对Rust的应用，并持续对Rust社区做出贡献。
+以华为代表的通信系统软件的代码以C/C++代码为主, 这些Rust库将使C/C++到Rust的迁移更加顺畅。
+作为Rust基金会的创始成员，华为也将不遗余力地引领通信软件行业对Rust的应用，并持续对Rust社区做出贡献。
 
 ## 华为对Rust社区的贡献
 
-虽然开始时间不长， 我们已经对Rust社区做出了一些贡献。值得提及的是， 我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体[ILP32](https://developer.arm.com/documentation/dai0490/latest/)芯片组, 用于我们的通信产品中。
+我们为Rust社区贡献了许多重要的功能特性。例如，我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体[ILP32](https://developer.arm.com/documentation/dai0490/latest/)芯片组, 用于我们的通信产品中。
 这些改进使得我们和友商可以在这些常用网络硬件架构上执行Rust原生程序。这些代码已经通过我们的Rust专家Amanieu d'Antras 提交给了[LLVM 编译器](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc), [libc库](https://github.com/rust-lang/libc/pull/2039), 以及[Rust编译器](https://github.com/rust-lang/rust/pull/81455)等开源社区。
 
 这些对Rust编译器的更改引入了新的端到端交叉编译目标，更容易针对定制硬件构建Rust产品,只需要简单的命令，比如：
