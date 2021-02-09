@@ -129,7 +129,7 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</span></code></pre></div>
-<p>华为在中国Rust社区方面也引领在12月26日至27日中国深圳主办了第一届Rust大会，并推行多项 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。</p>
+<p>华为在中国Rust社区方面也走在前列，引领在12月26日至27日深圳主办了<a href="https://2020conf.rustcc.cn">第一届中国Rust大会</a>，并推行多项 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。</p>
 <h2 id="c到rust转译">C到Rust转译</h2>
 <p>我们举个例子说明C到Rust转译这项能力。下面的C程序实现Rosetta Code中的“100门”算法。</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
@@ -194,7 +194,7 @@
 <span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="at">#[</span>main<span class="at">]</span></span>
 <span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">fn</span> main() <span class="op">{</span> <span class="kw">unsafe</span> <span class="op">{</span> <span class="pp">::std::process::</span>exit(main_0() <span class="kw">as</span> <span class="dt">i32</span>) <span class="op">}</span> <span class="op">}</span></span></code></pre></div>
 <p>虽然生成的Rust代码可编译，但是不易维护，其中所有函数都被标记为`unsafe’，必须由程序员负责它的安全性。虽然c2rust支持重构命令，但是它们需要由经验丰富的Rust程序员提供和调整才能奏效。</p>
-<p>为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于<a href="http://txl.ca">TXL</a>这个高效的源到源转换工具。我们给开源社区提供了一个健壮的<a href="http://txl.ca/examples/Grammars/Rust/README.txt">Rust TXL语法</a>，并用它来开发 有正确语义保证的自动重构模式，实现更安全、更可维护的Rust代码。例如</p>
+<p>为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于<a href="http://txl.ca">TXL</a>这个高效的源到源转换工具。我们给开源社区提供了一个健壮的 <a href="http://txl.ca/examples/Grammars/Rust/README.txt">Rust TXL语法</a>，并用它来开发 有正确语义保证的自动重构模式，实现更安全、更可维护的Rust代码。例如</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// #include &lt;stdio.h&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> is_open<span class="op">:</span> [<span class="dt">i8</span><span class="op">;</span> <span class="dv">100</span>] <span class="op">=</span> [<span class="dv">0</span><span class="op">;</span> <span class="dv">100</span>]<span class="op">;</span></span>
@@ -227,9 +227,9 @@
 <p>C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图：</p>
 <p><img src="img/RustConChina2020-yu-v410.png" /><br />
 </p>
-<p>为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到<a href="https://github.com/XAMPPRocky/tokei/pull/678"><code>tokei</code></a>支持识别编程语言的批处理。</p>
+<p>为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到<a href="https://github.com/XAMPPRocky/tokei/pull/678">tokei</a>支持识别编程语言的批处理。</p>
 <h3 id="cargo-geiger">cargo-geiger</h3>
-<p>为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计<code>不安全'项目，如</code>fn<code>、</code>expr<code>，</code>struct<code>、</code>impl<code>、</code>trait<code>及其在各相关库实现中的出现次数，[</code>cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。</p>
+<p>为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计“不安全”项目，如<code>fn</code>、<code>expr</code>，<code>struct</code>、<code>impl</code>、<code>trait</code>及其在各相关库实现中的出现次数， <a href="https://github.com/rust-secure-code/cargo-geiger">cargo-geiger</a>几乎做到了这点。</p>
 <p><img src="img/RustConChina2020-yu-v411.png" /><br />
 </p>
 <p>不过，统计数字中并没有反映安全要素的比率展现Rust项目总体上取得了多少安全进展。因此，我们 提交了<a href="https://github.com/rust-secure-code/cargo-geiger/pull/167">代码</a>，在改进的<code>cargo-geiger</code>计数器报告中提供Rust项目的安全检查比率。随着这个代码提交的采纳，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。</p>
@@ -240,7 +240,7 @@
 <p>随着Rust开源社区代码的演进和增长，新的开发人员需要学习掌握的最佳实践，包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为<a href="https://arxiv.org/abs/1709.06182">大代码</a>，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，Rust代码中的大量的特征需要深度神经网络来提取。 使用大代码训练深度神经网络以反映程序的特点，也被称为“深度代码学习”。在这方面，华为正在通过改进最先进的技术来突破开展“跨语言”的深度代码学习。</p>
 <p>例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%， <a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI’16)</a>。最近的SOTA在语句级使用抽象语法树 <a href="https://github.com/zhangj111/astnn">(ICSE ’19)</a>准确率达到98%。近期我们同<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率<a href="https://arxiv.org/abs/2009.09777">(AAAI’21)</a>。</p>
 <p>早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，以Rosetta Code 算法从GitHub爬取的Java和C数据集跨语言深度代码学习，证明可以获得86%的算法分类准确度 <a href="https://github.com/bdqnghi/bi-tbcnn">(SANER’19)</a>，在Java到C#的跨语言API映射 问题也能发挥重要作用<a href="https://github.com/bdqnghi/SAR_API_mapping">(ESEC/FSE’19)</a>。这些统计语言模型在软件工程中可以应用于很多方面，比如代码分类、代码搜索、代码推荐、代码摘要、方法名称预测、代码克隆检测等等<a href="https://github.com/bdqnghi/infercode">(ICSE’21)</a>。</p>
-<p>为了进一步研究分析Rust项目，我们向<a href="https://github.com/tree-sitter/tree-sitter/pull/863">Rust解析器项目<code>tree-sitter</code></a>和XML序列化 <a href="https://github.com/tafia/quick-xml/pull/250"><code>quick-xml</code></a>等项目提交了代码，通过 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。</p>
+<p>为了进一步研究分析Rust项目，我们向<a href="https://github.com/tree-sitter/tree-sitter/pull/863">Rust解析器项目tree-sitter</a>和XML序列化 <a href="https://github.com/tafia/quick-xml/pull/250">quick-xml</a>等项目提交了代码，通过 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。</p>
 <p>在Visual Studio Code IDE上，我们开发了扩展插件，使得程序员可以得到合适的算法推荐和可解释性的帮助。</p>
 <h2 id="结论">结论</h2>
 <p>综上所述，华为可信开源软件工程实验室正在开展的Rust工作为程序员提供智能化端到端IDE工具链，以期最大限度地提高代码的安全性和高性能。走向可信编程远景的旅程刚刚开始，我们希望与Rust社区和即将成立的Rust基金会深度合作，引领电信软件产业的可信革新。</p>

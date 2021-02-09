@@ -53,7 +53,9 @@ cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
-在社区参与方面，华为一直在中国牵头，于12月26-27日在深圳主办了首届Rust China Conf。我们已经开始通过开展一系列活动来带领社区和对Rust感兴趣的开发人员创建Rust的中文教程和Rust编码规范。
+
+华为在中国Rust社区方面也走在前列，引领在12月26日至27日深圳主办了[第一届中国Rust大会](https://2020conf.rustcc.cn)，并推行多项
+社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。
 
 ## C到Rust转译
 
@@ -129,7 +131,8 @@ pub fn main() { unsafe { ::std::process::exit(main_0() as i32) } }
 
 虽然生成的Rust代码可编译，但是不易维护，其中所有函数都被标记为`unsafe'，必须由程序员负责它的安全性。虽然c2rust支持重构命令，但是它们需要由经验丰富的Rust程序员提供和调整才能奏效。
 
-为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于[TXL](http://txl.ca)这个高效的源到源转换工具。我们给开源社区提供了一个健壮的[Rust TXL语法](http://txl.ca/examples/Grammars/Rust/README.txt)，并用它来开发
+为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于[TXL](http://txl.ca)这个高效的源到源转换工具。我们给开源社区提供了一个健壮的
+[Rust TXL语法](http://txl.ca/examples/Grammars/Rust/README.txt)，并用它来开发
 有正确语义保证的自动重构模式，实现更安全、更可维护的Rust代码。例如
 
 ```rust
@@ -175,11 +178,13 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 
 ![](img/RustConChina2020-yu-v410.png)\
 
-为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到[`tokei`](https://github.com/XAMPPRocky/tokei/pull/678)支持识别编程语言的批处理。
+为了在大型项目中满足处理多种编程语言的场景需求，我们提交代码到[tokei](https://github.com/XAMPPRocky/tokei/pull/678)支持识别编程语言的批处理。
 
 ### cargo-geiger
 
-为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计`不安全'项目，如`fn`、`expr`，`struct`、`impl`、`trait`及其在各相关库实现中的出现次数，[`cargo-geiger`](https://github.com/rust-secure-code/cargo-geiger)通过这种方式完成了这个任务。
+
+为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计"不安全"项目，如`fn`、`expr`，`struct`、`impl`、`trait`及其在各相关库实现中的出现次数，
+[cargo-geiger](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。
 
 ![](img/RustConChina2020-yu-v411.png)\
 
@@ -202,8 +207,8 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，从GitHub爬取的数据集Rosetta Code，从Java到C语言，可以获得86%的算法分类准确度 [(SANER'19)](https://github.com/bdqnghi/bi-tbcnn)，在Java到C#的跨语言API映射
 问题也能发挥重要作用[(ESEC/FSE'19)](https://github.com/bdqnghi/SAR_API_mapping)。这些统计语言模型在软件工程中可以应用于很多方面，比如代码分类、代码搜索、代码推荐、代码摘要、方法名称预测、代码克隆检测等等[(ICSE'21)](https://github.com/bdqnghi/infercode)。
 
-为了进一步研究分析Rust项目，我们向[Rust解析器项目`tree-sitter`](https://github.com/tree-sitter/tree-sitter/pull/863)和XML序列化
-[`quick-xml`](https://github.com/tafia/quick-xml/pull/250)等项目提交了代码，通过
+为了进一步研究分析Rust项目，我们向[Rust解析器项目tree-sitter](https://github.com/tree-sitter/tree-sitter/pull/863)和XML序列化
+[quick-xml](https://github.com/tafia/quick-xml/pull/250)等项目提交了代码，通过
 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在
 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。
 
