@@ -55,114 +55,9 @@ cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
-
 华为在中国Rust社区方面也走在前列，引领在12月26日至27日深圳主办了[第一届中国Rust大会](https://2020conf.rustcc.cn)，并推行多项
 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。
 
-## C到Rust转译
-
-我们举个例子说明C到Rust转译这项能力。下面的C程序实现Rosetta Code中的"100门"算法。
-
-```c
-#include <stdio.h>
- 
-int main()
-{
-  char is_open[100] = { 0 };
-  int pass, door;
- 
-  /* do the 100 passes */
-  for (pass = 0; pass < 100; ++pass)
-    for (door = pass; door < 100; door += pass+1)
-      is_open[door] = !is_open[door];
- 
-  /* output the result */
-  for (door = 0; door < 100; ++door)
-    printf("door #%d is %s.\n", door+1, (is_open[door]? "open" : "closed"));
- 
-  return 0;
-}
-```
-
-开源的[c2rust](https://github.com/immunant/c2rust)转译器最初产生以下Rust代码：
-
-```rust
-#![allow(dead_code, mutable_transmutes, non_camel_case_types, non_snake_case,
-         non_upper_case_globals, unused_assignments, unused_mut)]
-#![register_tool(c2rust)]
-#![feature(main, register_tool)]
-extern "C" {
-    #[no_mangle]
-    fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
-}
-unsafe fn main_0() -> libc::c_int {
-    let mut is_open: [libc::c_char; 100] =
-        [0 as libc::c_int as libc::c_char, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let mut pass: libc::c_int = 0;
-    let mut door: libc::c_int = 0;
-    /* do the 100 passes */
-    pass = 0 as libc::c_int;
-    while pass < 100 as libc::c_int {
-        door = pass;
-        while door < 100 as libc::c_int {
-            is_open[door as usize] =
-                (is_open[door as usize] == 0) as libc::c_int as libc::c_char;
-            door += pass + 1 as libc::c_int
-        }
-        pass += 1
-    }
-    /* output the result */
-    door = 0 as libc::c_int;
-    while door < 100 as libc::c_int {
-        printf(b"door #%d is %s.\n\x00" as *const u8 as *const libc::c_char,
-               door + 1 as libc::c_int,
-               if is_open[door as usize] as libc::c_int != 0 {
-                   b"open\x00" as *const u8 as *const libc::c_char
-               } else { b"closed\x00" as *const u8 as *const libc::c_char });
-        door += 1
-    }
-    return 0 as libc::c_int;
-}
-#[main]
-pub fn main() { unsafe { ::std::process::exit(main_0() as i32) } }
-```
-
-虽然生成的Rust代码可编译，但是不易维护，其中所有函数都被标记为`unsafe'，必须由程序员负责它的安全性。虽然c2rust支持重构命令，但是它们需要由经验丰富的Rust程序员提供和调整才能奏效。
-
-为了更好地获得Rust语言编译器的安全保证，华为的方案采用了基于[TXL](http://txl.ca)这个高效的源到源转换工具。我们给开源社区提供了一个健壮的
-[Rust TXL语法](http://txl.ca/examples/Grammars/Rust/README.txt)，并用它来开发
-有正确语义保证的自动重构模式，实现更安全、更可维护的Rust代码。例如
-
-```rust
-// #include <stdio.h>
-fn main() {
-    let mut is_open: [i8; 100] = [0; 100];
-    for pass in 0..100 {
-        let mut door = pass as usize;
-        while door < 100 {
-            is_open[door] = !is_open[door];
-            door += pass + 1;
-        }
-    }
-    for door in 0..100 {
-        print!(
-            "door #{} is {}.\n",
-            door + 1,
-            (if (is_open[door]) != 0 {
-                "open"
-            } else {
-                "closed"
-            })
-        );
-    }
-}
-```
-
-这里的Rust代码不再有`unsafe'块，Rust程序员也完全可理解。
 
 ## 配置华为的端到端Rust工具链
 
@@ -217,5 +112,5 @@ Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还�
 
 ## 结论
 
-综上所述，华为可信开源软件工程实验室正在开展的Rust工作为程序员提供智能化端到端IDE工具链，以期最大限度地提高代码的安全性和高性能。走向可信编程远景的旅程刚刚开始，我们希望与Rust社区和即将成立的Rust基金会深度合作，引领电信软件产业的可信革新。
+综上所述，华为可信开源软件工程实验室正在开展的Rust工作为程序员提供智能化端到端IDE工具链，以期最大限度地提高代码的安全性和性能。走向可信编程远景的旅程刚刚开始，我们希望与Rust社区和即将成立的Rust基金会深度合作，引领电信软件产业的可信革新。
 
