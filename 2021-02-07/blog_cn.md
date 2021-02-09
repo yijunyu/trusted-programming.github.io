@@ -14,44 +14,45 @@ Rust高级专家\
 
 ## Rust带来的创新
 
-2015年以来的调查表明, Rust一直是StackOverflow 程序员的最爱。
+StackOverflow的调查表明, 自2015年以来，Rust一直是开发者最爱的编程语言。
 
 ![](img/RustConChina2020-yu-v42.png){width=500px}\
 
-学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文逐年增加。
+学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文正逐年增加。
 
 ![](img/RustConChina2020-yu-v43.png)\
 
-更有甚者，在《自然》2020年岁尾的文章《Why Scientists are Turning to Rust》也强调指出, 科学家也极为推崇Rust。
+不仅如此，《自然》杂志2020年尾的文章《Why Scientists are Turning to Rust》中也强调：科学家极为推崇Rust。
 
 ![](img/RustConChina2020-yu-v41.png){width=500px}\
 
 ## Rust在华为的初步推进
 
-华为的目标是引领通信系统软件可信平滑演进，其中Rust语言正在发挥很大的作用。
+华为的目标是引领通信系统软件向安全可信演进，其中Rust语言正在发挥很大的作用。
 
-例如，我们希望通过部分C/C++代码的迁移，达到更安全和同样的高性能。在此过程中，
+例如，我们希望通过部分C/C++代码的迁移，在保证高性能的同时，拥有更高的安全性。在此过程中，
 我们为开发者提供一套自动化工具支持：基于开源的[C2Rust](https://c2rust.com/)转译工具，
 首先从C代码生成Rust代码, 然后通过源到源变换工具自动重构。
 
-在华为内部我们还基于actor的并发编程模式用Rust开发了一批程序库，方便程序员充分利用
-Rust的语言特性, 比如`async`, `await`, 等等。
+在华为内部我们还基于actor的并发编程模式开发了Rust库，方便程序员充分利用
+Rust的语言特性, 例如`async`, `await`等。
 
-以华为代表的通信系统软件的大量存量代码以C/C++代码为主, 这些C/C++到Rust的迁移技术措施将努力使我们的过渡更为平滑。
-作为Rust基金会的创始成员，华为也将不遗余力地引领通信软件业界对Rust的应用，并持续对Rust社区做出贡献。
+以华为代表的通信系统软件的开发以C/C++代码为主, 这些Rust库将使C/C++到Rust的迁移更加顺畅。
+作为业界领先公司和Rust基金会的创始成员，华为致力于Rust在通信软件行业，并将持续为Rust社区做出贡献。
 
 ## 华为对Rust社区的贡献
 
-虽然开始时间不长， 我们已经对Rust社区做出了一些贡献。值得提及的是， 我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体[ILP32](https://developer.arm.com/documentation/dai0490/latest/)芯片组, 用于我们的通信产品中。
+我们为Rust社区贡献了许多重要的功能特性。例如，我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体[ILP32](https://developer.arm.com/documentation/dai0490/latest/)芯片组, 用于我们的通信产品中。
 这些改进使得我们和友商可以在这些常用网络硬件架构上执行Rust原生程序。这些代码已经通过我们的Rust专家Amanieu d'Antras 提交给了[LLVM 编译器](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc), [libc库](https://github.com/rust-lang/libc/pull/2039), 以及[Rust编译器](https://github.com/rust-lang/rust/pull/81455)等开源社区。
 
-这些对Rust编译器的更改引入了新的端到端交叉编译目标，更容易针对定制硬件构建Rust产品,只需要简单的命令，比如：
+这些对Rust编译器的更改引入了新的端到端交叉编译目标，针对定制硬件构建Rust产品变得更容易,只需要简单的命令，比如：
 
 ```bash
 cargo build --target aarch64_be-unknown-linux-gnu
 cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
+
 
 华为在中国Rust社区方面也走在前列，引领在12月26日至27日深圳主办了[第一届中国Rust大会](https://2020conf.rustcc.cn)，并推行多项
 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。
@@ -163,13 +164,13 @@ fn main() {
 
 ## 配置华为的端到端Rust工具链
 
-华为已经开始Rust社区里已有的端到端工具受益，开发工具链帮助我们内部的开发人员。
-这里仅举几个例子。
+Rust社区中有几种端到端的工具，我们已经开始从开发人员和工具的交互中获取信息。
 
+这里有一些例子
 
 ### tokei
 
-由于可信编程项目通常涉及多个编程语言，我们采用了[`tokei`](https://github.com/XAMPPRocky/tokei)作为多语言代码复杂性度量工具，识别多达250种编程语言。例如，开源的Fuchhia项目涉及了多种编程语言，下面的统计信息显示有多少行不同语种的代码：
+由于可信编程项目通常涉及多个编程语言，我们采用了[`tokei`](https://github.com/XAMPPRocky/tokei)作为多语言代码复杂性度量工具，识别多达200种编程语言。例如，开源的Fuchhia项目涉及了多种编程语言，下面的统计信息显示有多少行不同语种的代码：
 
 ![](img/RustConChina2020-yu-v49.png)\
 
@@ -181,26 +182,29 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 
 ### cargo-geiger
 
+
 为了提高安全性，我们经常想知道有多少代码已经被Rust编译器检查过。幸运的是，通过统计"不安全"项目，如`fn`、`expr`，`struct`、`impl`、`trait`及其在各相关库实现中的出现次数，
 [cargo-geiger](https://github.com/rust-secure-code/cargo-geiger)几乎做到了这点。
 
 ![](img/RustConChina2020-yu-v411.png)\
 
-不过，统计数字中并没有反映安全要素的比率展现Rust项目总体上取得了多少安全进展。因此，我们
-提交了[代码](https://github.com/rust-secure-code/cargo-geiger/pull/167)，在改进的`cargo-geiger`计数器报告中提供Rust项目的安全检查比率。随着这个代码提交的采纳，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。
+不过，统计数字中并没有反映安全性，所以没办法展现Rust项目总体上取得了多少进展的比例。因此，我们
+提交了[代码](https://github.com/rust-secure-code/cargo-geiger/pull/167)，在改进的`cargo-geiger`计数器报告中提供Rust项目的安全检查比率。这个代码采纳后，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。
 
 ![](img/RustConChina2020-yu-v412.png)\
 ![](img/RustConChina2020-yu-v413.png)\
 
 ## 通过深度代码学习研究Rust
 
-随着Rust开源社区代码的演进和增长，新的开发人员需要学习掌握的最佳实践，包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为[大代码](https://arxiv.org/abs/1709.06182)，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，Rust代码中的大量的特征需要深度神经网络来提取。 使用大代码训练深度神经网络以反映程序的特点，也被称为"深度代码学习"。在这方面，华为正在通过改进最先进的技术来突破开展"跨语言"的深度代码学习。
+随着Rust开源社区代码的发展和革新，初学者需要学习掌握Rust最佳的实践，其包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为[大代码](https://arxiv.org/abs/1709.06182)，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，这些问题都需要通过深度神经网络(deep neural networks DNN)提取大量的特征，Big Code可能同样需要去训练DNN来反映程序的统计特性，所以也称为"深度代码学习"。
+
+在这方面，华为与[英国开放大学](https://mcs.open.ac.uk/yy66)和[新加坡管理大学](http://www.mysmu.edu/faculty/lxjiang/)进行技术合作，在现在最先进的“跨语言”深度代码学习基础上进行优化研究。
 
 例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%，
 [(AAAI'16)](https://github.com/bdqnghi/tbcnn.tensorflow)。最近的SOTA在语句级使用抽象语法树
 [(ICSE '19)](https://github.com/zhangj111/astnn)准确率达到98%。近期我们同[英国开放大学](https://mcs.open.ac.uk/yy66)和[新加坡管理大学](http://www.mysmu.edu/faculty/lxjiang/)在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率[(AAAI'21)](https://arxiv.org/abs/2009.09777)。
 
-早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，以Rosetta Code 算法从GitHub爬取的Java和C数据集跨语言深度代码学习，证明可以获得86%的算法分类准确度 [(SANER'19)](https://github.com/bdqnghi/bi-tbcnn)，在Java到C#的跨语言API映射
+早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，从GitHub爬取的数据集Rosetta Code，从Java到C语言，可以获得86%的算法分类准确度 [(SANER'19)](https://github.com/bdqnghi/bi-tbcnn)，在Java到C#的跨语言API映射
 问题也能发挥重要作用[(ESEC/FSE'19)](https://github.com/bdqnghi/SAR_API_mapping)。这些统计语言模型在软件工程中可以应用于很多方面，比如代码分类、代码搜索、代码推荐、代码摘要、方法名称预测、代码克隆检测等等[(ICSE'21)](https://github.com/bdqnghi/infercode)。
 
 为了进一步研究分析Rust项目，我们向[Rust解析器项目tree-sitter](https://github.com/tree-sitter/tree-sitter/pull/863)和XML序列化
@@ -208,7 +212,7 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在
 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。
 
-在Visual Studio Code IDE上，我们开发了扩展插件，使得程序员可以得到合适的算法推荐和可解释性的帮助。
+在IDE上的原型是在Visual Studio Code IDE上，我们开发扩展插件，使得程序员可以得到合适的算法推荐和可解释性的帮助。
 
 ## 结论
 
