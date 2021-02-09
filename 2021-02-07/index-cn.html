@@ -104,10 +104,12 @@
 <h1 id="可信编程-华为引领rust语言开发的实践和愿景">可信编程 – 华为引领Rust语言开发的实践和愿景</h1>
 <p><em>Yijun Yu</em></p>
 <p>可信编程首席专家<br />
-华为可信软件工程开源实验室</p>
+华为可信软件工程开源实验室<br />
+华为爱尔兰研究所</p>
 <p><em>Amanieu d’Antras</em></p>
 <p>Rust高级专家<br />
-华为可信软件工程开源实验室</p>
+华为可信软件工程开源实验室<br />
+华为爱尔兰研究所</p>
 <h2 id="rust带来的创新">Rust带来的创新</h2>
 <p>StackOverflow的调查表明, 自2015年以来，Rust一直是开发者最爱的编程语言。</p>
 <p><img src="img/RustConChina2020-yu-v42.png" width="500" /><br />
@@ -240,7 +242,7 @@
 <h2 id="通过深度代码学习研究rust">通过深度代码学习研究Rust</h2>
 <p>随着Rust开源社区代码的发展和革新，初学者需要学习掌握Rust最佳的实践，其包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为<a href="https://arxiv.org/abs/1709.06182">大代码</a>，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，这些问题都需要通过深度神经网络(deep neural networks DNN)提取大量的特征，Big Code可能同样需要去训练DNN来反映程序的统计特性，所以也称为“深度代码学习”。</p>
 <p>在这方面，华为与<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>进行技术合作，在现在最先进的“跨语言”深度代码学习基础上进行优化研究。</p>
-<p>例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%， <a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI’16)</a>。最近的SOTA在语句级使用抽象语法树 <a href="https://github.com/zhangj111/astnn">(ICSE ’19)</a>准确率达到98%。近期我们同<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率<a href="https://arxiv.org/abs/2009.09777">(AAAI’21)</a>。</p>
+<p>例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%<a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI’16)</a>。最近的SOTA在语句级使用抽象语法树 <a href="https://github.com/zhangj111/astnn">(ICSE ’19)</a>准确率达到98%。近期我们同<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率<a href="https://arxiv.org/abs/2009.09777">(AAAI’21)</a>。</p>
 <p>早些时候我们已经使用跨语言的数据集表明，对一种编程语言的深度代码学习模型也适用于另一种编程语言。例如，从GitHub爬取的数据集Rosetta Code，从Java到C语言，可以获得86%的算法分类准确度 <a href="https://github.com/bdqnghi/bi-tbcnn">(SANER’19)</a>，在Java到C#的跨语言API映射 问题也能发挥重要作用<a href="https://github.com/bdqnghi/SAR_API_mapping">(ESEC/FSE’19)</a>。这些统计语言模型在软件工程中可以应用于很多方面，比如代码分类、代码搜索、代码推荐、代码摘要、方法名称预测、代码克隆检测等等<a href="https://github.com/bdqnghi/infercode">(ICSE’21)</a>。</p>
 <p>为了进一步研究分析Rust项目，我们向<a href="https://github.com/tree-sitter/tree-sitter/pull/863">Rust解析器项目tree-sitter</a>和XML序列化 <a href="https://github.com/tafia/quick-xml/pull/250">quick-xml</a>等项目提交了代码，通过 Rust程序的抽象语法树来训练深度代码学习模型。研究的初步结果很有希望，算法检测任务在 Rust代码上的精度高达85.5%。随着工具链的改进，这个比例还有望进一步提升。</p>
 <p>在IDE上的原型是在Visual Studio Code IDE上，我们开发扩展插件，使得程序员可以得到合适的算法推荐和可解释性的帮助。</p>

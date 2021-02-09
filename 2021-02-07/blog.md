@@ -5,13 +5,15 @@
 *Yijun Yu*
 
 Chief Expert on Trusted Programming\
-Trustworthy Open-Source Software Engineering Lab\
+Trustworthy Open-Source Software Engineering Lab &\
+Ireland Research Centre\
 Huawei Technology, Inc.
 
 *Amanieu d'Antras*
 
 Principal Rust Expert\
-Trustworthy Open-Source Software Engineering Lab\
+Trustworthy Open-Source Software Engineering Lab &\
+Ireland Research Centre\
 Huawei Technology, Inc.
 
 ## Innovations by Rust
