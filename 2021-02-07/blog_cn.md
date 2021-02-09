@@ -37,15 +37,15 @@ StackOverflow的调查表明, 自2015年以来，Rust一直是开发者最爱的
 在华为内部我们还基于actor的并发编程模式开发了Rust库，方便程序员充分利用
 Rust的语言特性, 例如`async`, `await`等。
 
-以华为代表的通信系统软件的代码以C/C++代码为主, 这些Rust库将使C/C++到Rust的迁移更加顺畅。
-作为Rust基金会的创始成员，华为也将不遗余力地引领通信软件行业对Rust的应用，并持续对Rust社区做出贡献。
+以华为代表的通信系统软件的开发以C/C++代码为主, 这些Rust库将使C/C++到Rust的迁移更加顺畅。
+作为业界领先公司和Rust基金会的创始成员，华为致力于Rust在通信软件行业，并将持续为Rust社区做出贡献。
 
 ## 华为对Rust社区的贡献
 
 我们为Rust社区贡献了许多重要的功能特性。例如，我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体[ILP32](https://developer.arm.com/documentation/dai0490/latest/)芯片组, 用于我们的通信产品中。
 这些改进使得我们和友商可以在这些常用网络硬件架构上执行Rust原生程序。这些代码已经通过我们的Rust专家Amanieu d'Antras 提交给了[LLVM 编译器](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc), [libc库](https://github.com/rust-lang/libc/pull/2039), 以及[Rust编译器](https://github.com/rust-lang/rust/pull/81455)等开源社区。
 
-这些对Rust编译器的更改引入了新的端到端交叉编译目标，更容易针对定制硬件构建Rust产品,只需要简单的命令，比如：
+这些对Rust编译器的更改引入了新的端到端交叉编译目标，针对定制硬件构建Rust产品变得更容易,只需要简单的命令，比如：
 
 ```bash
 cargo build --target aarch64_be-unknown-linux-gnu
@@ -53,8 +53,7 @@ cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
-华为在中国Rust社区方面也引领在12月26日至27日中国深圳主办了第一届Rust大会，并推行多项
-社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。
+在社区参与方面，华为一直在中国牵头，于12月26-27日在深圳主办了首届Rust China Conf。我们已经开始通过开展一系列活动来带领社区和对Rust感兴趣的开发人员创建Rust的中文教程和Rust编码规范。
 
 ## C到Rust转译
 
