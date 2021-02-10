@@ -55,7 +55,7 @@ cargo build --target aarch64-unknown-linux-gnu_ilp32
 cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
-华为在中国Rust社区方面也走在前列，战略支持12月26日至27日在深圳举办了[第一届中国Rust大会](https://2020conf.rustcc.cn)，并推行多项
+华为在中国Rust社区方面也走在前列，战略支持12月26日至27日在深圳举办了[第一届Rust China Conf大会](https://2020conf.rustcc.cn)，并推行多项
 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。
 
 

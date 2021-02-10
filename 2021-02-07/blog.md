@@ -82,7 +82,7 @@ cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 ```
 
 With respect to community engagement, Huawei has been leading the effort in
-China, strategically sponsored the first Chinese Rust Conference during December 26-27 in
+China, strategically sponsored [the first Rust China Conf](https://2020conf.rustcc.cn) during December 26-27 in
 Shenzhen.  We have started to lead the community by carrying out a number of
 activities, including creating Rust tutorials and Rust coding conventions in
 Chinese for a vast number of developers who are interested in Rust. 
