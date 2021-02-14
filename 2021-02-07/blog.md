@@ -16,6 +16,14 @@ Trustworthy Open-Source Software Engineering Lab &\
 Ireland Research Centre\
 Huawei Technology, Inc.
 
+
+*Nghi D. Q. Bui*
+
+Research Scientist\
+Trustworthy Open-Source Software Engineering Lab &\
+Ireland Research Centre\
+Huawei Technology, Inc.
+
 ## Innovations by Rust
 
 Since 2015, Rust has consistently been voted as the most loved
@@ -23,7 +31,7 @@ programming language in the StackOverflow survey.
 
 ![](img/RustConChina2020-yu-v42.png){width=500px}\
 
-There has also been an increasing number of publications on Rust at recent top
+There has also been an increasing number of publications on Rust at the recent top
 programming languages and software engineering conferences. 
 
 ![](img/RustConChina2020-yu-v43.png)\
@@ -39,23 +47,23 @@ amongst scientists.
 At Huawei, we aim to engineer trustworthy software systems in the
 world's largest telecom industry. 
 
-For example, we are working to migrate parts of our code base towards
+For example, we are working to migrate parts of our codebase towards
 Rust, which is safer and as performant as C/C++. To assist our
 developers in this process, we are leveraging the open-source
 [C2Rust](https://c2rust.com/) transpiler to generate Rust code directly
 from C. We have created automated tools to refactor and clean up this
 generated Rust code through source-to-source transformations.
 
-We are also developing a rich set of internal Rust libraries in Rust
+We are also developing a rich set of internal libraries in Rust
 built around an actor-based concurrency paradigm. This simplifies
-asynchronuous programming by leveraging Rust language features such as
+asynchronous programming by leveraging Rust language features such as
 `async`, `await`, etc.
 
 All these factors have led to increased adoption of Rust withing Huawei
-and a smooth migration from C/C++ programs, which are dominant in the
+and smooth migration from C/C++ programs, which are dominant in the
 telecom industry. As the leading company in this industry and a
 founding member of the Rust Foundation, Huawei is committed to the
-success of Rust and will continue contributing back to the Rust
+the success of Rust and will continue contributing back to the Rust
 community.
 
 ## Contributions to Rust community from Huawei
@@ -65,8 +73,7 @@ example, our recent contributions to the Rust compiler enable the
 compilation of Rust programs for big-endian and
 [ILP32](https://developer.arm.com/documentation/dai0490/latest/)
 variants of AArch64.  These changes enable Huawei and other hardware
-companies to run Rust code on networking hardware which commonly use
-these architecture variants.  This contribution is achieved with the
+companies to run Rust code on networking hardware which commonly uses these architecture variants.  This contribution is achieved with the
 help of our Rust expert Amanieu d'Antras, who has pushed through these
 pull requests to [the LLVM
 compiler](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc),
@@ -83,7 +90,7 @@ cargo build --target aarch64_be-unknown-linux-gnu_ilp32
 
 With respect to community engagement, Huawei has been leading the effort in
 China, strategically sponsored [the first Rust China Conf](https://2020conf.rustcc.cn) during December 26-27 in
-Shenzhen.  We have started to lead the community by carrying out a number of
+Shenzhen.  We have started to lead the community by carrying out several
 activities, including creating Rust tutorials and Rust coding conventions in
 Chinese for a vast number of developers who are interested in Rust. 
 
@@ -98,8 +105,8 @@ Here are just a few examples.
 
 Because trustworthy programming typically involves migrating programming
 languages, we have adopted [`tokei`](https://github.com/XAMPPRocky/tokei) as our code
-complexity metric tool, which can recognise as many as 200 languages. For
-example, the following statistics show how many lines of code various
+complexity metrics tool, which can recognize as many as 200 languages. For
+For example, the following statistics show how many lines of code various
 programming languages have been developed in Google's Fucshia project: 
 
 ![](img/RustConChina2020-yu-v49.png)\
@@ -137,18 +144,18 @@ which crates have not been fully checked by the Rust compiler:
 
 ## Research on Rust through Deep Code Learning
 
-As code bases from the Rust open-source community evolve and grow, new
+As codebases from the Rust open-source community evolve and grow, new
 developers need to learn the best practices, including but not limited to the
-language itself. Statistical machine learning methods from large amount of
+language itself. Statistical machine learning methods from a large amount of
 source code, also known as [Big Code](https://arxiv.org/abs/1709.06182), have
 been considered by software engineering research communities: similar to the
-machine learning problems for image processing and natural language processing
-where vast number of features requires deep neural networks (DNN) to extract,
+machine-learning problems for image processing and natural language processing
+where a vast number of features requires deep neural networks (DNN) to extract,
 big code may also be used to train a DNN to reflect on statistical patterns of
 programs, which is called `Deep Code Learning'.
 
 In this respect, Huawei is pushing the limits by improving the state-of-the-art
-of `cross-language' deep code learning, through technical collaboration with
+of `cross-language' deep code learning, through a technical collaboration with
 [The Open University, UK](https://mcs.open.ac.uk/yy66) and [Singapore
 Management University](http://www.mysmu.edu/faculty/lxjiang/).
 
@@ -164,8 +171,7 @@ recent progress pushes the SOTA even higher to achieve 98.4\% accuracy
 [(AAAI'21)](https://arxiv.org/abs/2009.09777) by an innovation on Tree-based
 Capsule Networks.  
 
-Earlier, we have used cross-language datasets to show that the learnt model of one
-language is applicable to another programming language. For example, using the
+Earlier, we have used cross-language datasets to show that the learned model of one language applies to another programming language. For example, using the
 Rosetta Code datasets from Github, we show it possible to obtain 86\% accuracy
 for algorithm classification (Java to C)
 [(SANER'19)](https://github.com/bdqnghi/bi-tbcnn), and cross-language API mapping
@@ -173,10 +179,12 @@ problems (Java to C#)
 [(ESEC/FSE'19)](https://github.com/bdqnghi/SAR_API_mapping). These statistical
 language models have found multiple applications to software engineering, in terms of
 code classification, code search, code recommendation, code summary, method
-name prodiction, and code clone detection
-[(ICSE'21)](https://github.com/bdqnghi/infercode). 
+name prediction, and code clone detection
+[(ICSE'21)](https://github.com/bdqnghi/infercode). Such models also have the capability to
+transfer the knowledge across many tasks, thus it will reduce the effort to retrain the models for 
+each of the tasks separately.
 
-To analyse Rust projects, we have made another pull request to the Rust parser
+To analyze Rust projects, we have made another pull request to the Rust parser
 project [`tree-sitter`](https://github.com/tree-sitter/tree-sitter/pull/863)
 and XML serialization crate
 [`quick-xml`](https://github.com/tafia/quick-xml/pull/250), which allow us to
