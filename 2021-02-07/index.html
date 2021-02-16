@@ -46,20 +46,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
 </head>
 <body>
-<div id="TOC">
-<ul>
-<li><a href="#trusted-programming----our-rust-mission-at-huawei">Trusted Programming -- Our Rust Mission at Huawei</a><ul>
-<li><a href="#innovations-by-rust">Innovations by Rust</a></li>
-<li><a href="#contributions-to-rust-community-from-huawei">Contributions to Rust community from Huawei</a></li>
-<li><a href="#adapting-end-to-end-rust-tooling-for-huawei">Adapting end-to-end Rust tooling for Huawei</a><ul>
-<li><a href="#tokei"><code>tokei</code></a></li>
-<li><a href="#cargo-geiger"><code>cargo-geiger</code></a></li>
-</ul></li>
-<li><a href="#research-on-rust-through-deep-code-learning">Research on Rust through Deep Code Learning</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
-</ul></li>
-</ul>
-</div>
 <p><a href="index-cn.html">中文</a></p>
 <h1 id="trusted-programming----our-rust-mission-at-huawei">Trusted Programming -- Our Rust Mission at Huawei</h1>
 <p><em>Yijun Yu</em></p>
@@ -91,9 +77,9 @@ If that's not enough, a recent Nature 2020 article, `Why Scientists are Turning 
 <p>All these factors have led to increased adoption of Rust withing Huawei and smooth migration from C/C++ programs, which are dominant in the telecom industry. As the leading company in this industry and a founding member of the Rust Foundation, Huawei is committed to the the success of Rust and will continue contributing back to the Rust community.</p>
 <h2 id="contributions-to-rust-community-from-huawei">Contributions to Rust community from Huawei</h2>
 <p>We also contribute significant features back to the Rust community. For example, our recent contributions to the Rust compiler enable the compilation of Rust programs for big-endian and <a href="https://developer.arm.com/documentation/dai0490/latest/">ILP32</a> variants of AArch64. These changes enable Huawei and other hardware companies to run Rust code on networking hardware which commonly uses these architecture variants. This contribution is achieved with the help of our Rust expert Amanieu d'Antras, who has pushed through these pull requests to <a href="https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc">the LLVM compiler</a>, <a href="https://github.com/rust-lang/libc/pull/2039">the libc crate</a>, and <a href="https://github.com/rust-lang/rust/pull/81455">the Rust compiler itself</a>. These changes introduce new end-to-end cross-compilation targets for the Rust compiler, making it easier to build Rust products for bespoke hardware using a single command:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu
-<span class="ex">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32
-<span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cargo</span> build --target aarch64_be-unknown-linux-gnu
+<span class="kw">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32
+<span class="kw">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</code></pre></div>
 <p>With respect to community engagement, Huawei has been leading the effort in China, strategically sponsored <a href="https://2020conf.rustcc.cn">the first Rust China Conf</a> during December 26-27 in Shenzhen. We have started to lead the community by carrying out several activities, including creating Rust tutorials and Rust coding conventions in Chinese for a vast number of developers who are interested in Rust.</p>
 <h2 id="adapting-end-to-end-rust-tooling-for-huawei">Adapting end-to-end Rust tooling for Huawei</h2>
 <p>There are many end-to-end tools out there in the Rust community and we have started to benefit from the interactions with developers of these tools.</p>

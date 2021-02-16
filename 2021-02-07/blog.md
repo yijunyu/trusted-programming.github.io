@@ -16,7 +16,6 @@ Trustworthy Open-Source Software Engineering Lab &\
 Ireland Research Centre\
 Huawei Technology, Inc.
 
-
 *Nghi D. Q. Bui*
 
 Research Scientist\

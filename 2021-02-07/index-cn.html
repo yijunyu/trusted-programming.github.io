@@ -46,19 +46,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
 </head>
 <body>
-<div id="TOC">
-<ul>
-<li><a href="#可信编程----华为引领rust语言开发的实践和愿景">可信编程 -- 华为引领Rust语言开发的实践和愿景</a><ul>
-<li><a href="#rust带来的创新">Rust带来的创新</a></li>
-<li><a href="#华为对rust社区的贡献">华为对Rust社区的贡献</a></li>
-<li><a href="#配置华为的端到端rust工具链">配置华为的端到端Rust工具链</a><ul>
-<li><a href="#tokei">tokei</a></li>
-<li><a href="#cargo-geiger">cargo-geiger</a></li>
-</ul></li>
-<li><a href="#结论">结论</a></li>
-</ul></li>
-</ul>
-</div>
 <p><a href="index.html">English</a></p>
 <h1 id="可信编程----华为引领rust语言开发的实践和愿景">可信编程 -- 华为引领Rust语言开发的实践和愿景</h1>
 <p><em>Yijun Yu</em></p>
@@ -88,9 +75,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="华为对rust社区的贡献">华为对Rust社区的贡献</h2>
 <p>我们为Rust社区贡献了许多重要的功能特性。例如，我们最近为Rust编译器提交了一系列代码，使得Rust编译目标可以支持ARM AArch64 32位大端变体<a href="https://developer.arm.com/documentation/dai0490/latest/">ILP32</a>芯片组, 用于我们的通信产品中。 这些改进使得我们和友商可以在这些常用网络硬件架构上执行Rust原生程序。这些代码已经通过我们的Rust专家Amanieu d'Antras 提交给了<a href="https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc">LLVM 编译器</a>, <a href="https://github.com/rust-lang/libc/pull/2039">libc库</a>, 以及<a href="https://github.com/rust-lang/rust/pull/81455">Rust编译器</a>等开源社区。</p>
 <p>这些对Rust编译器的更改引入了新的端到端交叉编译目标，针对定制硬件构建Rust产品变得更容易,只需要简单的命令，比如：</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu
-<span class="ex">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32
-<span class="ex">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cargo</span> build --target aarch64_be-unknown-linux-gnu
+<span class="kw">cargo</span> build --target aarch64-unknown-linux-gnu_ilp32
+<span class="kw">cargo</span> build --target aarch64_be-unknown-linux-gnu_ilp32</code></pre></div>
 <p>华为在中国Rust社区方面也走在前列，战略支持12月26日至27日在深圳举办了<a href="https://2020conf.rustcc.cn">第一届Rust China Conf大会</a>，并推行多项 社区活动，包括为中国的开发者提供Rust教程和Rust编码规范。</p>
 <h2 id="配置华为的端到端rust工具链">配置华为的端到端Rust工具链</h2>
 <p>Rust社区中有几种端到端的工具，我们已经开始从开发人员和工具的交互中获取信息。</p>
