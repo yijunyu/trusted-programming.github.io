@@ -13,8 +13,6 @@ Signapore Management University
 
 </center>
 
-## Introduction
-
 Traditionally, program understanding is the most brain-wracking activity
 in software development and maintenance. How many times you scratch the
 head and say to yourself, `... if only I could use someone else's code to
