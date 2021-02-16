@@ -140,7 +140,7 @@ basis. A report will look like the following, which has made it easier to tell
 which crates have not been fully checked by the Rust compiler:
 
 ![](img/RustConChina2020-yu-v412.png)\
-![](img/RustConChina2020-yu-v413.png)\
+![](img/RustConChina2020-yu-v413.png)
 
 ## Research on Rust through Deep Code Learning
 
@@ -196,7 +196,7 @@ as we continue working on improving toolchains.
 A prototype of such an IDE is shown as an extension to the Visual Studio
 Code，where programmers are assisted with the recommendation of a suitable
 algorithm and an explanation of the choice.
-![](img/RustConChina2020-yu-v414.png)\
+![](img/RustConChina2020-yu-v414.png)
 
 ## Conclusion
 

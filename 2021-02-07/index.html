@@ -55,6 +55,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#tokei"><code>tokei</code></a></li>
 <li><a href="#cargo-geiger"><code>cargo-geiger</code></a></li>
 </ul></li>
+<li><a href="#research-on-rust-through-deep-code-learning">Research on Rust through Deep Code Learning</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul></li>
 </ul>
 </div>
@@ -107,15 +109,15 @@ To accommodate the needs to processing multiple programming languages in our pro
 <p><img src="img/RustConChina2020-yu-v411.png" /><br />
 However, the statistics do not reflect the ratio of safe items, hence not showing how much has been achieved overall for Rust projects. Therefore, we made a <a href="https://github.com/rust-secure-code/cargo-geiger/pull/167">pull request</a> to <code>cargo-geiger</code> to report the checked safe ratios of Rust projects. After it was accepted, this tool has been used regularly by our product teams on daily basis. A report will look like the following, which has made it easier to tell which crates have not been fully checked by the Rust compiler:</p>
 <p><img src="img/RustConChina2020-yu-v412.png" /><br />
-<img src="img/RustConChina2020-yu-v413.png" /><br />
-## Research on Rust through Deep Code Learning</p>
+<img src="img/RustConChina2020-yu-v413.png" /></p>
+<h2 id="research-on-rust-through-deep-code-learning">Research on Rust through Deep Code Learning</h2>
 <p>As codebases from the Rust open-source community evolve and grow, new developers need to learn the best practices, including but not limited to the language itself. Statistical machine learning methods from a large amount of source code, also known as <a href="https://arxiv.org/abs/1709.06182">Big Code</a>, have been considered by software engineering research communities: similar to the machine-learning problems for image processing and natural language processing where a vast number of features requires deep neural networks (DNN) to extract, big code may also be used to train a DNN to reflect on statistical patterns of programs, which is called `Deep Code Learning'.</p>
 <p>In this respect, Huawei is pushing the limits by improving the state-of-the-art of `cross-language' deep code learning, through a technical collaboration with <a href="https://mcs.open.ac.uk/yy66">The Open University, UK</a> and <a href="http://www.mysmu.edu/faculty/lxjiang/">Singapore Management University</a>.</p>
 <p>For example, initial deep code learning methods are trained and evaluated using the benchmarks of 52,000 C/C++ programs of 104 algorithm classes collected from the programming courses of Peking University. Traditionally, tree-based convolution neural networks (TBCNN) could achieve 94% accuracy in algorithm classification for this dataset <a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI'16)</a>. A recent progress of the SOTA using abstract syntax trees at the statement level <a href="https://github.com/zhangj111/astnn">(ICSE'19)</a> achieved 98% accuracy. Our recent progress pushes the SOTA even higher to achieve 98.4% accuracy <a href="https://arxiv.org/abs/2009.09777">(AAAI'21)</a> by an innovation on Tree-based Capsule Networks.</p>
 <p>Earlier, we have used cross-language datasets to show that the learned model of one language applies to another programming language. For example, using the Rosetta Code datasets from Github, we show it possible to obtain 86% accuracy for algorithm classification (Java to C) <a href="https://github.com/bdqnghi/bi-tbcnn">(SANER'19)</a>, and cross-language API mapping problems (Java to C#) <a href="https://github.com/bdqnghi/SAR_API_mapping">(ESEC/FSE'19)</a>. These statistical language models have found multiple applications to software engineering, in terms of code classification, code search, code recommendation, code summary, method name prediction, and code clone detection <a href="https://github.com/bdqnghi/infercode">(ICSE'21)</a>. Such models also have the capability to transfer the knowledge across many tasks, thus it will reduce the effort to retrain the models for each of the tasks separately.</p>
 <p>To analyze Rust projects, we have made another pull request to the Rust parser project <a href="https://github.com/tree-sitter/tree-sitter/pull/863"><code>tree-sitter</code></a> and XML serialization crate <a href="https://github.com/tafia/quick-xml/pull/250"><code>quick-xml</code></a>, which allow us to feed the abstract syntax trees of Rust programs to train a deep code learning model. The preliminary results are quite promising, the detection algorithms in Rust can reach an accuracy as high as 85.5%. This number is still climbing as we continue working on improving toolchains.</p>
-<p>A prototype of such an IDE is shown as an extension to the Visual Studio Code，where programmers are assisted with the recommendation of a suitable algorithm and an explanation of the choice. <img src="img/RustConChina2020-yu-v414.png" /><br />
-## Conclusion</p>
+<p>A prototype of such an IDE is shown as an extension to the Visual Studio Code，where programmers are assisted with the recommendation of a suitable algorithm and an explanation of the choice. <img src="img/RustConChina2020-yu-v414.png" /></p>
+<h2 id="conclusion">Conclusion</h2>
 <p>In summary, the Huawei Trustworthy Open-Source Software Engineering Lab is working hard to provide programmers an end-to-end IDE toolchain that intelligently assists in maximizing safety and performance.</p>
 <p>A journey towards the vision of Trusted Programming has just begun and we hope to work collaboratively with the Rust community, and the upcoming Rust Foundation, to lead a smooth revolution to the Telecom software industry.</p>
 </body>
