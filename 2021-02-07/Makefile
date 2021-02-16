@@ -18,3 +18,4 @@ index-cn.html: blog_cn.html
 
 %.html: %.md
 	pandoc $< -o $@ -c github-pandoc.css -s --highlight-style pygments
+
