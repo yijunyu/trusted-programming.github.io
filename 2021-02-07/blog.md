@@ -39,7 +39,7 @@ If that's not enough, a recent Nature 2020 article, `Why Scientists are Turning
 to Rust', says that there is increasing momentum on the adoption of Rust
 amongst scientists.
 
-![](img/RustConChina2020-yu-v41.png){width=500px}\
+![](img/RustConChina2020-yu-v41.png){width=500px}
 
 ## Initial adoption of Rust at Huawei 
 
