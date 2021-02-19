@@ -43,7 +43,7 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
+  <link rel="stylesheet" href="../github-pandoc.css" type="text/css" />
 </head>
 <body>
 <div id="TOC">
@@ -55,6 +55,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#tokei">tokei</a></li>
 <li><a href="#cargo-geiger">cargo-geiger</a></li>
 </ul></li>
+<li><a href="#通过深度代码学习研究rust">通过深度代码学习研究Rust</a></li>
 <li><a href="#结论">结论</a></li>
 </ul></li>
 </ul>
@@ -106,8 +107,8 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 <p><img src="img/RustConChina2020-yu-v411.png" /><br />
 不过，统计数字中并没有反映安全性，所以没办法展现Rust项目总体上取得了多少进展的比例。因此，我们 提交了<a href="https://github.com/rust-secure-code/cargo-geiger/pull/167">代码</a>，在改进的<code>cargo-geiger</code>计数器报告中提供Rust项目的安全检查比率。这个代码采纳后，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。</p>
 <p><img src="img/RustConChina2020-yu-v412.png" /><br />
-<img src="img/RustConChina2020-yu-v413.png" /><br />
-## 通过深度代码学习研究Rust</p>
+<img src="img/RustConChina2020-yu-v413.png" /></p>
+<h2 id="通过深度代码学习研究rust">通过深度代码学习研究Rust</h2>
 <p>随着Rust开源社区代码的发展和革新，初学者需要学习掌握Rust最佳的实践，其包括但不限于Rust语言本身。把统计机器学习的方法应用到源代码数据上，也称为<a href="https://arxiv.org/abs/1709.06182">大代码</a>，正被全世界的软件工程研究团队关注：类似于 图像处理和自然语言处理中的机器学习问题，这些问题都需要通过深度神经网络(deep neural networks DNN)提取大量的特征，Big Code可能同样需要去训练DNN来反映程序的统计特性，所以也称为&quot;深度代码学习&quot;。</p>
 <p>在这方面，华为与<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>进行技术合作，在现在最先进的“跨语言”深度代码学习基础上进行优化研究。</p>
 <p>例如，最初的深度代码学习方法应用于北京大学编程课程收集到的104个算法类的5.2万个C/C++程序。对此数据集，树基卷积神经网络(TBCNN)算法分类准确率达到94%<a href="https://github.com/bdqnghi/tbcnn.tensorflow">(AAAI'16)</a>。最近的SOTA在语句级使用抽象语法树 <a href="https://github.com/zhangj111/astnn">(ICSE '19)</a>准确率达到98%。近期我们同<a href="https://mcs.open.ac.uk/yy66">英国开放大学</a>和<a href="http://www.mysmu.edu/faculty/lxjiang/">新加坡管理大学</a>在树基胶囊网络的合作研究进展推动了SOTA进一步提高，达到98.4%的准确率<a href="https://arxiv.org/abs/2009.09777">(AAAI'21)</a>。</p>

@@ -96,7 +96,7 @@ C、C++、Rust代码在Fuchhia项目的占比，可以绘制成如下演进图�
 提交了[代码](https://github.com/rust-secure-code/cargo-geiger/pull/167)，在改进的`cargo-geiger`计数器报告中提供Rust项目的安全检查比率。这个代码采纳后，我们的产品团队现在每天定期都在使用这个工具，一份典型的报告能够更容易理解哪些代码库还没被Rust编译器完全检查到。
 
 ![](img/RustConChina2020-yu-v412.png)\
-![](img/RustConChina2020-yu-v413.png)\
+![](img/RustConChina2020-yu-v413.png)
 
 ## 通过深度代码学习研究Rust
 
