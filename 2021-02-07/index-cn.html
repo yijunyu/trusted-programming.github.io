@@ -50,6 +50,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="#可信编程----华为引领rust语言开发的实践和愿景">可信编程 -- 华为引领Rust语言开发的实践和愿景</a><ul>
 <li><a href="#rust带来的创新">Rust带来的创新</a></li>
+<li><a href="#rust在华为的初步推进">Rust在华为的初步推进</a></li>
 <li><a href="#华为对rust社区的贡献">华为对Rust社区的贡献</a></li>
 <li><a href="#配置华为的端到端rust工具链">配置华为的端到端Rust工具链</a><ul>
 <li><a href="#tokei">tokei</a></li>
@@ -80,8 +81,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 学术界对于Rust也越来越重视，在编程语言和软件工程顶会上发表的关于Rust的论文正逐年增加。</p>
 <p><img src="img/RustConChina2020-yu-v43.png" /><br />
 不仅如此，《自然》杂志2020年尾的文章《Why Scientists are Turning to Rust》中也强调：科学家极为推崇Rust。</p>
-<p><img src="img/RustConChina2020-yu-v41.png" width="500" /><br />
-## Rust在华为的初步推进</p>
+<div class="figure">
+<img src="img/RustConChina2020-yu-v41.png" width="500" />
+
+</div>
+<h2 id="rust在华为的初步推进">Rust在华为的初步推进</h2>
 <p>华为的目标是引领通信系统软件向安全可信演进，其中Rust语言正在发挥很大的作用。</p>
 <p>例如，我们希望通过部分C/C++代码的迁移，在保证高性能的同时，拥有更高的安全性。在此过程中， 我们为开发者提供一套自动化工具支持：基于开源的<a href="https://c2rust.com/">C2Rust</a>转译工具， 首先从C代码生成Rust代码, 然后通过源到源变换工具自动重构。</p>
 <p>在华为内部我们还基于actor的并发编程模式开发了Rust库，方便程序员充分利用 Rust的语言特性, 例如<code>async</code>, <code>await</code>等。</p>
