@@ -33,7 +33,7 @@ StackOverflow的调查表明, 自2015年以来，Rust一直是开发者最爱的
 
 不仅如此，《自然》杂志2020年尾的文章《Why Scientists are Turning to Rust》中也强调：科学家极为推崇Rust。
 
-![](img/RustConChina2020-yu-v41.png){width=500px}\
+![](img/RustConChina2020-yu-v41.png){width=500px}
 
 ## Rust在华为的初步推进
 
