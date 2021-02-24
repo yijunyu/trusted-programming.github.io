@@ -8,7 +8,7 @@ Trustworthy Open-Source Software Engineering Lab &\
 Ireland Research Centre\
 Huawei Technology, Inc.
 
-*Lingxiao Jiang* (Associted Professor)\
+*Lingxiao Jiang* (Associated Professor)\
 Signapore Management University
 
 </center>
