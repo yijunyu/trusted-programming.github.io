@@ -214,12 +214,12 @@ Jin: Modular Tree Network for Source Code Representation Learning. ACM
 Trans. Softw. Eng. Methodol. 29(4): 31:1-31:23 (2020)
 
 \[Li et al. ICLR16\] Li, Y.; Tarlow, D.; Brockschmidt, M.; and Zemel, R.
-2016. Gated Graph Sequence Neural Networks. In International Conference
-on Learning Representations.
+Gated Graph Sequence Neural Networks. In International Conference
+on Learning Representations. (2016)
 
 \[Hinton et al., ICLR18\] Hinton, G. E.; Sabour, S.; and Frosst, N.
-2018. Matrix capsules with EM routing. In International Conference on
-Learning Representations.
+Matrix capsules with EM routing. In International Conference on
+Learning Representations. (2018) 
 
 \[Allamanis et al. ACM Comput. Survey18\] M. Allamanis, E. T. Barr, P.
 Devanbu, C. Sutton. A Survey of Machine Learning for Big Code and
