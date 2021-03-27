@@ -36,18 +36,18 @@ Huawei Technology, Inc.
 Since 2015, Rust has consistently been voted as the most loved
 programming language in the StackOverflow survey.
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v42.png){width=500px}\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v42.png)
 
 There has also been an increasing number of publications on Rust at the recent top
 programming languages and software engineering conferences. 
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v43.png)\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v43.png)
 
 If that's not enough, a recent Nature 2020 article, `Why Scientists are Turning
 to Rust', says that there is increasing momentum on the adoption of Rust
 amongst scientists.
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v41.png){width=500px}
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v41.png)
 
 ## Initial adoption of Rust at Huawei 
 
@@ -116,12 +116,12 @@ complexity metrics tool, which can recognize as many as 200 languages. For
 For example, the following statistics show how many lines of code various
 programming languages have been developed in Google's Fucshia project: 
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v49.png)\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v49.png)
 
 It is relatively easy to plot the proportion of C, C++, Rust code in the evolution of
-Fucshia, as follows: 
+Fucshia, as follows:
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v410.png)\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v410.png)
 
 To accommodate the needs to processing multiple programming languages
 in our projects, we have made a [pull request to
@@ -136,7 +136,7 @@ compiler. Fortunately,
 this by counting the statistics of `unsafe` items such as `fn`, `expr`,
 `struct`, `impl`, `trait`, and their occurrences in various dependent crates:
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v411.png)\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v411.png)
 
 However, the statistics do not reflect the ratio of safe items, hence not
 showing how much has been achieved overall for Rust projects. Therefore, we
@@ -146,7 +146,7 @@ accepted, this tool has been used regularly by our product teams on daily
 basis. A report will look like the following, which has made it easier to tell 
 which crates have not been fully checked by the Rust compiler:
 
-![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v412.png)\
+![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v412.png)
 ![]({{site.baseurl}}/images/2021-02-07/RustConChina2020-yu-v413.png)
 
 ## Research on Rust through Deep Code Learning
