@@ -24,8 +24,8 @@ Signapore Management University
 
 Traditionally, program understanding is the most brain-wracking activity
 in software development and maintenance. How many times you scratch the
-head and say to yourself, `... if only I could use someone else's code to
-learn their tricks'. However, open-source code repositories from which
+head and say to yourself, ``... if only I could use someone else's code to
+learn their tricks''. However, open-source code repositories from which
 one can learn a thing or two is widely and wildly available, and growing
 in numbers exponentially (see the trend in Fig. 1). ``It's not so easy to
 read thousands of lines of code written by others and use them for me'',
