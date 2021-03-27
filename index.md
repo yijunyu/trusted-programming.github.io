@@ -14,7 +14,7 @@ localizer, etc.
 
 <ul>
 {% for post in site.posts %}
- {% unless post.title contains "_cn" %}
+ {% unless post.url contains "_cn" %}
    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
  {% endunless %}
 {% endfor %}
