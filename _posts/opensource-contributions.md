@@ -1,3 +1,13 @@
+---
+layout: post
+title: Recent Contributions to the Open Source Communities by Huawei Trusted Programming 
+toc: true
+---
+
+* toc
+{:toc}
+
+
 Here is the list of opensource contributions made by huawei employees:
 
 ### (rustdoc) Codeblock tooltip position
