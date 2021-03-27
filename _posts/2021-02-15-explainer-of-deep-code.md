@@ -1,3 +1,12 @@
+---
+layout: post
+title: Explainer of Deep Code Learning
+toc: true
+---
+
+* toc
+{:toc}
+
 # Explainer of Deep Code Learning
 <center>
 
@@ -22,7 +31,7 @@ in numbers exponentially (see the trend in Fig. 1). ``It's not so easy to
 read thousands of lines of code written by others and use them for me'',
 you may also say.
 
-![Figure 1. Exponential growth of major open source code repositories](./media/image4.png){width="4.1605993000874895in"
+![Figure 1. Exponential growth of major open source code repositories]({{site.baseurl}}/images/2021-02-15/image4.png){width="4.1605993000874895in"
 height="2.875968941382327in"}
 
 Indeed, if we want to develop software as a new project, we ought to
@@ -47,7 +56,7 @@ from the pixels of an image (Fig. 2), and it is impossible to learn the
 patterns of the programs by the brute force computations of CNNs.
 
 ![Figure 2. Which forms of code representation can learn the meaning of a
-program?](./media/image6.png){width="6.5in" height="2.838888888888889in"}
+program?]({{site.baseurl}}/images/2021-02-15/image6.png){width="6.5in" height="2.838888888888889in"}
 
 
 Traditional deep learning solutions such as long-short-memory sequence
@@ -85,7 +94,7 @@ the mouth grows to the top of the head unnaturally, the convolutional
 neural network could still wrongly recognize it as a face (Figure 3).
 
 ![Figure 3. Why is the capsule network needed? CNNs cannot recognize
-features by pixel translation](./media/image7.png){width="4.96875in" height="3.2636614173228344in"}
+features by pixel translation]({{site.baseurl}}/images/2021-02-15/image7.png){width="4.96875in" height="3.2636614173228344in"}
 
 Obtaining the relationship between objects through consensus-based
 routing, an ontology of the objects can now be recognized as knowledge
@@ -102,13 +111,13 @@ layer (DRSW) (Fig. 4).
 
 ![Figure 4. Compared with tree CNN, tree capsules obtain hidden semantics
 between feature vectors of nodes learned from trees through dynamic
-route reassembly.](./media/image8.png){width="6.5in" height="2.8618055555555557in"}
+route reassembly.]({{site.baseurl}}/images/2021-02-15/image8.png){width="6.5in" height="2.8618055555555557in"}
 
 Another key innovation is our routing algorithm (VTS) which extends
 static-width routing to dynamic-width routing (Fig. 5).
 
 ![Figure 5. Adaptive adjustment of route width to obtain a fixed-size
-transformation matrix](./media/image9.png){width="6.5in" height="2.703472222222222in"}
+transformation matrix]({{site.baseurl}}/images/2021-02-15/image9.png){width="6.5in" height="2.703472222222222in"}
 
 With the innovations in these algorithms, the experimental results are
 remarkable. Based on the same Peking University Algorithm course data as
@@ -159,7 +168,7 @@ The performances of the two routing algorithms during training can be
 compared in Fig. 6.
 
 ![Figure 6. Visualizing the improvement to classic Capsules Network
-routing in TreeCaps training steps](./media/image10.png){width="6.5in" height="2.015277777777778in"}
+routing in TreeCaps training steps]({{site.baseurl}}/images/2021-02-15/image10.png){width="6.5in" height="2.015277777777778in"}
 
 Furthermore, we know that the results of learning can be interfered by
 data changes: can a different set of data still achieve the same results
@@ -173,7 +182,7 @@ after the VR, US, and PS are used. It can be seen again that TreeCaps is
 least affected.
 
 ![Figure 7. Robustness of learning under semantic equivalent transformation
-attacks (decreasing accuracy)](./media/image11.png){width="5.21875in"
+attacks (decreasing accuracy)]({{site.baseurl}}/images/2021-02-15/image11.png){width="5.21875in"
 height="1.8854166666666667in"}
 
 Compared to graph-based and sequence-based methods, TreeCaps training
