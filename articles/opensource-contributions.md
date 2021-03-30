@@ -63,3 +63,8 @@ This [PR](https://github.com/rust-lang/libc/pull/2127) provided the following ne
  * PROCESSOR_TEMPERATURE
  * PROCESSOR_SET_BASIC_INFO
  * PROCESSOR_SET_LOAD_INFO
+
+And this [PR](https://github.com/rust-lang/libc/pull/2129) added the following type aliases:
+ * processor_flavor_t
+ * processor_info_t
+ * processor_info_array_t
