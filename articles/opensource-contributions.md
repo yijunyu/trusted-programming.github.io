@@ -10,6 +10,24 @@ toc: true
 
 Here is the list of opensource contributions made by huawei employees:
 
+### (rustc/LLVM/libc) Add support for big-endian and ILP32 variants of AArch64
+
+This added compilation support of Rust programs for big-endian and [ILP32](https://developer.arm.com/documentation/dai0490/latest/)
+variants of AArch64.  These changes enable Huawei and other hardware companies to run Rust code on networking hardware which commonly
+uses these architecture variants.
+
+It was through pull requests to [the LLVM compiler](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc),
+[the libc crate](https://github.com/rust-lang/libc/pull/2039), and [the Rust compiler itself](https://github.com/rust-lang/rust/pull/81455).
+
+These changes introduce new end-to-end cross-compilation targets for the Rust compiler, making it easier to build Rust products for bespoke
+hardware using a single command:
+
+```bash
+cargo build --target aarch64_be-unknown-linux-gnu
+cargo build --target aarch64-unknown-linux-gnu_ilp32
+cargo build --target aarch64_be-unknown-linux-gnu_ilp32
+```
+
 ### (rustdoc) Codeblock tooltip position
 
 The goal of this PR was to fix the position of the tooltip "i" which appears when a rust documentation codeblock is marked as "ignore" or "compile_fail". You can see screenshots directly in the pull request [here](https://github.com/rust-lang/rust/pull/83393).
