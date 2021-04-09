@@ -82,7 +82,7 @@ This [pull request](https://github.com/rust-lang/libc/pull/2127) provided the fo
  * PROCESSOR_SET_BASIC_INFO
  * PROCESSOR_SET_LOAD_INFO
 
-And this [PR](https://github.com/rust-lang/libc/pull/2129) added the following type aliases:
+And this [pull request](https://github.com/rust-lang/libc/pull/2129) added the following type aliases:
  * processor_flavor_t
  * processor_info_t
  * processor_info_array_t
@@ -98,3 +98,26 @@ You can see the pull request [here](https://github.com/GuillaumeGomez/sysinfo/pu
 ### (rustdoc) Add a button to copy the "use statement"
 
 It's very common, when reading an item's documentation to want to then import it into your code to use it. This [pull request](https://github.com/rust-lang/rust/pull/83721) adds a button to do it.
+
+### (rustdoc) Merge idents in paths to make source code pages DOM smaller
+
+This [pull request](https://github.com/rust-lang/rust/pull/83992) ensures to not have a span for each part of a path in the source code pages (for example [here](https://docs.rs/sysinfo/0.17.0/src/sysinfo/lib.rs.html#7-283)). Before this change, for `a::b::c` we generated `<span>a</span>::<span>b</span>::<span>c</span>`, now we generate `<span>a::b::c</span>`.
+
+### (libc) Add new constant and functions for Android
+
+This [pull request] added the following functions:
+
+ * __system_property_set
+ * __system_property_get
+
+And the following constant:
+
+ * PROP_VALUE_MAX
+
+### (tempfile) Ensure that README code examples are tested
+
+This [pull request](https://github.com/Stebalien/tempfile/pull/144) added the usage of [doc-comment](https://crates.io/crates/doc-comment) to ensure that the README code examples are tested (which prevents them to get outdated). You can see more explanations on how to easily test a markdown file code examples by reading this [blog post](https://blog.guillaume-gomez.fr/articles/2019-04-13+Keeping+Rust+projects%27+README.md+code+examples+up-to-date).
+
+### (sysinfo) Add fallback when calculating OS version on linux
+
+On linux, the version ID isn't always set (nor mandatory) in the `/etc/os-release` file. To fix this issue in case this information is missing, this [pull request](https://github.com/GuillaumeGomez/sysinfo/pull/457) go get it from `/etc/lsb-release`.
