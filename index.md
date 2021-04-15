@@ -19,6 +19,7 @@ localizer, etc.
  {% endunless %}
 {% endfor %}
  <li><a href="{{ site.baseurl }}/articles/opensource-contributions.html">Huawei's opensource contributions</a></li>
+ <li><a href="{{ site.baseurl }}/articles/work-in-progress.html">Huawei's opensource work in progress</a></li>
  <li><a href="https://foundation.rust-lang.org">Huawei is one of the main contributors to the Rust Foundation</a></li>
  <li><a href="https://2020conf.rustcc.cn">The 1st Rust China Conf 2020, Shenzhen, China</a></li>
  <li><a href="https://apply.workable.com/huawei-ireland/j/823CFEB55B/">Join Huawei R&D for Trusted Programming -- Job Opportunities</a></li>
