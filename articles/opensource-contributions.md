@@ -8,7 +8,7 @@ toc: true
 {:toc}
 
 
-Here is the list of opensource contributions made by huawei employees:
+Here is the list of opensource contributions made by huawei employees (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress.html)):
 
 ### (rustc/LLVM/libc) Add support for big-endian and ILP32 variants of AArch64
 
