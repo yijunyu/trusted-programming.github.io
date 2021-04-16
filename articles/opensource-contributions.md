@@ -121,3 +121,7 @@ This [pull request](https://github.com/Stebalien/tempfile/pull/144) added the us
 ### (sysinfo) Add fallback when calculating OS version on linux
 
 On linux, the version ID isn't always set (nor mandatory) in the `/etc/os-release` file. To fix this issue in case this information is missing, this [pull request](https://github.com/GuillaumeGomez/sysinfo/pull/457) go get it from `/etc/lsb-release`.
+
+### (docs.rs) Add gitlab support
+
+This [pull request](https://github.com/rust-lang/docs.rs/pull/1249) adds the support for gitlab information retrieval (for example, the number of stars or forks of a repository) and also create the architecture to greatly improve and simplify the adds of other platforms.
