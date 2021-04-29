@@ -141,3 +141,7 @@ Because they can be rewritten like this:
 assert!(!"a".is_empty());
 debug_assert!(!"b".is_empty());
 ```
+
+### (docs.rs) Add footer to provide easier access to some information
+
+We needed this [pull request](https://github.com/rust-lang/docs.rs/pull/1367) when we were about to add a link to the privacy policy page: only issue is that the top navbar on docs.rs was already quite "full". So instead, we decided to create a footer to reduce the load on the top navbar and also use it to add this new link.
