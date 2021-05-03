@@ -145,3 +145,9 @@ debug_assert!(!"b".is_empty());
 ### (docs.rs) Add footer to provide easier access to some information
 
 We needed this [pull request](https://github.com/rust-lang/docs.rs/pull/1367) when we were about to add a link to the privacy policy page: only issue is that the top navbar on docs.rs was already quite "full". So instead, we decided to create a footer to reduce the load on the top navbar and also use it to add this new link.
+
+### (rustdoc) Migrate trait and impl blocks' toggles into full HTML
+
+This [pull request](https://github.com/rust-lang/rust/pull/84754) convert more JS-generated toggles into full HTML ones. It's part of a more global process to clean all the toggles that you can see described in [this issue](https://github.com/rust-lang/rust/issues/83332). The global idea being to remove more JS for faster rendering.
+
+A funny side-effect is that it actually improves the doc pages in case you disabled JS on the rustdoc pages.
