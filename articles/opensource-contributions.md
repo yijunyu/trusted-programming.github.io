@@ -146,8 +146,16 @@ debug_assert!(!"b".is_empty());
 
 We needed this [pull request](https://github.com/rust-lang/docs.rs/pull/1367) when we were about to add a link to the privacy policy page: only issue is that the top navbar on docs.rs was already quite "full". So instead, we decided to create a footer to reduce the load on the top navbar and also use it to add this new link.
 
-### (rustdoc) Migrate trait and impl blocks' toggles into full HTML
+### (rustdoc) Migrate toggles into full HTML
 
-This [pull request](https://github.com/rust-lang/rust/pull/84754) convert more JS-generated toggles into full HTML ones. It's part of a more global process to clean all the toggles that you can see described in [this issue](https://github.com/rust-lang/rust/issues/83332). The global idea being to remove more JS for faster rendering.
+This [pull request](https://github.com/rust-lang/rust/pull/84754) and [this one](https://github.com/rust-lang/rust/pull/85074) convert JS-generated toggles into full HTML ones. It's part of a more global process to clean all the toggles that you can see described in [this issue](https://github.com/rust-lang/rust/issues/83332). The global idea being to remove more JS for faster rendering.
 
-A funny side-effect is that it actually improves the doc pages in case you disabled JS on the rustdoc pages.
+A "funny" side-effect is that it actually improves the doc pages in case you disabled JS on the rustdoc pages.
+
+### (rustdoc) Remove unneeded call to with_default_session_globals
+
+We recently realized that not only this function call was unneeded but also that it was messing up the spans. You can see the pull request [here](https://github.com/rust-lang/rust/pull/84953).
+
+### (rustdoc) Improvement for rustdoc-gui test suite output and run
+
+This [pull request](https://github.com/rust-lang/rust/pull/85038) and [this one](https://github.com/rust-lang/rust/pull/84990) improved the rustdoc-gui test suite by alphabetically sorting the test and run all tests instead of stopping at the first failure like it used to.
