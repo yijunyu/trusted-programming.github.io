@@ -159,3 +159,7 @@ We recently realized that not only this function call was unneeded but also that
 ### (rustdoc) Improvement for rustdoc-gui test suite output and run
 
 This [pull request](https://github.com/rust-lang/rust/pull/85038) and [this one](https://github.com/rust-lang/rust/pull/84990) improved the rustdoc-gui test suite by alphabetically sorting the test and run all tests instead of stopping at the first failure like it used to.
+
+### (rustdoc) Improve search result DOM generation
+
+It was discovered randomly that in some cases, the generated DOM was invalid (because of items' documentation). For more context, when using the rustdoc search, we generate the results with JS. This generation was mostly done using strings before, this [pull request](https://github.com/rust-lang/rust/pull/85540) changed it so that it now generates through browsers' API instead.
