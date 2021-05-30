@@ -163,3 +163,7 @@ This [pull request](https://github.com/rust-lang/rust/pull/85038) and [this one]
 ### (rustdoc) Improve search result DOM generation
 
 It was discovered randomly that in some cases, the generated DOM was invalid (because of items' documentation). For more context, when using the rustdoc search, we generate the results with JS. This generation was mostly done using strings before, this [pull request](https://github.com/rust-lang/rust/pull/85540) changed it so that it now generates through browsers' API instead.
+
+### (rustdoc/rust infra) Enforce rustdoc-GUI test-suite
+
+Rustdoc has GUI tests to prevent regressions like it happened a lot in the past. We recently realized that this test-suite was not always run as it should. This [pull request](https://github.com/rust-lang/rust/pull/84586) fixes this issue.
