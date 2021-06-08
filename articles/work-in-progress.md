@@ -27,3 +27,7 @@ Thanks to [this pull request](https://github.com/rust-lang/rust/pull/84953), we 
 ### (rustc/infra) Enforce error codes checks
 
 The Rust compiler uses error codes (which look like "E0111") and provide an explanation alongside them which can be seen using `rustc --explain E0111`. However, as time passes, some error codes are not used anymore and are often not cleaned up correctly. This [pull request](https://github.com/rust-lang/rust/pull/86137) ensures that they are cleaned up appropriately if they are removed by sending an error when the `tidy` check is run.
+
+### (rustup) Add freebsd CI check
+
+rustup recently got some issues on freebsd, adding this [CI check](https://github.com/rust-lang/rustup/pull/2783) will allow to prevent issues to be released unnoticed.
