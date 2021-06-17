@@ -205,3 +205,27 @@ We started using the `tidy` tool to ensure the HTML rustdoc generates is valid. 
 ### (rustdoc) Better search result DOM generation
 
 When you use rustdoc search system, it'll go through the items, find the best matches and then display them. The display part was generated inside a big string before, which allowed a lot of issues. Instead, it was replaced with much safer DOM generation using browsers' API to create DOM elements. You can see how in [this pull request](https://github.com/rust-lang/rust/pull/85540).
+
+### (tokei) Turing the code measuring tool into a driver for batch process for code in various programming languages
+
+When you do tokei, it will report lines of code etc per programming language. We added [this pull request](https://github.com/XAMPPRocky/tokei/pull/678) to extend the tool for classifying the programs of different language as a list on the standard output for further processing downstream the pipeline. 
+
+### (tree-sitter) Generate XML output of the abstract syntax trees, which has similar format to the SrcML schema, e.g., embedding the tokens with XML tags according to the ASTs
+
+When you run tree-sitter, it will output the ASTs as a plain text file with some indention, while the concrete tokens are only shown by their offsets in the original source file. We created [this pull request](https://github.com/tree-sitter/tree-sitter/pull/863) to generate XML output of the ASTs, which has similar format to the SrcML schema, e.g., embedding the tokens with XML tags according to the ASTs. 
+
+### (cargo-geiger) Generate reports of the safe code ratios in addition to the unsafe code counts
+
+When you run cargo-geiger, it will output the counts of unsafe code elements for functions, expressions, etc. We created [this pull request](https://github.com/rust-secure-code/cargo-geiger/pull/167) to report the safe code ratios. 
+
+### (quick-xml) Fixing a bug in the tags generated to allow serialization in a format similar to that of SrcML
+
+This is a [pull request](https://github.com/tafia/quick-xml/pull/250) to generate XML outputs where <key/> are generated rather than flagged as an error.
+
+### (rust2xml) Generate XML outputs from Rust abstract syntax trees
+
+This is a [new crate](https://github.com/yijunyu/rust2xml) to create XML outputs from Rust code's abstract syntax trees.
+
+### (rust2pickle) Generate Pickle outputs from Rust abstract syntax trees
+
+This is a [new crate](https://github.com/yijunyu/rust2pickle) to create Pickle output from Rust code's abstract syntax trees.
