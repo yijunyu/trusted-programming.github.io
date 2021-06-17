@@ -229,3 +229,7 @@ This is a [new crate](https://github.com/yijunyu/rust2xml) to create XML outputs
 ### (rust2pickle) Generate Pickle outputs from Rust abstract syntax trees
 
 This is a [new crate](https://github.com/yijunyu/rust2pickle) to create Pickle output from Rust code's abstract syntax trees.
+
+### (rustdoc) Don't mark "safe" intrinsics as unsafe
+
+Some rust intrinsics are safe to be used. This [pull request](https://github.com/rust-lang/rust/pull/86327) propagates this change to rustdoc.
