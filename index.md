@@ -23,4 +23,5 @@ localizer, etc.
  <li><a href="https://foundation.rust-lang.org">Huawei is one of the main contributors to the Rust Foundation</a></li>
  <li><a href="https://2020conf.rustcc.cn">The 1st Rust China Conf 2020, Shenzhen, China</a></li>
  <li><a href="https://apply.workable.com/huawei-ireland/j/823CFEB55B/">Join Huawei R&D for Trusted Programming -- Job Opportunities</a></li>
+ <li><a href="https://www.open.ac.uk/stem/computing-and-communications/node/230">PhD Studentship on Using Deep Learning to Find Bugs -- The Open University</a></li>
 </ul>
