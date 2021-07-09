@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Trusted Programming -- Our Rust Mission at Huawei
+toc: true
 ---
 
-* toc
-{:toc}
 
 [中文](our-rust-mission-at-huawei_cn.html)
 
