@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Trusted Programming -- Our Rust Mission at Huawei
+title: Our Rust Mission at Huawei
 toc: true
 ---
 

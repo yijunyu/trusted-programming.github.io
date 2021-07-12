@@ -20,7 +20,7 @@ localizer, etc.
 {% endfor %}
 </div>
 
-## Huawei in opensource
+## Huawei and opensource
 
 <div class="posts">
   <a href="{{ site.baseurl }}/articles/opensource-contributions.html">Huawei's opensource contributions</a>

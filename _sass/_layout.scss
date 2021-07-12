@@ -63,8 +63,7 @@ details {
     width: 100%;
     display: block;
     position: relative;
-    overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 2em;
 
     &[open] {
         border: 1px solid $brand-color;
@@ -95,21 +94,22 @@ details {
 
     summary {
         line-height: 1.6em;
-        display: inline-block;
+        display: block;
         text-align: center;
-        color: $brand-color;
+        color: #813d9c;
         cursor: pointer;
         font-weight: bold;
-        font-family: $headings-font-family;
-        padding: 1em 1.6em;
+        font-family: Roboto, sans-serif;
+        padding: 1em 0;
         margin-bottom: 0.5em;
         text-align: center;
+        width: 100%;
 
         &::before {
             font-size: 0.9em;
             /* ▶︎ */
             content: '\25B6\FE0E';
-            margin-right: 0.6rem;
+            margin-right: 4px;
             vertical-align: top;
         }
 
@@ -166,5 +166,42 @@ h1, h2, h3, h4, h5, h6 {
 
     &:hover > .anchor {
         display: block;
+    }
+}
+
+.post-head {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+    a.next-post, a.prev-post {
+        max-width: 50%;
+        display: inline-block;
+        text-decoration: none;
+        color: $text-color;
+        opacity: 0.9;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 4px;
+        border-radius: 4px;
+
+        img {
+            height: 40px;
+            opacity: 0.6;
+        }
+
+        &:hover {
+            opacity: 1;
+            border-color: $text-color;
+
+            img {
+                opacity: 1;
+            }
+        }
+    }
+    a.next-post {
+        text-align: right;
     }
 }
