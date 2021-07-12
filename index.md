@@ -10,7 +10,7 @@ technology and methods**, e.g., model-driven software development (MDSD), domain
 languages (DSL), and **programming tools**, e.g., code transpiler, deep code learner, bug
 localizer, etc.
 
-## Blog posts
+<h2>Blog posts <a href="{{ site.baseurl }}/feed.xml"><img class="feed" src="{{ site.baseurl }}/images/feed.svg"></a></h2>
 
 <div class="posts">
 {% for post in site.posts %}

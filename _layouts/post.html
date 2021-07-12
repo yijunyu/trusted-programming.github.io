@@ -44,7 +44,7 @@
       <nav class="post-head">
         {% if prev_url %}
           <a href="{{ prev_url }}" class="prev-post">
-            <img src="/images/back-arrow.svg">
+            <img src="{{ site.baseurl }}/images/back-arrow.svg">
             <span>{{ prev_title }}</span>
           </a>
         {% else %}
@@ -53,7 +53,7 @@
         {% if next_url %}
           <a href="{{ next_url }}" class="next-post">
             <span>{{ next_title }}</span>
-            <img src="/images/next-arrow.svg">
+            <img src="{{ site.baseurl }}/images/next-arrow.svg">
           </a>
         {% else %}
           <div class="next-post"></div>
