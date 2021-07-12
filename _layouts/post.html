@@ -1,8 +1,66 @@
+{% comment %}
+  The code following removes the chinese translated articles from the blog post navigation
+  to avoid duplications.
+{% endcomment %}
+
+{% capture the_collection %}{{ page.collection }}{% endcapture %}
+
+{% if page.collection %}
+  {% assign posts = site[the_collection] %}
+{% endif %}
+
+{% for post in posts %}
+  {% if post.title == page.title %}
+    {% if prev %}
+      {% assign prev_url = prev.url %}
+      {% assign prev_title = prev.title %}
+    {% endif %}
+    {% unless forloop.last %}
+      {% assign prev_index = forloop.index | add: 1 %}
+    {% endunless %}
+    {% break %}
+  {% endif %}
+  {% unless post.url contains '_cn' %}
+    {% assign prev = post %}
+  {% endunless %}
+{% endfor %}
+
+{% if prev_index %}
+  {% for post in posts offset: prev_index %}
+    {% unless post.url contains '_cn' %}
+      {% assign next_title = post.title %}
+      {% assign next_url = post.url %}
+      {% break %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+
 <!DOCTYPE html>
 <html>
   {% include head.html %}
   <body>
-    {{ content }}
-    <a style="text-align: center;display: block;margin-top: 33px;font-size: 16px;" href="{{ site.baseurl }}/">Back to home page</a>
+    {% include header.html %}
+    <div class="wrapper">
+      <nav class="post-head">
+        {% if prev_url %}
+          <a href="{{ prev_url }}" class="prev-post">
+            <img src="{{ site.baseurl }}/images/back-arrow.svg">
+            <span>{{ prev_title }}</span>
+          </a>
+        {% else %}
+          <div class="prev-post"></div>
+        {% endif %}
+        {% if next_url %}
+          <a href="{{ next_url }}" class="next-post">
+            <span>{{ next_title }}</span>
+            <img src="{{ site.baseurl }}/images/next-arrow.svg">
+          </a>
+        {% else %}
+          <div class="next-post"></div>
+        {% endif %}
+      </nav>
+      {% include toc.html html=content ordered=true h_min=1 h_max=3 %}
+      {% include anchor_headings.html html=content anchorBody="§" anchorClass="anchor" %}
+    </div>
   </body>
 </html>

@@ -1,0 +1,216 @@
+/**
+ * Site header
+ */
+header {
+    position: relative;
+    background: $header-background-color;
+    font-family: $headings-font-family;
+    color: $header-text-color;
+    display: block;
+    overflow: auto;
+    font-size: 40px;
+    margin-bottom: 10px;
+
+    .header {
+        text-align: center;
+        margin: 13px 0;
+    }
+
+    .home {
+        position: absolute;
+        background-image: url("/images/home.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: calc((100% - #{$header-icon-size}) / 2);
+        left: 10px;
+        width: $header-icon-size;
+        height: $header-icon-size;
+        filter: invert(100%);
+
+        &:hover {
+            filter: invert(80%);
+        }
+    }
+}
+
+
+.posts {
+    padding-top: 10px;
+
+    & > a {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #F7F7F7;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #EFEFEF;
+        }
+    }
+}
+
+
+@keyframes fade-in {
+  from { max-height: 0; }
+  to { max-height: 2000px; }
+}
+
+details {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 2em;
+
+    &[open] {
+        border: 1px solid $brand-color;
+        border-radius: 5px;
+    }
+
+    &:not([open]) > summary {
+        background: $header-background-color;
+        border-radius: 5px;
+        color: $header-text-color;
+    }
+
+    &:not([open]) > :not(summary) {
+        opacity: 0;
+    }
+
+    &[open] > :not(summary) {
+        opacity: 1;
+        animation-name: fade-in;
+        animation-duration: 1s;
+    }
+
+    &[open] summary::before {
+        /* ▼ */
+        content: '\25BC\FE0E';
+        font-size: 0.9em;
+    }
+
+    summary {
+        line-height: 1.6em;
+        display: block;
+        text-align: center;
+        color: #813d9c;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: Roboto, sans-serif;
+        padding: 1em 0;
+        margin-bottom: 0.5em;
+        text-align: center;
+        width: 100%;
+
+        &::before {
+            font-size: 0.9em;
+            /* ▶︎ */
+            content: '\25B6\FE0E';
+            margin-right: 4px;
+            vertical-align: top;
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    ol {
+        list-style-position: inside;
+
+        li {
+            &:not(last-child) {
+                padding-bottom: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.anchor {
+    position: absolute;
+    top: 0;
+    display: none;
+    color: $text-color;
+    text-decoration: none;
+    padding-right: 5px;
+    font-size: 0.9em;
+}
+
+h1 > .anchor {
+    left: -16px;
+}
+h2 > .anchor {
+    left: -19px;
+}
+h3 > .anchor, h4 > .anchor {
+    left: -15px;
+}
+h5, h6 > .anchor {
+    left: -12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+
+    &:hover > .anchor {
+        display: block;
+    }
+}
+
+.post-head {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+    a.next-post, a.prev-post {
+        max-width: 50%;
+        display: inline-block;
+        text-decoration: none;
+        color: $text-color;
+        opacity: 0.9;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 4px;
+        border-radius: 4px;
+
+        img {
+            height: 40px;
+            opacity: 0.6;
+        }
+
+        &:hover {
+            opacity: 1;
+            border-color: $text-color;
+
+            img {
+                opacity: 1;
+            }
+        }
+    }
+    a.next-post {
+        text-align: right;
+    }
+}
+
+.feed {
+    height: 34px;
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 1;
+    }
+}

@@ -4,9 +4,6 @@ title: Explainer of Deep Code Learning
 toc: true
 ---
 
-* toc
-{:toc}
-
 # Explainer of Deep Code Learning
 
 *Nghi D. Q. Bui* (Research Scientist)\

@@ -1,0 +1,63 @@
+// Our variables
+$base-font-family:   Roboto, sans-serif;
+$base-font-size:     18px;
+$small-font-size:    16px;
+$base-line-height:   1.3;
+
+$headings-font-family:  Roboto, sans-serif;
+$headings-color:        #3d3846;
+
+$text-color:         #3d3846;
+$background-color:   #f6f5f4;
+$brand-color:        #813d9c;
+
+$grey-color:         #828282;
+$grey-color-light:   lighten($grey-color, 40%);
+
+$header-borders:     6px;
+$header-line-height: 56px;
+$content-padding:    10px;
+
+$header-background-color: #241f31;
+$header-text-color:       #e6e3e6;
+$header-icon-size:        52px;
+
+$box-background:    linear-gradient(150deg, #241f31, #3d3846);
+
+$on-mobile: 600px;
+
+body {
+    --content-width: 670px;
+    --spacing-unit: 26px;
+    --spacing-unit-half: calc(var(--spacing-unit) / 2);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/fonts/Roboto.woff2");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: bold;
+    src: url("/fonts/Roboto-Bold.woff2");
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    font-weight: bold;
+    src: url("/fonts/Roboto-Mono-Medium.woff2");
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    font-weight: bold;
+    font-family: italic;
+    src: url("/fonts/Roboto-Mono-Medium-Italic.woff2");
+}
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}

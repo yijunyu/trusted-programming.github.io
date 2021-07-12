@@ -1,11 +1,8 @@
 ---
 layout: post
-title: 可信编程 -- 华为引领Rust语言开发的实践和愿景
+title: 华为引领Rust语言开发的实践和愿景
 toc: true
 ---
-
-* toc
-{:toc}
 
 [English](our-rust-mission-at-huawei.html)
 
