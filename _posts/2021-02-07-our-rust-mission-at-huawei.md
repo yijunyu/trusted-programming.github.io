@@ -215,3 +215,6 @@ A journey towards the vision of Trusted Programming has just begun and we hope
 to work collaboratively with the Rust community, and the upcoming Rust
 Foundation, to lead a smooth revolution to the Telecom software industry.  
 
+# Updates
+![]({{site.baseurl}}/images/2021-02-07/our-rust-mission-at-huawei.mp4)
+
