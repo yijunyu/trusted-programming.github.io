@@ -241,3 +241,7 @@ This [pull request](https://github.com/rust-lang/rust/pull/86059) adds a new tes
 ### (rustc) Rework SESSION_GLOBALS API
 
 Thanks to [this pull request](https://github.com/rust-lang/rust/pull/84953), we realized that the `SESSION_GLOBALS` API allowed to do invalid operations, messing up the spans. This [pull request](https://github.com/rust-lang/rust/pull/84961) fixes it by preventing to access the global static directly.
+
+### (rustdoc) Add --nocapture option to rustdoc
+
+Until [this pull request](https://github.com/rust-lang/rust/pull/86230) was merged, there was no way to see the output of the doctests. This is now possible by using the `--nocapture` option when running `rustdoc --test`.
