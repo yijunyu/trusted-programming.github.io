@@ -245,3 +245,27 @@ Thanks to [this pull request](https://github.com/rust-lang/rust/pull/84953), we 
 ### (rustdoc) Add --nocapture option to rustdoc
 
 Until [this pull request](https://github.com/rust-lang/rust/pull/86230) was merged, there was no way to see the output of the doctests. This is now possible by using the `--nocapture` option when running `rustdoc --test`.
+
+### (rustdoc) Add support for tuple struct field documentation
+
+Before this [pull request](https://github.com/rust-lang/rust/pull/87451), it was not possible to do this:
+
+```rust
+pub struct Tuple(
+    /// Not this.
+    u32,
+    /// Not that either.
+    i8,
+);
+
+// Nor this:
+
+pub enum Enum {
+    Tuple(
+        /// Not this.
+        u8,
+	/// Not that either.
+        char,
+    ),
+}
+```
