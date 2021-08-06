@@ -275,3 +275,25 @@ pub enum Enum {
 This [pull request](https://github.com/rust-lang/rust/pull/84176) adds a the possibility to jump to an item definitions from the rustdoc source code pages (you can see a video in the pull request description). It got a lot of support from rust users as you can see from this twitter feed:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;m very excited to show some feature I&#39;m working on in <a href="https://twitter.com/rustlang?ref_src=twsrc%5Etfw">@rustlang</a>&#39;s rustdoc: ever wanted to be able to jump to a type definition from the source code pages directly? It&#39;ll be possible soon! More to come! Here is a small preview: <a href="https://t.co/ICPXH35Q8V">pic.twitter.com/ICPXH35Q8V</a></p>&mdash; Guillaume Gomez (@imperioworld_) <a href="https://twitter.com/imperioworld_/status/1379506735094857728?ref_src=twsrc%5Etfw">April 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### (rustdoc) Improve intra-doc errors
+
+The intra-doc feature in rustdoc allows to generate links to an item without giving a full path. For example:
+
+```rust
+/// I link to [Bar].
+pub struct Foo;
+
+/// I link to [Foo].
+pub enum Bar {
+    U,
+}
+```
+
+In this case, the rustdoc will generate links to `Foo` and `Bar` on its own.
+
+This [pull request](https://github.com/rust-lang/rust/pull/87285) improves the error in case rustdoc cannot generate the link on its own.
+
+### (rustdoc) Fix rendering of reexported macros 2.0 and fix visibility of reexported items
+
+Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the difference between the new and old macros and rendered both the same way. This [pull request](https://github.com/rust-lang/rust/pull/86841) fixed it and also fixed the visibility rendering on reexported items.
