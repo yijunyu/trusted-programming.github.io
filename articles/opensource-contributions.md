@@ -382,4 +382,6 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
 
 ### improve diagnostics: https://github.com/rust-lang/rust/pull/86422, https://github.com/rust-lang/rust/pull/87566, https://github.com/rust-lang/rust/pull/87607
 
-### maintain rust-phf crates: https://github.com/rust-phf/rust-p##### 
+### maintain rust-phf crates: https://github.com/rust-phf/rust-phf 
+
+
