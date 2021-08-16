@@ -21,3 +21,7 @@ The `union` keyword has a different meaning depending where it's used. Rustdoc s
 ### (docs.rs) Unify keyboard events on docs.rs results
 
 On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
+
+### (rustc) implement RFC 2574 (WIP) 
+
+https://github.com/rust-lang/rust/pull/86546
