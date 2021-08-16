@@ -333,29 +333,53 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
  - `sort_by` for constants
 
 ## Rust Compiler features since 2019 by Vadim Petrochenkov
-### feature: `#[cfg_eval]` attribute for eagerly expanding `#[cfg]` and `#[cfg_attr]` attributes was implemented.
-### feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.md")]`.
-### feature: A scheme for tracking environment variables used during Rust compilation was designed and implemented, allowing automatic rebuilds on environment variable changes.
-### feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
-### feature: Statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`) were supported.
-### feature: Parsing of `tuple.0.0` as tuple indexing instead of floating point literal was implemented.
-### feature: Function-like procedural macros in expression, pattern and statement positions were prepared for stabilization and stabilized.
-### feature: Support for registering custom tool attributes using a crate-level attribute was implemented.
-### feature: `#[cfg(accessible(path))]` allowing to check path accessibility at compile time was partially implemented.
-### bugfix: `#[derive]` was turned into a regular macro attribute, improving language consistency and simplifying the compiler.
-### bugfix: Many bugs and internal compiler errors (ICE) in areas of macro expansion, name resolution, linking, crate loading, crate metadata encoding/decoding and command line option handling were fixed.
-### performance: `macro_rules` scope chains were collapsed on the fly, siginificantly improving compiler performance on `derive`-heavy crates.
-### performance/internal: Item visibilites (`pub` and others) were calculated once and then reused, simplifying compiler logic and improving its performance.
-### diagnostics: Privacy error diagnostics were improved to point to private definitions including the whole import chain.
-### diagnostics: More precise locations for lints reported at macro expansion time were implemented.
-### docs: More detailed documentation for some command line options controlling codegen and linking (-Crelocation-model, -Ccode-model, -Zstrip, -Ztls-model) was written.
-### internal: rustc's interactions with linker were significantly clarified enabling features like static PIE and bugfixes.
-### internal: Many refactorings in internal compiler logic in areas of AST, ###IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
-### internal: compile-fail test suite was entirely eliminated in favor of us###r interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implement.
 
-## Recent Contributions ###y Yuki Okushi (JohnTitor)
-### the nomicon cleanups### https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601
-### implement RFC 2574 (###IP): https://github.com/rust-lang/rust/pull/86546
-### fix ICEs: https://gi###hub.com/rust-lang/rust/pull/86505, https://github.com/rust-lang/rust/pull/87646
-### improve diagnostics:###https://github.com/rust-lang/rust/pull/86422, https://github.com/rust-lang/rust/pull/87566, https://github.com/rust-lang/rust/pull/87607
-### maintain rust-phf cr###tes: https://github.com/rust-phf/rust-p##### 
+### feature: `#[cfg_eval]` attribute for eagerly expanding `#[cfg]` and `#[cfg_attr]` attributes was implemented.
+
+### feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.md")]`.
+
+### feature: A scheme for tracking environment variables used during Rust compilation was designed and implemented, allowing automatic rebuilds on environment variable changes.
+
+### feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
+
+### feature: Statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`) were supported.
+
+### feature: Parsing of `tuple.0.0` as tuple indexing instead of floating point literal was implemented.
+
+### feature: Function-like procedural macros in expression, pattern and statement positions were prepared for stabilization and stabilized.
+
+### feature: Support for registering custom tool attributes using a crate-level attribute was implemented.
+
+### feature: `#[cfg(accessible(path))]` allowing to check path accessibility at compile time was partially implemented.
+
+### bugfix: `#[derive]` was turned into a regular macro attribute, improving language consistency and simplifying the compiler.
+
+### bugfix: Many bugs and internal compiler errors (ICE) in areas of macro expansion, name resolution, linking, crate loading, crate metadata encoding/decoding and command line option handling were fixed.
+
+### performance: `macro_rules` scope chains were collapsed on the fly, siginificantly improving compiler performance on `derive`-heavy crates.
+
+### performance/internal: Item visibilites (`pub` and others) were calculated once and then reused, simplifying compiler logic and improving its performance.
+
+### diagnostics: Privacy error diagnostics were improved to point to private definitions including the whole import chain.
+
+### diagnostics: More precise locations for lints reported at macro expansion time were implemented.
+
+### docs: More detailed documentation for some command line options controlling codegen and linking (-Crelocation-model, -Ccode-model, -Zstrip, -Ztls-model) was written.
+
+### internal: rustc's interactions with linker were significantly clarified enabling features like static PIE and bugfixes.
+
+### internal: Many refactorings in internal compiler logic in areas of AST, IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
+
+### internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implement.
+
+## Recent Contributions by Yuki Okushi (JohnTitor)
+
+### the nomicon cleanups https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601
+
+### implement RFC 2574 (IP): https://github.com/rust-lang/rust/pull/86546
+
+### fix ICEs: https://github.com/rust-lang/rust/pull/86505, https://github.com/rust-lang/rust/pull/87646
+
+### improve diagnostics: https://github.com/rust-lang/rust/pull/86422, https://github.com/rust-lang/rust/pull/87566, https://github.com/rust-lang/rust/pull/87607
+
+### maintain rust-phf crates: https://github.com/rust-phf/rust-p##### 
