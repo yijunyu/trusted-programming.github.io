@@ -300,88 +300,97 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
 
 ## Recent contributions by Li Yuan (SparrowLi) and Chen Shuo (SureChen) 
 
-### add neon intrinsics support in `stdarch` :
+### (stdarch) add neon intrinsics support
 
   Solved the ARM support issue of the SIMD acceleration library.
 
-### Initiated Discussion about  zero-sized padding in `LLVM codegen`:
+### (LLVM codegen) Initiated Discussion about  zero-sized padding
 
   Solved the ARM support issue of the SIMD acceleration library.
 
-### Support `no_std` in `ndarray` :
+### (ndarray) Support `no_std`
 
   Help developers use `ndarray ` in embedded systems
 
-### Implement `negative strides`  feature in `ndarray` :
+### (ndarray) Implement `negative strides`  feature
 
   Improve the space utilization of the multidimensional array operation library
 
-### Implement `array broadcast` feature in `ndarray` :
+### (ndarray) Implement `array broadcast` feature
 
   Resolved interactions between arrays of different dimensions
   
-## Rust compiler features since 2021 by Vadim Petrochenkov 
-### Generation of Cython bindings for Rust libraries was implemented.
+## Rust compiler features by Vadim Petrochenkov 
+### (rustc) Generation of Cython bindings for Rust libraries was implemented.
 
-### Generation of compact representation for enums (C/C++ tagged unions) was implemented.
+### (rustc) Generation of compact representation for enums (C/C++ tagged unions) was implemented.
 
-### Many other smaller improvements to generation of C/C++ headers 
+### (rustc) Many other smaller improvements to generation of C/C++ headers 
  - arbitrary expressions in constants and enum discriminants, bitfield annotations
  - lifetime parameters on enums
  - converting usize/isize into size_t/ptrdiff_t
  - `#[cfg]` on fields
  - `sort_by` for constants
 
-## Rust Compiler features since 2019 by Vadim Petrochenkov
+### (rustc) feature: `#[cfg_eval]` attribute for eagerly expanding `#[cfg]` and `#[cfg_attr]` attributes was implemented.
 
-### feature: `#[cfg_eval]` attribute for eagerly expanding `#[cfg]` and `#[cfg_attr]` attributes was implemented.
+### (rustc) feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.(rustc) md")]`.
 
-### feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.md")]`.
+### (rustc) feature: A scheme for tracking environment variables used during Rust compilation was designed and i(rustc) mplemented, allowing automatic rebuilds on environment variable changes.
 
-### feature: A scheme for tracking environment variables used during Rust compilation was designed and implemented, allowing automatic rebuilds on environment variable changes.
+### (rustc) feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
 
-### feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
+### (rustc) feature: Statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`) were supported.
 
-### feature: Statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`) were supported.
+### (rustc) feature: Parsing of `tuple.0.0` as tuple indexing instead of floating point literal was implemented.
 
-### feature: Parsing of `tuple.0.0` as tuple indexing instead of floating point literal was implemented.
+### (rustc) feature: Function-like procedural macros in expression, pattern and statement positions were prepared for stabilization and stabilized.
 
-### feature: Function-like procedural macros in expression, pattern and statement positions were prepared for stabilization and stabilized.
+### (rustc) feature: Support for registering custom tool attributes using a crate-level attribute was implemented.
 
-### feature: Support for registering custom tool attributes using a crate-level attribute was implemented.
+### (rustc) feature: `#[cfg(accessible(path))]` allowing to check path accessibility at compile time was partially implemented.
 
-### feature: `#[cfg(accessible(path))]` allowing to check path accessibility at compile time was partially implemented.
+### (rustc) bugfix: `#[derive]` was turned into a regular macro attribute, improving language consistency and simplifying the compiler.
 
-### bugfix: `#[derive]` was turned into a regular macro attribute, improving language consistency and simplifying the compiler.
+### (rustc) bugfix: Many bugs and internal compiler errors (ICE) in areas of macro expansion, name resolution, linking, crate loading, crate metadata encoding/decoding and command line option handling were fixed.
 
-### bugfix: Many bugs and internal compiler errors (ICE) in areas of macro expansion, name resolution, linking, crate loading, crate metadata encoding/decoding and command line option handling were fixed.
+### (rustc) performance: `macro_rules` scope chains were collapsed on the fly, siginificantly improving compiler performance on `derive`-heavy crates.
 
-### performance: `macro_rules` scope chains were collapsed on the fly, siginificantly improving compiler performance on `derive`-heavy crates.
+### (rustc) performance/internal: Item visibilites (`pub` and others) were calculated once and then reused, simplifying compiler logic and improving its performance.
 
-### performance/internal: Item visibilites (`pub` and others) were calculated once and then reused, simplifying compiler logic and improving its performance.
+### (rustc) diagnostics: Privacy error diagnostics were improved to point to private definitions including the whole import chain.
 
-### diagnostics: Privacy error diagnostics were improved to point to private definitions including the whole import chain.
+### (rustc) diagnostics: More precise locations for lints reported at macro expansion time were implemented.
 
-### diagnostics: More precise locations for lints reported at macro expansion time were implemented.
+### (rustc) docs: More detailed documentation for some command line options controlling codegen and linking (-Crelocation-model, -Ccode-model, -Zstrip, -Ztls-model) was written.
 
-### docs: More detailed documentation for some command line options controlling codegen and linking (-Crelocation-model, -Ccode-model, -Zstrip, -Ztls-model) was written.
+### (rustc) internal: rustc's interactions with linker were significantly clarified enabling features like static PIE and bugfixes.
 
-### internal: rustc's interactions with linker were significantly clarified enabling features like static PIE and bugfixes.
+### (rustc) internal: Many refactorings in internal compiler logic in areas of AST, IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
 
-### internal: Many refactorings in internal compiler logic in areas of AST, IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
-
-### internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implement.
+### (rustc) internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implement.
 
 ## Recent Contributions by Yuki Okushi (JohnTitor)
 
-### the nomicon cleanups https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601
+### (nomicon) the nomicon cleanups 
+https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601
 
-### implement RFC 2574 (IP): https://github.com/rust-lang/rust/pull/86546
+### (rustc) fix ICEs: 
 
-### fix ICEs: https://github.com/rust-lang/rust/pull/86505, https://github.com/rust-lang/rust/pull/87646
+https://github.com/rust-lang/rust/pull/86505
 
-### improve diagnostics: https://github.com/rust-lang/rust/pull/86422, https://github.com/rust-lang/rust/pull/87566, https://github.com/rust-lang/rust/pull/87607
+https://github.com/rust-lang/rust/pull/87646
 
-### maintain rust-phf crates: https://github.com/rust-phf/rust-phf 
+### (rustc) improve diagnostics
+
+https://github.com/rust-lang/rust/pull/86422
+
+https://github.com/rust-lang/rust/pull/87566
+
+https://github.com/rust-lang/rust/pull/87607
+
+### (rust-phf) maintain rust-phf crates
+
+https://github.com/rust-phf/rust-phf 
 
 
