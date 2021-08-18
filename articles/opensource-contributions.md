@@ -320,13 +320,14 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
 
   Resolved interactions between arrays of different dimensions
   
-## Rust compiler features by Vadim Petrochenkov 
-### (rustc) Generation of Cython bindings for Rust libraries was implemented.
+## Rust compiler and cbindgen features by Vadim Petrochenkov 
+### (cbindgen) Generation of Cython bindings for Rust libraries was implemented.
 
-### (rustc) Generation of compact representation for enums (C/C++ tagged unions) was implemented.
+### (cbindgen) Generation of compact representation for enums (C/C++ tagged unions) was implemented.
 
-### (rustc) Many other smaller improvements to generation of C/C++ headers 
- - arbitrary expressions in constants and enum discriminants, bitfield annotations
+### (cbindgen) Many other smaller improvements to generation of C/C++ headers 
+ - arbitrary expressions in constants and enum discriminants
+ - bitfield annotations
  - lifetime parameters on enums
  - converting usize/isize into size_t/ptrdiff_t
  - `#[cfg]` on fields
@@ -336,7 +337,7 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
 
 ### (rustc) feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.(rustc) md")]`.
 
-### (rustc) feature: A scheme for tracking environment variables used during Rust compilation was designed and i(rustc) mplemented, allowing automatic rebuilds on environment variable changes.
+### (rustc) feature: A scheme for tracking environment variables used during Rust compilation was designed and implemented, allowing automatic rebuilds on environment variable changes.
 
 ### (rustc) feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
 
@@ -368,7 +369,7 @@ Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the differen
 
 ### (rustc) internal: Many refactorings in internal compiler logic in areas of AST, IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
 
-### (rustc) internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implement.
+### (rustc) internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implemented.
 
 ## Recent Contributions by Yuki Okushi (JohnTitor)
 
