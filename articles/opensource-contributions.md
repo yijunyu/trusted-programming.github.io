@@ -1,398 +1,79 @@
 ---
 layout: post
-title: Recent Contributions to the Open Source Communities by Huawei Trusted Programming 
+title: Contributions to the Open Source Communities by Huawei Trusted Programming 
 toc: true
 ---
 
-Here is the list of opensource contributions made by huawei employees (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress.html)):
+Here is the list of opensource projects where employees huawei contributed (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress.html)). Considering there are a lot of contributions overall, they are split by projects:
 
-### (rustc/LLVM/libc) Add support for big-endian and ILP32 variants of AArch64
+### cargo-geiger
 
-This added compilation support of Rust programs for big-endian and [ILP32](https://developer.arm.com/documentation/dai0490/latest/)
-variants of AArch64.  These changes enable Huawei and other hardware companies to run Rust code on networking hardware which commonly
-uses these architecture variants.
+See the list of contributions [here]({{ site.baseurl }}/articles/cargo-geiger.html).
 
-It was through pull requests to [the LLVM compiler](https://reviews.llvm.org/rG21bfd068b32ece1c6fbc912208e7cd1782a8c3fc),
-[the libc crate](https://github.com/rust-lang/libc/pull/2039), and [the Rust compiler itself](https://github.com/rust-lang/rust/pull/81455).
+### cbindgen.md
 
-These changes introduce new end-to-end cross-compilation targets for the Rust compiler, making it easier to build Rust products for bespoke
-hardware using a single command:
+See the list of contributions [here]({{ site.baseurl }}/articles/cbindgen.html).
 
-```bash
-cargo build --target aarch64_be-unknown-linux-gnu
-cargo build --target aarch64-unknown-linux-gnu_ilp32
-cargo build --target aarch64_be-unknown-linux-gnu_ilp32
-```
+### clippy.md
 
-### (rustdoc) Codeblock tooltip position
+See the list of contributions [here]({{ site.baseurl }}/articles/clippy.html).
 
-The goal of this PR was to fix the position of the tooltip "i" which appears when a rust documentation codeblock is marked as "ignore" or "compile_fail". You can see screenshots directly in the pull request [here](https://github.com/rust-lang/rust/pull/83393).
+### docs-rs.md
 
-### (rustdoc) Add documentation for rustdoc GUI tests
+See the list of contributions [here]({{ site.baseurl }}/articles/docs-rs.html).
 
-There are multiple test suites to ensure that rustdoc is working as expected:
- * test/rustdoc: checks parts of the HTML and that some elements are present as expected
- * test/rustdoc-js: checks the documentation search
- * test/rustdoc-js-std: checks the documentation search (in the std specifically)
- * test/rustdoc-ui: checks the cli output (errors, warnings, etc)
- * test/rustdoc-json: checks the validity of the JSON output (you can generate either HTML or JSON)
- * test/rustdoc-gui: browse the generated HTML using a chrome instance (with the framework [browser-ui-test](https://github.com/GuillaumeGomez/browser-UI-test/))
+### libc.md
 
-This [PR](https://github.com/rust-lang/rust/pull/83420) is about adding documentation about the **rustdoc-gui** test suite.
+See the list of contributions [here]({{ site.baseurl }}/articles/libc.html).
 
-### (rust) Fix error code checks
+### ndarray.md
 
-When the rust compiler generates an error, they have an associated code which then allows you to get more information by using `rustc --explain [ERROR_CODE]`. You can see the full list of the error codes [here](https://doc.rust-lang.org/nightly/error-index.html).
+See the list of contributions [here]({{ site.baseurl }}/articles/ndarray.html).
 
-Just like a lot of things in the compiler, we need to ensure that the code doesn't become obsolete or out of date. It's very common for error codes to not be needed anymore and we need a check to be sure that they have been cleaned up correctly.
+### quick-xml.md
 
-Because of some changes in the way the test suites are run, part of this check was not run because the target folder wasn't the right one. So the check was run, just not in the correct folder. With this [pull request](https://github.com/rust-lang/rust/pull/83451), it shouldn't happen again silently.
+See the list of contributions [here]({{ site.baseurl }}/articles/quick-xml.html).
 
-### (rust-GSL) Multiple fixes/improvements and upgrade crate version to 4.0
+### rust2pickle.md
 
-This crate provides bindings for the GSL (GNU Scientific library). With the new Rust release came new lints. This [pull request](https://github.com/GuillaumeGomez/rust-GSL/pull/97) fixed them and made some small improvements.
+See the list of contributions [here]({{ site.baseurl }}/articles/rust2pickle.html).
 
-### (libc) Add new structures, constants and types around processor API for macOS
+### rust2xml.md
 
-The [libc](https://github.com/rust-lang/libc/) project provides FFI (Foreign Function Interface) bindings to platforms' system libraries. It's one of the most used crate in the Rust ecosystem because as soon as you want to write low-level code, it's very likely that you'll need it.
+See the list of contributions [here]({{ site.baseurl }}/articles/rust2xml.html).
 
-This [pull request](https://github.com/rust-lang/libc/pull/2127) provided the following new items:
- * processor_cpu_load_info
- * processor_cpu_load_info_t
- * processor_cpu_load_info_data_t
- * processor_basic_info
- * processor_basic_info_t
- * processor_basic_info_data_t
- * processor_set_basic_info
- * processor_set_basic_info_t
- * processor_set_basic_info_data_t
- * processor_set_load_info
- * processor_set_load_info_t
- * processor_set_load_info_data_t
- * natural_t
- * mach_msg_type_number_t
- * PROCESSOR_BASIC_INFO
- * PROCESSOR_CPU_LOAD_INFO
- * PROCESSOR_PM_REGS_INFO
- * PROCESSOR_TEMPERATURE
- * PROCESSOR_SET_BASIC_INFO
- * PROCESSOR_SET_LOAD_INFO
+### rustc.md
 
-And this [pull request](https://github.com/rust-lang/libc/pull/2129) added the following type aliases:
- * processor_flavor_t
- * processor_info_t
- * processor_info_array_t
+See the list of contributions [here]({{ site.baseurl }}/articles/rustc.html).
 
-### (sysinfo) Fix invalid CPU usage on new mac processors
+### rustdoc.md
 
-The [sysinfo](https://github.com/GuillaumeGomez/sysinfo) crate provides information on your system, such as CPU, memory, disk and network usage. It also provides information on users and components whenever it's provided by the OS.
+See the list of contributions [here]({{ site.baseurl }}/articles/rustdoc.html).
 
-With the arrival of the new mac processors, the computation for the CPU usage on mac needed to be updated. Before, it was using `mach_absolute_time` to get how much time the processors "used" and then, by subtracting the previous time, you could know how much a process used of that time. Unfortunately, it seems that the time returned by this function is inaccurate with the new processors. So instead, we get the "raw" information from the processors (the "ticks") and we then convert it to time to be able to compute the processes usage.
+### rust-gsl.md
 
-You can see the pull request [here](https://github.com/GuillaumeGomez/sysinfo/pull/453).
+See the list of contributions [here]({{ site.baseurl }}/articles/rust-gsl.html).
 
-### (rustdoc) Add a button to copy the "use statement"
+### rust-nomicon.md
 
-It's very common, when reading an item's documentation to want to then import it into your code to use it. This [pull request](https://github.com/rust-lang/rust/pull/83721) adds a button to do it.
+See the list of contributions [here]({{ site.baseurl }}/articles/rust-nomicon.html).
 
-### (rustdoc) Merge idents in paths to make source code pages DOM smaller
+### stdarch.md
 
-This [pull request](https://github.com/rust-lang/rust/pull/83992) ensures to not have a span for each part of a path in the source code pages (for example [here](https://docs.rs/sysinfo/0.17.0/src/sysinfo/lib.rs.html#7-283)). Before this change, for `a::b::c` we generated `<span>a</span>::<span>b</span>::<span>c</span>`, now we generate `<span>a::b::c</span>`.
+See the list of contributions [here]({{ site.baseurl }}/articles/stdarch.html).
 
-### (libc) Add new constant and functions for Android
+### sysinfo.md
 
-This [pull request] added the following functions:
+See the list of contributions [here]({{ site.baseurl }}/articles/sysinfo.html).
 
- * `__system_property_set`
- * `__system_property_get`
+### tempfile.md
 
-And the following constant:
+See the list of contributions [here]({{ site.baseurl }}/articles/tempfile.html).
 
- * PROP_VALUE_MAX
+### tokei.md
 
-### (tempfile) Ensure that README code examples are tested
+See the list of contributions [here]({{ site.baseurl }}/articles/tokei.html).
 
-This [pull request](https://github.com/Stebalien/tempfile/pull/144) added the usage of [doc-comment](https://crates.io/crates/doc-comment) to ensure that the README code examples are tested (which prevents them to get outdated). You can see more explanations on how to easily test a markdown file code examples by reading this [blog post](https://blog.guillaume-gomez.fr/articles/2019-04-13+Keeping+Rust+projects%27+README.md+code+examples+up-to-date).
+### tree-sitter.md
 
-### (sysinfo) Add fallback when calculating OS version on linux
-
-On linux, the version ID isn't always set (nor mandatory) in the `/etc/os-release` file. To fix this issue in case this information is missing, this [pull request](https://github.com/GuillaumeGomez/sysinfo/pull/457) go get it from `/etc/lsb-release`.
-
-### (docs.rs) Add gitlab support
-
-This [pull request](https://github.com/rust-lang/docs.rs/pull/1249) adds the support for gitlab information retrieval (for example, the number of stars or forks of a repository) and also create the architecture to greatly improve and simplify the adds of other platforms.
-
-### (clippy) Add lint to check for boolean comparison in assert macro calls
-
-This [pull request](https://github.com/rust-lang/rust-clippy/pull/7083) add a new lint (called `bool_assert_comparison`) which check cases like these:
-
-```rust
-assert_eq!("a".is_empty(), false);
-debug_assert_ne!("b".is_empty(), true);
-```
-
-Because they can be rewritten like this:
-
-```rust
-assert!(!"a".is_empty());
-debug_assert!(!"b".is_empty());
-```
-
-### (docs.rs) Add footer to provide easier access to some information
-
-We needed this [pull request](https://github.com/rust-lang/docs.rs/pull/1367) when we were about to add a link to the privacy policy page: only issue is that the top navbar on docs.rs was already quite "full". So instead, we decided to create a footer to reduce the load on the top navbar and also use it to add this new link.
-
-### (rustdoc) Migrate toggles into full HTML
-
-This [pull request](https://github.com/rust-lang/rust/pull/84754) and [this one](https://github.com/rust-lang/rust/pull/85074) convert JS-generated toggles into full HTML ones. It's part of a more global process to clean all the toggles that you can see described in [this issue](https://github.com/rust-lang/rust/issues/83332). The global idea being to remove more JS for faster rendering.
-
-A "funny" side-effect is that it actually improves the doc pages in case you disabled JS on the rustdoc pages.
-
-### (rustdoc) Remove unneeded call to with_default_session_globals
-
-We recently realized that not only this function call was unneeded but also that it was messing up the spans. You can see the pull request [here](https://github.com/rust-lang/rust/pull/84953).
-
-### (rustdoc) Improvement for rustdoc-gui test suite output and run
-
-This [pull request](https://github.com/rust-lang/rust/pull/85038) and [this one](https://github.com/rust-lang/rust/pull/84990) improved the rustdoc-gui test suite by alphabetically sorting the test and run all tests instead of stopping at the first failure like it used to.
-
-### (rustdoc) Improve search result DOM generation
-
-It was discovered randomly that in some cases, the generated DOM was invalid (because of items' documentation). For more context, when using the rustdoc search, we generate the results with JS. This generation was mostly done using strings before, this [pull request](https://github.com/rust-lang/rust/pull/85540) changed it so that it now generates through browsers' API instead.
-
-### (rustdoc/rust infra) Enforce rustdoc-GUI test-suite
-
-Rustdoc has GUI tests to prevent regressions like it happened a lot in the past. We recently realized that this test-suite was not always run as it should. This [pull request](https://github.com/rust-lang/rust/pull/84586) fixes this issue.
-
-### (rustdoc) Sidebar unification
-
-This [pull request](https://github.com/rust-lang/rust/pull/84834) unify the sidebar between modules and the other items, add the crates list on all items on all "levels" and remove a duplicate "location" information on modules.
-
-### (rustdoc) Clean up HTML generated by rustdoc
-
-Thanks to <https://github.com/rust-lang/rust/pull/84480>, we realized that the HTML (a.k.a. DOM) generated by rustdoc needed to be cleaned up. This [pull request](https://github.com/rust-lang/rust/pull/84703) is the clean up.
-
-### (rustdoc) Fixes for new DOM
-
-A lot of changes happened on rustdoc recently and we're now catching up on bugs and adding a lot of new tests since we now have GUI tests. Here is a long and non-exhaustive list:
-
- * Fix HTML handling in search results description: <https://github.com/rust-lang/rust/pull/86095>
- * Fix font weight on documentation: <https://github.com/rust-lang/rust/pull/86078>
- * Fix display for search results by removing unwanted margins and font-weight: <https://github.com/rust-lang/rust/pull/86040>
- * Fix toggle on trait methods: <https://github.com/rust-lang/rust/pull/85722>
- * Fix source code line number display and make it clickable again: <https://github.com/rust-lang/rust/pull/85148>
- * Fix border radius for doc code blocks in rustdoc: <https://github.com/rust-lang/rust/pull/85174>
- * Fix display for "implementors" section: <https://github.com/rust-lang/rust/pull/85256>
- * Fix invalid `input:disabled` CSS selector: <https://github.com/rust-lang/rust/pull/85367>
- * Fix escape key handling: <https://github.com/rust-lang/rust/pull/85438>
- * Fix invalid CSS rules for `a:hover` (it was highlighting instead of underlining): <https://github.com/rust-lang/rust/pull/85470>
- * Fix search result position handling when switching result tab: <https://github.com/rust-lang/rust/pull/85506>
- * Prevent tab title to "null" if the URL is a search one: <https://github.com/rust-lang/rust/pull/85509>
- * Remove a lot of dead JS code: <https://github.com/rust-lang/rust/pull/85548>
- * Fix search result display (the item was going over its description): <https://github.com/rust-lang/rust/pull/85551>
- * Put back special search result items information: <https://github.com/rust-lang/rust/pull/85568>
- * Fix "inherent implementations" display (they were collapsed by default, which was wrong): <https://github.com/rust-lang/rust/pull/85602>
- * Move special search result item handling from CSS to JS: <https://github.com/rust-lang/rust/pull/85631>
-
-### (rustdoc) Improve generated DOM
-
-We started using the `tidy` tool to ensure the HTML rustdoc generates is valid. The final part of this fix is in [this pull request](https://github.com/rust-lang/rust/pull/85972).
-
-### (rustdoc) Better search result DOM generation
-
-When you use rustdoc search system, it'll go through the items, find the best matches and then display them. The display part was generated inside a big string before, which allowed a lot of issues. Instead, it was replaced with much safer DOM generation using browsers' API to create DOM elements. You can see how in [this pull request](https://github.com/rust-lang/rust/pull/85540).
-
-### (tokei) Turing the code measuring tool into a driver for batch process for code in various programming languages
-
-When you do tokei, it will report lines of code etc per programming language. We added [this pull request](https://github.com/XAMPPRocky/tokei/pull/678) to extend the tool for classifying the programs of different language as a list on the standard output for further processing downstream the pipeline. 
-
-### (tree-sitter) Generate XML output of the abstract syntax trees, which has similar format to the SrcML schema, e.g., embedding the tokens with XML tags according to the ASTs
-
-When you run tree-sitter, it will output the ASTs as a plain text file with some indention, while the concrete tokens are only shown by their offsets in the original source file. We created [this pull request](https://github.com/tree-sitter/tree-sitter/pull/863) to generate XML output of the ASTs, which has similar format to the SrcML schema, e.g., embedding the tokens with XML tags according to the ASTs. 
-
-### (cargo-geiger) Generate reports of the safe code ratios in addition to the unsafe code counts
-
-When you run cargo-geiger, it will output the counts of unsafe code elements for functions, expressions, etc. We created [this pull request](https://github.com/rust-secure-code/cargo-geiger/pull/167) to report the safe code ratios. 
-
-### (quick-xml) Fixing a bug in the tags generated to allow serialization in a format similar to that of SrcML
-
-This is a [pull request](https://github.com/tafia/quick-xml/pull/250) to generate XML outputs where <key/> are generated rather than flagged as an error.
-
-### (rust2xml) Generate XML outputs from Rust abstract syntax trees
-
-This is a [new crate](https://github.com/yijunyu/rust2xml) to create XML outputs from Rust code's abstract syntax trees.
-
-### (rust2pickle) Generate Pickle outputs from Rust abstract syntax trees
-
-This is a [new crate](https://github.com/yijunyu/rust2pickle) to create Pickle output from Rust code's abstract syntax trees.
-
-### (rustdoc) Don't mark "safe" intrinsics as unsafe
-
-Some rust intrinsics are safe to be used. This [pull request](https://github.com/rust-lang/rust/pull/86327) propagates this change to rustdoc.
-
-### (rustc/infra) Enforce error codes checks
-
-The Rust compiler uses error codes (which look like "E0111") and provide an explanation alongside them which can be seen using `rustc --explain E0111`. However, as time passes, some error codes are not used anymore and are often not cleaned up correctly. This [pull request](https://github.com/rust-lang/rust/pull/86137) ensures that they are cleaned up appropriately if they are removed by sending an error when the `tidy` check is run.
-
-### (rustdoc/rust infra) Add new tool to check generated HTML
-
-This [pull request](https://github.com/rust-lang/rust/pull/86059) adds a new test-suite to ensure that the HTML generated by rustdoc is valid. It's especially important for accessibility and prevent silent regressions.
-
-### (rustc) Rework SESSION_GLOBALS API
-
-Thanks to [this pull request](https://github.com/rust-lang/rust/pull/84953), we realized that the `SESSION_GLOBALS` API allowed to do invalid operations, messing up the spans. This [pull request](https://github.com/rust-lang/rust/pull/84961) fixes it by preventing to access the global static directly.
-
-### (rustdoc) Add --nocapture option to rustdoc
-
-Until [this pull request](https://github.com/rust-lang/rust/pull/86230) was merged, there was no way to see the output of the doctests. This is now possible by using the `--nocapture` option when running `rustdoc --test`.
-
-### (rustdoc) Add support for tuple struct field documentation
-
-Before this [pull request](https://github.com/rust-lang/rust/pull/87451), it was not possible to do this:
-
-```rust
-pub struct Tuple(
-    /// Not this.
-    u32,
-    /// Not that either.
-    i8,
-);
-
-// Nor this:
-
-pub enum Enum {
-    Tuple(
-        /// Not this.
-        u8,
-	/// Not that either.
-        char,
-    ),
-}
-```
-
-### (rustdoc) Generate links to definition in rustdoc source code pages
-
-This [pull request](https://github.com/rust-lang/rust/pull/84176) adds a the possibility to jump to an item definitions from the rustdoc source code pages (you can see a video in the pull request description). It got a lot of support from rust users as you can see from this twitter feed:
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;m very excited to show some feature I&#39;m working on in <a href="https://twitter.com/rustlang?ref_src=twsrc%5Etfw">@rustlang</a>&#39;s rustdoc: ever wanted to be able to jump to a type definition from the source code pages directly? It&#39;ll be possible soon! More to come! Here is a small preview: <a href="https://t.co/ICPXH35Q8V">pic.twitter.com/ICPXH35Q8V</a></p>&mdash; Guillaume Gomez (@imperioworld_) <a href="https://twitter.com/imperioworld_/status/1379506735094857728?ref_src=twsrc%5Etfw">April 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-### (rustdoc) Improve intra-doc errors
-
-The intra-doc feature in rustdoc allows to generate links to an item without giving a full path. For example:
-
-```rust
-/// I link to [Bar].
-pub struct Foo;
-
-/// I link to [Foo].
-pub enum Bar {
-    U,
-}
-```
-
-In this case, the rustdoc will generate links to `Foo` and `Bar` on its own.
-
-This [pull request](https://github.com/rust-lang/rust/pull/87285) improves the error in case rustdoc cannot generate the link on its own.
-
-### (rustdoc) Fix rendering of reexported macros 2.0 and fix visibility of reexported items
-
-Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the difference between the new and old macros and rendered both the same way. This [pull request](https://github.com/rust-lang/rust/pull/86841) fixed it and also fixed the visibility rendering on reexported items.
-
-### (stdarch) add neon intrinsics support
-
-Solved the ARM support issue of the SIMD acceleration library. You can see the list of the pull requests [here](https://github.com/rust-lang/stdarch/pulls?q=is%3Apr+is%3Amerged+neon+author%3ASparrowLii) and [here](https://github.com/rust-lang/stdarch/pulls?q=is%3Apr+is%3Amerged+neon+author%3ASureChen).
-
-### (ndarray) Support `no_std`
-
-This [pull request](https://github.com/rust-ndarray/ndarray/pull/864) added the support for `no_std`. The goal is to help developers use `ndarray` in embedded systems.
-
-### (ndarray) Fix memory continuity judgment when stride is negative
-
-This [pull request](https://github.com/rust-ndarray/ndarray/pull/885) improved the space utilization of the multidimensional array.
-
-### (ndarray) Implement co-broadcasting in operator overloading
-
-This [pull request](https://github.com/rust-ndarray/ndarray/pull/898) resolved interactions between arrays of different dimensions. It was followed by this [pull request](https://github.com/rust-ndarray/ndarray/pull/965) to improve this feature's performance.
-
-### (cbindgen) Add support for Cython
-
-This [pull request](https://github.com/eqrion/cbindgen/pull/590) added the support to read Cython-compatible source files.
-
-It was followed up by this [pull request](https://github.com/eqrion/cbindgen/pull/619) which added options to specify header and imports.
-
-### (cbindgen) Small improvements to generation of C/C++ headers
-
- - [arbitrary expressions in constants and enum discriminants](https://github.com/eqrion/cbindgen/pull/589)
- - [bitfield annotations](https://github.com/eqrion/cbindgen/pull/611)
- - [lifetime parameters on enums](https://github.com/eqrion/cbindgen/pull/604)
- - [converting usize/isize into size_t/ptrdiff_t](https://github.com/eqrion/cbindgen/pull/606)
- - [`#[cfg]` on fields](https://github.com/eqrion/cbindgen/pull/633)
- - [`sort_by` for constants](https://github.com/eqrion/cbindgen/pull/587)
-
-### (rustc) Implement built-in `#[cfg_eval]` attribute
-
-This [pull request](https://github.com/rust-lang/rust/pull/82682) eagerly expands `#[cfg]` and `#[cfg_attr]` attributes to avoid `#[derive()]` without arguments being abused as a way to configure input for other attributes.
-
-### (rustc) Add support for macro expansions in key-value attributes
-
-This [pull request](https://github.com/rust-lang/rust/pull/78837) allows to call macros in attributes like `#[doc = include_str!("README.md")]`.
-
-### (rustc) Add a scheme to track environment variables used during Rust compilation
-
-This [pull request](https://github.com/rust-lang/rust/pull/71858) allows automatic rebuilds on environment variable changes.
-
-### (rustc) Add support for `-static-pie` and `-static-shared`
-
-This [pull request](https://github.com/rust-lang/rust/pull/71804) added support for statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`).
-
-### (rustc) Allow parsing of `tuple.0.0`
-
-This [pull request](https://github.com/rust-lang/rust/pull/71322) allowed `tuple.0.0` syntax to index tuples. It was previously considered as a floating point literal.
-
-### (rustc) Stabilize fn-like proc macros in expression, pattern and statement positions
-
-<https://github.com/rust-lang/rust/pull/68717>
-
-### (rustc) Add `#[cfg(accessible(path))]`
-
-This [pull request](https://github.com/rust-lang/rust/pull/69870) allows to check path accessibility at compile time.
-
-### (rustc) Turn #[derive] into a regular macro attribute
-
-This [pull request](https://github.com/rust-lang/rust/pull/79078) turned `#[derive]` into a a regular macro attribute, improving language consistency and simplifying the compiler.
-
-### (rustc) Collapse `macro_rules` scope chains on the fly
-
-This [pull request](https://github.com/rust-lang/rust/pull/78826) collapsed scope chains of `macro_rules` on the fly, allowing to significantly improve the compiler performance on `derive`-heavy crates.
-
-### (rustc) Calculate visibilities once in resolve
-
-This [pull request](https://github.com/rust-lang/rust/pull/78077) improved compiler performance and simplifying the logic by calculating item visibilities (`pub` and others) once and then reused.
-
-### (rustc) Improve deprecation lint location on macro
-
-This [pull request](https://github.com/rust-lang/rust/pull/78999) and [this one](https://github.com/rust-lang/rust/pull/73178) improve the location or lints reported at macro expansion time.
-
-### (rustc) Improve documentation for some command line options controlling codegen and linking
-
-In the following pull requests:
-
- * [-Crelocation-model](https://github.com/rust-lang/rust/pull/71490)
- * [-Ccode-model](https://github.com/rust-lang/rust/pull/72248)
-
-### (rustc) Remove `compile-fail` test suite
-
-This [pull request](https://github.com/rust-lang/rust/pull/80453) completely removed the `compile-fail` test suite and replaced it with user interface (UI) tests and a machine learning based tool for classifying tests into subdirectories.
-
-### (nomicon) Lot of cleanups and code improvements
-
-The list of pull requests is available [here](https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601).
-
-### (rustc) Fix internal compiler errors
-
- * [Fix panic in `return_type_impl_trait`](https://github.com/rust-lang/rust/pull/86505)
- * [Fix parser error on invalid function body](https://github.com/rust-lang/rust/pull/87646)
-
-### (rustc) Improve diagnostics
-
-This [pull request](https://github.com/rust-lang/rust/pull/87607) added a a hint that expressions produce a value.
+See the list of contributions [here]({{ site.baseurl }}/articles/tree-sitter.html).
