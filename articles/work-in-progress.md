@@ -22,6 +22,18 @@ The `union` keyword has a different meaning depending where it's used. Rustdoc s
 
 On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
 
-### (rustc) implement RFC 2574 (WIP) 
+### (rustc) implement RFC 2574
 
 https://github.com/rust-lang/rust/pull/86546
+
+### (ndarray) Implement construction from negative strides
+
+<https://github.com/rust-ndarray/ndarray/pull/901>
+
+### (rustc) Recover invalid assoc type bounds using ==
+
+<https://github.com/rust-lang/rust/pull/87566>
+
+### (rustc) Emit clearer diagnostics for parens around for loop heads
+
+<https://github.com/rust-lang/rust/pull/86422>
