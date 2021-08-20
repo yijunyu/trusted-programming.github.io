@@ -103,8 +103,8 @@ This [pull request](https://github.com/rust-lang/rust/pull/83992) ensures to not
 
 This [pull request] added the following functions:
 
- * __system_property_set
- * __system_property_get
+ * `__system_property_set`
+ * `__system_property_get`
 
 And the following constant:
 
@@ -298,100 +298,101 @@ This [pull request](https://github.com/rust-lang/rust/pull/87285) improves the e
 
 Macros 2.0 adds a new syntax to declare macros. Rustdoc didn't make the difference between the new and old macros and rendered both the same way. This [pull request](https://github.com/rust-lang/rust/pull/86841) fixed it and also fixed the visibility rendering on reexported items.
 
-## Recent contributions by Li Yuan (SparrowLi) and Chen Shuo (SureChen) 
-
 ### (stdarch) add neon intrinsics support
 
-  Solved the ARM support issue of the SIMD acceleration library.
-
-### (LLVM codegen) Initiated Discussion about  zero-sized padding
-
-  Solved the ARM support issue of the SIMD acceleration library.
+Solved the ARM support issue of the SIMD acceleration library. You can see the list of the pull requests [here](https://github.com/rust-lang/stdarch/pulls?q=is%3Apr+is%3Amerged+neon+author%3ASparrowLii) and [here](https://github.com/rust-lang/stdarch/pulls?q=is%3Apr+is%3Amerged+neon+author%3ASureChen).
 
 ### (ndarray) Support `no_std`
 
-  Help developers use `ndarray ` in embedded systems
+This [pull request](https://github.com/rust-ndarray/ndarray/pull/864) added the support for `no_std`. The goal is to help developers use `ndarray` in embedded systems.
 
-### (ndarray) Implement `negative strides`  feature
+### (ndarray) Fix memory continuity judgment when stride is negative
 
-  Improve the space utilization of the multidimensional array operation library
+This [pull request](https://github.com/rust-ndarray/ndarray/pull/885) improved the space utilization of the multidimensional array.
 
-### (ndarray) Implement `array broadcast` feature
+### (ndarray) Implement co-broadcasting in operator overloading
 
-  Resolved interactions between arrays of different dimensions
-  
-## Rust compiler and cbindgen features by Vadim Petrochenkov 
-### (cbindgen) Generation of Cython bindings for Rust libraries was implemented.
+This [pull request](https://github.com/rust-ndarray/ndarray/pull/898) resolved interactions between arrays of different dimensions. It was followed by this [pull request](https://github.com/rust-ndarray/ndarray/pull/965) to improve this feature's performance.
 
-### (cbindgen) Generation of compact representation for enums (C/C++ tagged unions) was implemented.
+### (cbindgen) Add support for Cython
 
-### (cbindgen) Many other smaller improvements to generation of C/C++ headers 
- - arbitrary expressions in constants and enum discriminants
- - bitfield annotations
- - lifetime parameters on enums
- - converting usize/isize into size_t/ptrdiff_t
- - `#[cfg]` on fields
- - `sort_by` for constants
+This [pull request](https://github.com/eqrion/cbindgen/pull/590) added the support to read Cython-compatible source files.
 
-### (rustc) feature: `#[cfg_eval]` attribute for eagerly expanding `#[cfg]` and `#[cfg_attr]` attributes was implemented.
+It was followed up by this [pull request](https://github.com/eqrion/cbindgen/pull/619) which added options to specify header and imports.
 
-### (rustc) feature: Macro expansions were supported in key-value attributes like `#[doc = include_str!("README.(rustc) md")]`.
+### (cbindgen) Small improvements to generation of C/C++ headers
 
-### (rustc) feature: A scheme for tracking environment variables used during Rust compilation was designed and implemented, allowing automatic rebuilds on environment variable changes.
+ - [arbitrary expressions in constants and enum discriminants](https://github.com/eqrion/cbindgen/pull/589)
+ - [bitfield annotations](https://github.com/eqrion/cbindgen/pull/611)
+ - [lifetime parameters on enums](https://github.com/eqrion/cbindgen/pull/604)
+ - [converting usize/isize into size_t/ptrdiff_t](https://github.com/eqrion/cbindgen/pull/606)
+ - [`#[cfg]` on fields](https://github.com/eqrion/cbindgen/pull/633)
+ - [`sort_by` for constants](https://github.com/eqrion/cbindgen/pull/587)
 
-### (rustc) feature: An RFC "Linking modifiers for native libraries" was submitted and accepted.
+### (rustc) Implement built-in `#[cfg_eval]` attribute
 
-### (rustc) feature: Statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`) were supported.
+This [pull request](https://github.com/rust-lang/rust/pull/82682) eagerly expands `#[cfg]` and `#[cfg_attr]` attributes to avoid `#[derive()]` without arguments being abused as a way to configure input for other attributes.
 
-### (rustc) feature: Parsing of `tuple.0.0` as tuple indexing instead of floating point literal was implemented.
+### (rustc) Add support for macro expansions in key-value attributes
 
-### (rustc) feature: Function-like procedural macros in expression, pattern and statement positions were prepared for stabilization and stabilized.
+This [pull request](https://github.com/rust-lang/rust/pull/78837) allows to call macros in attributes like `#[doc = include_str!("README.md")]`.
 
-### (rustc) feature: Support for registering custom tool attributes using a crate-level attribute was implemented.
+### (rustc) Add a scheme to track environment variables used during Rust compilation
 
-### (rustc) feature: `#[cfg(accessible(path))]` allowing to check path accessibility at compile time was partially implemented.
+This [pull request](https://github.com/rust-lang/rust/pull/71858) allows automatic rebuilds on environment variable changes.
 
-### (rustc) bugfix: `#[derive]` was turned into a regular macro attribute, improving language consistency and simplifying the compiler.
+### (rustc) Add support for `-static-pie` and `-static-shared`
 
-### (rustc) bugfix: Many bugs and internal compiler errors (ICE) in areas of macro expansion, name resolution, linking, crate loading, crate metadata encoding/decoding and command line option handling were fixed.
+This [pull request](https://github.com/rust-lang/rust/pull/71804) added support for statically linked position-independent executables (`-static-pie`) and "statically linked" shared libraries (`-static -shared`).
 
-### (rustc) performance: `macro_rules` scope chains were collapsed on the fly, siginificantly improving compiler performance on `derive`-heavy crates.
+### (rustc) Allow parsing of `tuple.0.0`
 
-### (rustc) performance/internal: Item visibilites (`pub` and others) were calculated once and then reused, simplifying compiler logic and improving its performance.
+This [pull request](https://github.com/rust-lang/rust/pull/71322) allowed `tuple.0.0` syntax to index tuples. It was previously considered as a floating point literal.
 
-### (rustc) diagnostics: Privacy error diagnostics were improved to point to private definitions including the whole import chain.
+### (rustc) Stabilize fn-like proc macros in expression, pattern and statement positions
 
-### (rustc) diagnostics: More precise locations for lints reported at macro expansion time were implemented.
+<https://github.com/rust-lang/rust/pull/68717>
 
-### (rustc) docs: More detailed documentation for some command line options controlling codegen and linking (-Crelocation-model, -Ccode-model, -Zstrip, -Ztls-model) was written.
+### (rustc) Add `#[cfg(accessible(path))]`
 
-### (rustc) internal: rustc's interactions with linker were significantly clarified enabling features like static PIE and bugfixes.
+This [pull request](https://github.com/rust-lang/rust/pull/69870) allows to check path accessibility at compile time.
 
-### (rustc) internal: Many refactorings in internal compiler logic in areas of AST, IR, name resolution and macro expansion making compiler simpler and more accessible were performed.
+### (rustc) Turn #[derive] into a regular macro attribute
 
-### (rustc) internal: compile-fail test suite was entirely eliminated in favor of user interface (UI) tests, a machine learning based tool for classifying tests into subdirectories was implemented.
+This [pull request](https://github.com/rust-lang/rust/pull/79078) turned `#[derive]` into a a regular macro attribute, improving language consistency and simplifying the compiler.
 
-## Recent Contributions by Yuki Okushi (JohnTitor)
+### (rustc) Collapse `macro_rules` scope chains on the fly
 
-### (nomicon) the nomicon cleanups 
-https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601
+This [pull request](https://github.com/rust-lang/rust/pull/78826) collapsed scope chains of `macro_rules` on the fly, allowing to significantly improve the compiler performance on `derive`-heavy crates.
 
-### (rustc) fix ICEs: 
+### (rustc) Calculate visibilities once in resolve
 
-https://github.com/rust-lang/rust/pull/86505
+This [pull request](https://github.com/rust-lang/rust/pull/78077) improved compiler performance and simplifying the logic by calculating item visibilities (`pub` and others) once and then reused.
 
-https://github.com/rust-lang/rust/pull/87646
+### (rustc) Improve deprecation lint location on macro
 
-### (rustc) improve diagnostics
+This [pull request](https://github.com/rust-lang/rust/pull/78999) and [this one](https://github.com/rust-lang/rust/pull/73178) improve the location or lints reported at macro expansion time.
 
-https://github.com/rust-lang/rust/pull/86422
+### (rustc) Improve documentation for some command line options controlling codegen and linking
 
-https://github.com/rust-lang/rust/pull/87566
+In the following pull requests:
 
-https://github.com/rust-lang/rust/pull/87607
+ * [-Crelocation-model](https://github.com/rust-lang/rust/pull/71490)
+ * [-Ccode-model](https://github.com/rust-lang/rust/pull/72248)
 
-### (rust-phf) maintain rust-phf crates
+### (rustc) Remove `compile-fail` test suite
 
-https://github.com/rust-phf/rust-phf 
+This [pull request](https://github.com/rust-lang/rust/pull/80453) completely removed the `compile-fail` test suite and replaced it with user interface (UI) tests and a machine learning based tool for classifying tests into subdirectories.
 
+### (nomicon) Lot of cleanups and code improvements
 
+The list of pull requests is available [here](https://github.com/rust-lang/nomicon/commits/master?author=JohnTitor&since=20210601).
+
+### (rustc) Fix internal compiler errors
+
+ * [Fix panic in `return_type_impl_trait`](https://github.com/rust-lang/rust/pull/86505)
+ * [Fix parser error on invalid function body](https://github.com/rust-lang/rust/pull/87646)
+
+### (rustc) Improve diagnostics
+
+This [pull request](https://github.com/rust-lang/rust/pull/87607) added a a hint that expressions produce a value.
