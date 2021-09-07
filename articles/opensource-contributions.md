@@ -10,70 +10,70 @@ Here is the list of opensource projects where employees huawei contributed (if y
 
 See the list of contributions [here]({{ site.baseurl }}/articles/cargo-geiger.html).
 
-### cbindgen.md
+### cbindgen
 
 See the list of contributions [here]({{ site.baseurl }}/articles/cbindgen.html).
 
-### clippy.md
+### clippy
 
 See the list of contributions [here]({{ site.baseurl }}/articles/clippy.html).
 
-### docs-rs.md
+### docs-rs
 
 See the list of contributions [here]({{ site.baseurl }}/articles/docs-rs.html).
 
-### libc.md
+### libc
 
 See the list of contributions [here]({{ site.baseurl }}/articles/libc.html).
 
-### ndarray.md
+### ndarray
 
 See the list of contributions [here]({{ site.baseurl }}/articles/ndarray.html).
 
-### quick-xml.md
+### quick-xml
 
 See the list of contributions [here]({{ site.baseurl }}/articles/quick-xml.html).
 
-### rust2pickle.md
+### rust2pickle
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rust2pickle.html).
 
-### rust2xml.md
+### rust2xml
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rust2xml.html).
 
-### rustc.md
+### rustc
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rustc.html).
 
-### rustdoc.md
+### rustdoc
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rustdoc.html).
 
-### rust-gsl.md
+### rust-gsl
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rust-gsl.html).
 
-### rust-nomicon.md
+### rust-nomicon
 
 See the list of contributions [here]({{ site.baseurl }}/articles/rust-nomicon.html).
 
-### stdarch.md
+### stdarch
 
 See the list of contributions [here]({{ site.baseurl }}/articles/stdarch.html).
 
-### sysinfo.md
+### sysinfo
 
 See the list of contributions [here]({{ site.baseurl }}/articles/sysinfo.html).
 
-### tempfile.md
+### tempfile
 
 See the list of contributions [here]({{ site.baseurl }}/articles/tempfile.html).
 
-### tokei.md
+### tokei
 
 See the list of contributions [here]({{ site.baseurl }}/articles/tokei.html).
 
-### tree-sitter.md
+### tree-sitter
 
 See the list of contributions [here]({{ site.baseurl }}/articles/tree-sitter.html).
