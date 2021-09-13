@@ -13,8 +13,7 @@ When you run tree-sitter, it will output the ASTs as a plain text file with some
 ### Precompiled parser library for tree-sitter grammars:
 
 Building tree-sitter parsers takes extra time. Here is a list of precompiled tree-sitter parsers built for the 21 officially supported programming languages. 
-We ceeated a new [crate](https://crates.io/crates/tree-sitter-parsers) for Rust developers (currently tested on Linux-based distributions such as X86_64 and Raspberry Pi). 
+We created a new [crate](https://crates.io/crates/tree-sitter-parsers) for Rust developers (currently tested on Linux-based distributions such as X86_64 and Raspberry Pi), see
 [Rust source code](https://github.com/yijunyu/tree-sitter-parsers/tree/rust). 
 
-If you are using Python, the precompiled parsers can be imported through `pip install tree-sitter-parsers` as well, and the precompiled shared libraries can be found in 
-https://github.com/yijunyu/tree-sitter-parsers/tree/Linux and https://github.com/yijunyu/tree-sitter-parsers/tree/Windows. [Python source code](https://github.com/yijunyu/tree-sitter-parsers). 
+If you are using Python, the precompiled parsers can be imported through `pip install tree-sitter-parsers` as well, and the precompiled shared libraries can be found for [Linux)(https://github.com/yijunyu/tree-sitter-parsers/tree/Linux) and [Windows](https://github.com/yijunyu/tree-sitter-parsers/tree/Windows), see [Python source code](https://github.com/yijunyu/tree-sitter-parsers). 
