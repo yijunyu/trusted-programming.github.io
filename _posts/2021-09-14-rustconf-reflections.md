@@ -1,5 +1,12 @@
 # Reflections on the Rust Conference 2021
 
+Yijun Yu
+
+Chief Expert in Trusted Programming
+Director of Trustworthiness Lab
+Ireland Research Centre
+Huawei Technology, Inc.
+
 The Rust conference ended successfully. Although it had to be held online due to the pandemic, over 2,000 people participanted the Discord live discussions at the conference, which is another testament to the popularity and importance of Rust programming language in software industry. In contrast, our developers had little interests in Apple's iPhone 13 launch event on the same day :-) Interestingly, the leading Rust experts spoke at the conference are from diverse backgrounds and are young and energetic.
 
 The initial keynote addresses of the conference were given by Niko Matsakis and Mara Bos, presenting a vision of the development of Rust language and library, respectively. The following are some of the thoughts of Huawei experts who participated:
