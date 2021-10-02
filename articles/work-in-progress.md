@@ -15,10 +15,6 @@ rustup recently got some issues on freebsd, adding this [CI check](https://githu
 
 This [pull request](https://github.com/rust-lang/rust/pull/86892) adds both features in the title. It's common to copy code from the code block examples and also common to want to see the "full" code (including the eventual wrappers and so on).
 
-### (rustdoc) Fix union keyword highlighting in rustdoc HTML sources
-
-The `union` keyword has a different meaning depending where it's used. Rustdoc simply didn't take this situation into account, prevent the `union` keyword to have the correct highlighting. This [pull request](https://github.com/rust-lang/rust/pull/87428) fixes this issue.
-
 ### (docs.rs) Unify keyboard events on docs.rs results
 
 On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.

@@ -111,3 +111,7 @@ This [pull request](https://github.com/rust-lang/rust/pull/80453) completely rem
 ### (rustc) Improve diagnostics
 
 This [pull request](https://github.com/rust-lang/rust/pull/87607) added a a hint that expressions produce a value.
+
+### (rustc/rustdoc) Remove `cfg(doc)` from std::os module reexports
+
+This [pull request](https://github.com/rust-lang/rust/pull/88619) was actually quite important: the `std::os` module was providing different information depending on whether you were building it with rustc or rustdoc. The problem is that this split prevented the usage of the rustdoc "jump to definition" feature since the paths were completely messed up.
