@@ -17,6 +17,7 @@ plugins:
   - jekyll-plantuml
   - jekyll-sitemap
   - jekyll-redirect-from  
+  - jekyll-include-cache
 exclude:
   - CNAME
   - README.md
