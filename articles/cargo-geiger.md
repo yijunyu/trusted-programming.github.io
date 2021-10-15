@@ -8,6 +8,6 @@ Here is the list of the opensource contributions made by huawei employees on the
 
 ### (cargo-geiger) Generate reports of the safe code ratios in addition to the unsafe code counts
 
-![Architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/trusted-programming/trusted-programming.github.io/main/articles/cargo-geiger.uml)
+![Architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/trusted-programming/trusted-programming.github.io/main/articles/cargo-geiger.iuml)
 
 When you run cargo-geiger, it will output the counts of unsafe code elements for functions, expressions, etc. We created [this pull request](https://github.com/rust-secure-code/cargo-geiger/pull/167) to report the safe code ratios.
