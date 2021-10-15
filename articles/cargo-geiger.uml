@@ -1,1 +1,3 @@
+@startuml
 [Rust source code] -> [Cargo-Geiger] -> [Rust safe ratio report]
+@enduml
