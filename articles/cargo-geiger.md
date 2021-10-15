@@ -11,8 +11,10 @@ Here is the list of the opensource contributions made by huawei employees on the
 ![Architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/trusted-programming/trusted-programming.github.io/main/articles/cargo-geiger.md&idx=0)
 ```
 @startuml
-[Rust source code] -> [Cargo-Geiger] 
-[Cargo-Geiger] -> [Rust safe ratio report]
+file "Rust source code"
+file "Rust safe ratio report"
+"Rust source code" -> [Cargo-Geiger] 
+[Cargo-Geiger] -> "Rust safe ratio report"
 @enduml
 ```
 
