@@ -12,15 +12,11 @@ Here is the list of the opensource contributions made by huawei employees on the
 ```
 @startuml
 file code as "Rust\nproject"
-file report as "Report of safe ratios in Rust code"
+file report as "Report of \nsafe ratios"
 component geiger as "cargo-geiger --output-format=Ratio"
 code -> geiger
 geiger -> report
 @enduml
 ```
-
-<img uml='
-code -> [Cargo-Geiger]
-'>
 
 When you run cargo-geiger, it will output the counts of unsafe code elements for functions, expressions, etc. We created [this pull request](https://github.com/rust-secure-code/cargo-geiger/pull/167) to report the safe code ratios.
