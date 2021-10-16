@@ -11,9 +11,9 @@ Here is the list of the opensource contributions made by huawei employees on the
 ![Architecture]({{site.plantuml}}/articles/cargo-geiger.md&idx=0)
 ```
 @startuml
-file code as "Rust \n source code"
-file report as "Rust safe ratio \n report"
-code -> [Cargo-Geiger]
+file code as "Rust\nproject"
+file report as "Report of safe ratios in Rust code"
+code -> [cargo-geiger --output-format=Ratio]
 [Cargo-Geiger] -> report
 @enduml
 ```
