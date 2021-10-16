@@ -10,6 +10,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: trusted-programming
+plantuml: "http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/trusted-programming/trusted-programming.github.io/main"
 exclude:
   - CNAME
   - README.md
