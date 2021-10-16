@@ -18,4 +18,8 @@ code -> [Cargo-Geiger]
 @enduml
 ```
 
+<img uml='
+code -> [Cargo-Geiger]
+'>
+
 When you run cargo-geiger, it will output the counts of unsafe code elements for functions, expressions, etc. We created [this pull request](https://github.com/rust-secure-code/cargo-geiger/pull/167) to report the safe code ratios.

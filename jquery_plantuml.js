@@ -53,12 +53,12 @@ if (b == 1) {
 return '?';
 }
 
-var deflater = window.SharedWorker && new SharedWorker('rawdeflate.js');
+var deflater = window.SharedWorker && new SharedWorker('/rawdeflate.js');
 if (deflater) {
   deflater.port.addEventListener('message', done_deflating, false);
   deflater.port.start();
 } else if (window.Worker) {
-  deflater = new Worker('rawdeflate.js');
+  deflater = new Worker('/rawdeflate.js');
   deflater.onmessage = done_deflating;
 }
 
