@@ -2,6 +2,4 @@ ports:
   - port: 4000
 tasks:
   - name: Prepare bundle
-    init: bundle install 
-  - name: Run jekyll
-    command: bundle exec jekyll serve
+    init: bundle install && bundle exec jekyll serve
