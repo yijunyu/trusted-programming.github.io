@@ -13,13 +13,13 @@ Here is the list of the opensource contributions made by huawei employees on the
 @startuml
 file code as "Rust\nproject"
 file report as "Report of \nunsafe counts"
-file ratio_report as "Report of \nsafe ratios"
+file report2 as "Report of \nsafe ratios"
 component geiger as "cargo-geiger"
-component ratio_geiger as "cargo-geiger --output-format=Ratio"
+component geiger2 as "cargo-geiger --output-format=Ratio"
 code -> geiger
-code -> ratio_geiger
+code -> geiger2
 geiger -> report
-ratio_geiger -> ratio_report
+geiger2 -> report2
 @enduml
 -->
 
