@@ -8,7 +8,7 @@ Here is the list of the opensource contributions made by huawei employees on the
 
 ### (cargo-geiger) Generate reports of the safe code ratios in addition to the unsafe code counts
 
-![]({{site.plantuml}}{{page.url | replace:'.html','.md'}}&idx=0){:target="_blank"}
+![]({{site.plantuml}}{{page.url | replace:'.html','.md'}}&idx=0)
 <!--
 @startuml
 file code as "Rust\nproject"
