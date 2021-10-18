@@ -7,21 +7,24 @@ toc: true
 <!--
 @startmindmap
 + InferCode 
-++ parser
-++ embedding
-++ representation
-++ usage
+++ parser using tree-sitter
+++ subtrees extraction
+++ code embedding using TBCNN
+++ pretraining + fine-tuning
 @endmindmap
 -->
 [Mindmap]({{site.plantuml}}{{page.url | replace:'.html','.md'}}&idx=0)
 
 <!--
 @startuml
-file code as "source code"
-component parser "Tree-Sitter parser"
-component encoder "Tree-based CNN"
-file vector as "embedding vector"
-code -> parser -> encoder -> vector
+participant code as "source code\nC/C++, Rust, Java ..."
+participant ast as "Tree-Sitter\nSubtree Extractor"
+participant models as "TBCNN using Tensorflow"
+participant embedding as "numpy"
+code ->> ast: training_ast = parse(training_code)\ntuning_ast=parse(tuning_code)\ninferring_ast=parse(inferring_code)
+ast->>models: pretrained_model = tbcnn(training_ast)
+models->>models: tuned_model = tbcnn(pretrained_model, tuning_ast)
+models->>embedding: embedding = tbcnn(tuned_model, inferring_ast)
 @enduml
 -->
 [Architecture Diagram]({{site.plantuml}}{{page.url | replace:'.html','.md'}}&idx=1)
