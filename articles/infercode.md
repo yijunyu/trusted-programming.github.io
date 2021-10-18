@@ -7,9 +7,9 @@ toc: true
 <!--
 @startmindmap
 + InferCode 
-++ parser using tree-sitter
+-- parser using tree-sitter
+-- code embedding using TBCNN
 ++ subtrees extraction
-++ code embedding using TBCNN
 ++ pretraining + fine-tuning
 @endmindmap
 -->
