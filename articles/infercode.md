@@ -18,7 +18,7 @@ toc: true
 <!--
 @startuml
 file code as "source code"
-compoennt parser "Tree-Sitter parser"
+component parser "Tree-Sitter parser"
 component encoder "Tree-based CNN"
 file vector as "embedding vector"
 code -> parser -> encoder -> vector
