@@ -1,15 +1,15 @@
-{% comment %}
+{%- comment -%}
   The code following removes the chinese translated articles from the blog post navigation
   to avoid duplications.
-{% endcomment %}
+{%- endcomment -%}
 
-{% capture the_collection %}{{ page.collection }}{% endcapture %}
+{%- capture the_collection -%}{{ page.collection }}{%- endcapture -%}
 
-{% if page.collection %}
+{%- if page.collection -%}
   {% assign posts = site[the_collection] %}
-{% endif %}
+{%- endif -%}
 
-{% for post in posts %}
+{%- for post in posts -%}
   {% if post.title == page.title %}
     {% if prev %}
       {% assign prev_url = prev.url %}
@@ -23,7 +23,7 @@
   {% unless post.url contains '_cn' %}
     {% assign prev = post %}
   {% endunless %}
-{% endfor %}
+{%- endfor -%}
 
 {% if prev_index %}
   {% for post in posts offset: prev_index %}
@@ -33,7 +33,7 @@
       {% break %}
     {% endunless %}
   {% endfor %}
-{% endif %}
+{%- endif -%}
 
 <!DOCTYPE html>
 <html>
