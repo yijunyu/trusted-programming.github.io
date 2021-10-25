@@ -15,7 +15,6 @@ toc: true
 ```
 
 ```plantuml
-@startuml
 participant code as "source code\nC/C++, Rust, Java ..."
 participant ast as "Tree-Sitter\nSubtree Extractor"
 participant models as "TBCNN using Tensorflow"
@@ -24,7 +23,6 @@ code ->> ast: training_ast = parse(training_code)\ntuning_ast=parse(tuning_code)
 ast->>models: pretrained_model = tbcnn(training_ast)
 models->>models: tuned_model = tbcnn(pretrained_model, tuning_ast)
 models->>embedding: embedding = tbcnn(tuned_model, inferring_ast)
-@enduml
 ```
 
 InferCode works based on the key idea of using an encoder to predict subtrees as a pretext task. Then the weights learned from the encoder can be used to transfer for other downstream tasks. This is to alleviate the need for the huge amount of labeled data to build decent code learning models in Software Engineering. With this concept, representation learning models for  source code can now learn from unlabeled data.
