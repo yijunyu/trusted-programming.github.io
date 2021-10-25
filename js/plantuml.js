@@ -1,4 +1,4 @@
-<!--  inspired from https://github.com/johan/js-deflate -->
+//  inspired from https://github.com/johan/js-deflate
 
 function encode64(data) {
  r = "";
@@ -50,26 +50,33 @@ return '?';
 }
 
 function done_deflating(el, e) {
-  console.log("deflating!");
   el.parentElement.insertAdjacentHTML('beforebegin', `<div class="plantuml"><img src="http://www.plantuml.com/plantuml/img/${encode64(e.data)}"></div>`);
   el.parentElement.remove();
 }
 
 function plantuml_runonce() {
   var elems = Array.prototype.slice.call(document.getElementsByClassName("language-plantuml"));
-  console.log("found " + elems.length + " elems!");
   for (var i = 0; i < elems.length; ++i) {
     var el = elems[i];
-    var u1 = el.textContent;
-    if (u1=="") {
+    var text = el.textContent;
+    if (text == "") {
       el.parentElement.remove();
       continue;
     }
-    var s = unescape(encodeURIComponent(u1));
+    var lines = text.split(/\r?\n/g);
+    // We allow to not add @startuml and @enduml at the beginning and the end of the
+    // code block to make it smaller.
+    if (!lines[0].trim().startsWith("@")) {
+      lines.unshift("@startuml");
+    }
+    if (!lines[lines.length - 1].startsWith("@")) {
+      lines.push("@enduml")
+    }
+    var s = unescape(encodeURIComponent(lines.join("\n")));
     done_deflating(el, { data: deflate(s) });
   }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-   plantuml_runonce();
+  plantuml_runonce();
 });
