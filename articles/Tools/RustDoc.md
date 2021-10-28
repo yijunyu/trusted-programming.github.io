@@ -1,28 +1,11 @@
-# Amanieu
+# RustDoc improvement
 
-Inline assembly
+```
+Guillaume Gomez
+Trustworthy Open-Source Software Engineering Lab &
+Ireland Research Centre
+Huawei Technology, Inc.
+```
 
-
-
-# Guillaume
-
-Code navigation
-
-Improve Rustdoc UI
-
-# Josh
-
-instrumentation stabilization => component 
-
-symbol mangling version => stabilized
-
-Strips support => stabilized
-
-# Vadim
-
-
-
-# Jane
-
-ISRG meeting
-
+- [x] Code navigation
+- [ ] Improve Rustdoc UI: there are four ways to enhance UI, needs to decide which one is the best
