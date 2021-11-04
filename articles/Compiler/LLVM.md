@@ -13,4 +13,5 @@ At the following [thread](https://zulip-archive.rust-lang.org/stream/187780-t-co
 
 ## Updates
 
-- [x] elicit the issues of LLVM to be addressed
+- [x] elicit 6 issues of LLVM to be addressed, all of them have examples with tasks on LLVM IR to be optimized properly
+- [ ] to feedback on the commitment of addressing these issues by Huawei
