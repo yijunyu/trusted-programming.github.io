@@ -33,6 +33,6 @@ For the fresh build, however, this method has a limitation to requiring more pre
 
 ## Updates
 
-- [x] Method 1: an estimate of 10% performance gain can be obtained for the benchmarks.
+- [x] Method 1: an estimate of 10% performance gain can be obtained for the benchmarks: the option is not on by default, but when the option is on it does improve the performance. A further update by Nov 24 by the language team to decide whether the feature will be made into a default. 
 - [x] Method 2: according to one product line, this feature alone could reduce compilation time by 30%. 
 - [x] Method 3: According to the experiment on the Rust compiler itself, within the build of OpenEuler, we are able to reduce the compilation time by 50% using this technique alone. 
