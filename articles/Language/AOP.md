@@ -287,3 +287,6 @@ The locations found in `search_pointcuts` are stored in a file, whose name is `c
     
     b.  replace the concerned expression with a macro expansion. For example, replace the `s.send("msg")` to `log!(s).send("msg")`. And the `log!` macro will do the real logging which can be implemented like the `std::dbg!` macro.
 
+## Update
+- [x] A fork of Rust compiler repo has been created, and to merge the pull request from F001 
+- [ ] To review the pull requests by the Rust community
