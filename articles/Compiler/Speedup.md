@@ -20,7 +20,7 @@ https://perf.rust-lang.org/compare.html?start=2021-07-23
 @endmindmap
 ```
 
-## Method 1: improve the speed of compiling common (standard) libraries, such as the `syn` crate, by refactoring
+## Method 1: improve the speed of compiling common (standard) libraries, such as the `syn` crate, by aborting if a `panic()` happens in a `drop()`. 
 
 ## Method 2: use downstream compiler LLVM's new feature such as pass manager (since LLVM 13.0)
 
