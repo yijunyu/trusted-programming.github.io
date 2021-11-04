@@ -5,7 +5,37 @@ toc: true
 list_in_items: false
 ---
 
-Here is the list of opensource work in progress by huawei employees. If you want to look at the opensource contributions, take a look [here]({{ site.baseurl }}/articles/opensource-contributions.html).
+Here is the list of opensource work in progress by Huawei employees. If you want to look at our existing open-source contributions, take a look [here]({{ site.baseurl }}/articles/opensource-contributions.html).
+
+# Compiler
+
+[Cross-Compilation]
+
+
+
+### (rustc) implement RFC 2574
+
+https://github.com/rust-lang/rust/pull/86546
+
+### (rustc) Recover invalid assoc type bounds using ==
+
+<https://github.com/rust-lang/rust/pull/87566>
+
+### (rustc) Emit clearer diagnostics for parens around for loop heads
+
+<https://github.com/rust-lang/rust/pull/86422>
+
+# Language
+
+# Library
+
+### (ndarray) Implement construction from negative strides
+
+<https://github.com/rust-ndarray/ndarray/pull/901>
+
+### 
+
+# Development Toolchain
 
 ### (rustup) Add freebsd CI check
 
@@ -19,18 +49,3 @@ This [pull request](https://github.com/rust-lang/rust/pull/86892) adds both feat
 
 On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
 
-### (rustc) implement RFC 2574
-
-https://github.com/rust-lang/rust/pull/86546
-
-### (ndarray) Implement construction from negative strides
-
-<https://github.com/rust-ndarray/ndarray/pull/901>
-
-### (rustc) Recover invalid assoc type bounds using ==
-
-<https://github.com/rust-lang/rust/pull/87566>
-
-### (rustc) Emit clearer diagnostics for parens around for loop heads
-
-<https://github.com/rust-lang/rust/pull/86422>
