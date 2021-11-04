@@ -20,4 +20,5 @@ https://blog.antoyo.xyz/
 ## Update
 
 - [x] Merge code into Rust compiler branch
+- [ ] Help with coordinating with Rust compiler experts
 - [ ] Benchmarking performance in comparison with LLVM
