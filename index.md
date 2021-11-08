@@ -24,7 +24,7 @@ localizer, etc.
 
 <div class="posts">
   <a href="{{ site.baseurl }}/articles/opensource-contributions.html">Huawei's opensource contributions</a>
-  <a href="{{ site.baseurl }}/articles/work-in-progress.html">Huawei's opensource work in progress</a>
+  <a href="{{ site.baseurl }}/articles/work-in-progress/index.html">Huawei's opensource work in progress</a>
 </div>
 
 ## Other interesting links

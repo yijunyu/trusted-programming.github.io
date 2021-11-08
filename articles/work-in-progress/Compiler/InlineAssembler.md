@@ -1,3 +1,7 @@
+---
+layout: post
+title: Inline Assembler
+---
 
 # Inline Assembler
 

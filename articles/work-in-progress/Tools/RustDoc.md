@@ -1,4 +1,9 @@
-# RustDoc improvement
+---
+layout: post
+title: Rustdoc improvements
+---
+
+# Rustdoc improvement
 
 ```
 Guillaume Gomez
