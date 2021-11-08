@@ -1,3 +1,8 @@
+---
+layout: post
+title: Aspect Oriented Programming (AOP)
+---
+
 # Aspect Oriented Programming (AOP) for Rust
 
 ```

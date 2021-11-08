@@ -1,3 +1,8 @@
+---
+layout: post
+title: Name Mangling
+---
+
 # V0 demanging
 
 This feature hasn't been stabilized:

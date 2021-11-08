@@ -1,3 +1,8 @@
+---
+layout: post
+title: Speed Up Compilation Time
+---
+
 # Speed up compilation time
 
 ```

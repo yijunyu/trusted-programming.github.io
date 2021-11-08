@@ -1,3 +1,8 @@
+---
+layout: post
+title: Split DWARF
+---
+
 # Split DWARF
 
 ```

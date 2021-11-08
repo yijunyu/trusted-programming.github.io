@@ -5,7 +5,7 @@ toc: true
 list_in_items: false
 ---
 
-Here is the list of opensource projects where employees huawei contributed (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress.html)). Considering there are a lot of contributions overall, they are split by projects:
+Here is the list of opensource projects where employees huawei contributed (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress/index.html)). Considering there are a lot of contributions overall, they are split by projects:
 
 {% for article in site.pages %}
     {% assign dir = article.dir | replace: '/', '' | replace: '\\', '' %}
