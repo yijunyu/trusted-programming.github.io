@@ -1,3 +1,8 @@
+---
+layout: post
+title: Clone Detection Tool
+---
+
 # Clone Detection tool
 
 ```
