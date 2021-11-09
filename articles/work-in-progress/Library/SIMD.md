@@ -11,11 +11,12 @@ Trustworthiness Software Engineering & Open Source Lab
 Huawei Technologies, Inc.
 ```
 
-A project group proposal for portable SIMD in std has [an open RFC](https://github.com/rust-lang/rust/issues/48556
-). 
+A project group proposal for portable SIMD in std has [an open RFC](https://github.com/rust-lang/rust/issues/48556), 
+see our [pull request](https://github.com/rust-lang/rust/pull/86546).
 
 We expect the library to be ready as nightly in November and stabilized in end of December, 95% (4400 instructions)
 has been done, 80 instructions left.
+
 
 ## Updates
 - [x] Completed most of the support work for the arm/aarch64 module. 
