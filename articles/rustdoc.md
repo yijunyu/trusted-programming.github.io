@@ -214,3 +214,19 @@ This [pull request](https://github.com/rust-lang/rust/pull/88742) fixed the rend
 ### Add "doc(test(...))" attribute checks
 
 This [pull request](https://github.com/rust-lang/rust/pull/87728) added checks on the `doc(test(...))` attributes to ensure that they were valid and to also let users know in case something was wrong instead of silently ignoring it.
+
+### Fix bug with `#[doc]` string single-character last lines
+
+If the last line of a file imported in a doc comment contained only one character, the line was removed. This is a very old bug which remained unnoticed for years. It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/90657).
+
+### Show all Deref implementations recursively
+
+When you implement the `Deref` trait on a type, the `Deref` target can itself implements `Deref`, giving the original type access to the methods of the target and of the target's target.
+
+For example, if you implement `Deref` with `PathBuf` as target, you'll also have access to `Path`'s methods because `PathBuf` implements `Deref` with `Path` as target.
+
+The problem was that rustdoc was only showing the direct implementation and not its children, meaning that a lot of information was missing in the documentation pages. This was fixed in this [pull request](https://github.com/rust-lang/rust/pull/90183).
+
+### Make cfg imply `doc(cfg)`
+
+When reading documentation, it is useful to know which `cfg` is needed to be able to have access to the item. Before this [pull request](https://github.com/rust-lang/rust/pull/89596), you needed to add the `doc(cfg)` attributes yourself. Now it's done automatically by rustdoc.

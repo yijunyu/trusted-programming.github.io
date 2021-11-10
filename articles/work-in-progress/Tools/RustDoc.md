@@ -12,13 +12,16 @@ Ireland Research Centre
 Huawei Technology, Inc.
 ```
 
-### (rustdoc) Add "copy to clipboard" and "show hidden lines" for codeblocks
+### Add "copy to clipboard" and "show hidden lines" for codeblocks
 
 This [pull request](https://github.com/rust-lang/rust/pull/86892) adds both features in the title. It's common to copy code from the code block examples and also common to want to see the "full" code (including the eventual wrappers and so on).
 
-### (docs.rs) Unify keyboard events on docs.rs results
+### Improve search
 
-On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
+This [pull request](https://github.com/rust-lang/rust/pull/90630) does two things:
+ * Write a parser for the rustdoc search.
+ * Extend the rustdoc search capabilities.
+
 
 - [x] Code navigation
 - [ ] Improve Rustdoc UI: there are four ways to enhance UI, needs to decide which one is the best
