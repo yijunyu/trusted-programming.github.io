@@ -37,3 +37,7 @@ This contribution is splitted in 3 pull requests:
  1. This [pull request](https://github.com/rust-lang/docs.rs/pull/1464) added a toggle mechanism on the source sidebar to allow to collapse it.
  2. This [pull request](https://github.com/rust-lang/docs.rs/pull/1477) made the source file sidebar scroll independent of the source file viewer scroll.
  3. And finally [this one](https://github.com/rust-lang/docs.rs/pull/1493) improved the global display of this feature.
+
+### (docs.rs) Unify keyboard events on docs.rs results
+
+On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
