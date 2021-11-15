@@ -10,6 +10,10 @@ Amanieu d'Antras
 Principal Rust Expert
 Trustworthy Open-Source Software Engineering Lab &
 Ireland Research Centre
+
+Wei Wei 
+Central Software Institute
+
 Huawei Technology, Inc.
 ```
 [High Priority bugs in LLVM for the Rust compiler](https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3AA-LLVM+is%3Aissue+label%3AP-high) indicates that we need to ask Huawei's help to resolve these problems. 
@@ -62,5 +66,7 @@ https://github.com/rust-lang/rust/issues/85133#issuecomment-904185574
 
 ## Updates
 
-- [x] elicit 6 issues of LLVM to be addressed, all of them have examples with tasks on LLVM IR to be optimized properly
-- [ ] to feedback on the commitment of addressing these issues by Huawei
+- [x] elicited 6 issues of LLVM to be addressed, all of them have examples with tasks on LLVM IR to be optimized properly
+- [x] confirmed to commit on addressing these issues by Huawei's LLVM team
+- [ ] Progress checks
+
