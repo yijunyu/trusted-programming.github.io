@@ -17,3 +17,6 @@ This [pull request](https://github.com/rust-ndarray/ndarray/pull/885) improved t
 ### (ndarray) Implement co-broadcasting in operator overloading
 
 This [pull request](https://github.com/rust-ndarray/ndarray/pull/898) resolved interactions between arrays of different dimensions. It was followed by this [pull request](https://github.com/rust-ndarray/ndarray/pull/965) to improve this feature's performance.
+
+# (ndarray) Implement construction from negative strides
+https://github.com/rust-ndarray/ndarray/pull/901
