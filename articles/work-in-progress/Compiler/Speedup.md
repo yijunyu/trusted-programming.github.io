@@ -21,4 +21,4 @@ https://perf.rust-lang.org/compare.html?start=2021-07-23
 ## Updates
 
 - [x] an estimate of 10% performance gain can be obtained for the benchmarks: the option is not on by default, but when the option is on it does improve the performance. A further update by Nov 24 by the language team to decide whether the feature will be made into a default. 
-
+- [ ] Gradually merge in improvements
