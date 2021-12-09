@@ -24,4 +24,5 @@ This [pull request](https://github.com/rust-lang/rust/pull/90630) does two thing
 
 
 - [x] Code navigation
-- [ ] Improve Rustdoc UI: there are four ways to enhance UI, needs to decide which one is the best
+- [x] Improve Rustdoc UI: there are four ways to enhance UI, needs to decide which one is the best
+- [ ] Implementations need to be done.
