@@ -48,5 +48,6 @@ To be merged into stable in 3-4 months: some additional concerns for the blockin
 
 - [x] Got usage feedback from real users. 
 - [x] To split the feature gates to partial stabilizing, which is to be stablizing by the language team: commiting to never change the API in the future
-- [x] Finish documentation
-- [ ] Follow-up work for missing parts (stabilizing everything) which will be achieved this week. 
+- [x] Finish documentation and has been stablised
+- [ ] Follow-up work for missing parts (stabilizing everything).
+- [ ] Evaluate the usefulness with product lines 
