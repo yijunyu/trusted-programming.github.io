@@ -17,5 +17,4 @@ Huawei Technology, Inc.
 
 - [x] A clone detector has been created for Rust
 - [x] The clone detection results has been done on Rust compiler, revealing over 700 clone pairs
-- [ ] We are coordinating an effort to refactor Rust compiler to address some of these clones with our Rust experts
-
+- [ ] We are coordinating an effort to refactor Rust compiler to address 15 of these clone pairs with our Rust experts
