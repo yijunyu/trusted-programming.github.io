@@ -68,5 +68,5 @@ https://github.com/rust-lang/rust/issues/85133#issuecomment-904185574
 
 - [x] elicited 6 issues of LLVM to be addressed, all of them have examples with tasks on LLVM IR to be optimized properly
 - [x] confirmed to commit on addressing these issues by Huawei's LLVM team
-- [ ] Progress checks
+- [ ] LLVM team has been working on one of the patches which has been evaluating it for generalizability
 
