@@ -16,8 +16,8 @@ rustup recently got some issues on freebsd, adding this [CI check](https://githu
 
 ## Updates
 
- - [ ] Have all libc pull requests merged
- - [ ] Publish new sysinfo version
+ - [x] Have all libc pull requests merged
+ - [x] Publish new sysinfo version
  - [ ] Update rustup dependencies to use sysinfo
  - [ ] Update rustup dependencies versions
  - [ ] Add freebsd CI on rustup
