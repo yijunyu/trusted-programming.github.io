@@ -15,5 +15,5 @@ Stabilize the ARM and ARMx64 intrinsics.
 
 ## Updates
 
-- [ ] stabilize aarch64
+- [x] stabilized aarch64
 - [ ] ARM stabilization
