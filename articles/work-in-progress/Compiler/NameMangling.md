@@ -14,4 +14,5 @@ After that is stabilized, you still wouldn't be able to use the v0 mangling sche
 ## Update
 
 - [x] A pull request has been made to make it stable
-- [ ] 
+- [x] The feature has been stablized and evaluated for hotpatching
+- [ ] The default v0 feature is being considered
