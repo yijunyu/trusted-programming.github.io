@@ -38,6 +38,16 @@ This contribution is splitted in 3 pull requests:
  2. This [pull request](https://github.com/rust-lang/docs.rs/pull/1477) made the source file sidebar scroll independent of the source file viewer scroll.
  3. And finally [this one](https://github.com/rust-lang/docs.rs/pull/1493) improved the global display of this feature.
 
-### (docs.rs) Unify keyboard events on docs.rs results
+### Unify keyboard events on docs.rs results
 
 On <docs.rs>, you can navigate some pages using the keyboard. However, each page had its own handling for this behaviour. This [pull request](https://github.com/rust-lang/docs.rs/pull/1452) unifies the behaviour and the DOM.
+
+### Update to new rustdoc style
+
+Rustdoc changed how the sidebar is displayed, which makes the style much simpler overall. The problem on docs.rs is then not only to update its style, but to be able to handle both the old and new rustdoc styles without breaking one of the two. To do so, we detect the date on which the crate has been documented and set the correct style depending on it.
+
+You can take a look at the pull request [here](https://github.com/rust-lang/docs.rs/pull/1579).
+
+### Fix bug which prevented to click on the footer
+
+Because of how the footer is displayed on docs.rs, we was going "under" the rustdoc content. To fix it, this [pull request](https://github.com/rust-lang/docs.rs/pull/1603) made it move on top.
