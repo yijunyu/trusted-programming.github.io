@@ -230,3 +230,41 @@ The problem was that rustdoc was only showing the direct implementation and not 
 ### Make cfg imply `doc(cfg)`
 
 When reading documentation, it is useful to know which `cfg` is needed to be able to have access to the item. Before this [pull request](https://github.com/rust-lang/rust/pull/89596), you needed to add the `doc(cfg)` attributes yourself. Now it's done automatically by rustdoc.
+
+### Refactoring/improvements of rustdoc UI
+
+We made a lot of changes in the UI to improve the browsing experience for our users while making the maintenance easier for rustdoc contributors. It is composed of multiple pull requests (the first one is the start of the big changes):
+
+ * <https://github.com/rust-lang/rust/pull/91356>
+ * <https://github.com/rust-lang/rust/pull/92764>
+ * <https://github.com/rust-lang/rust/pull/92937>
+ * <https://github.com/rust-lang/rust/pull/92673>
+ * <https://github.com/rust-lang/rust/pull/92610>
+ * <https://github.com/rust-lang/rust/pull/92404>
+ * <https://github.com/rust-lang/rust/pull/92440>
+ * <https://github.com/rust-lang/rust/pull/91905>
+ * <https://github.com/rust-lang/rust/pull/91223>
+ * <https://github.com/rust-lang/rust/pull/91225>
+ * <https://github.com/rust-lang/rust/pull/91179>
+ * <https://github.com/rust-lang/rust/pull/90983>
+ * <https://github.com/rust-lang/rust/pull/90571>
+
+### Fix invalid line removal in doc comments with different kinds
+
+In case you have a doc comment composed of different kind of doc comments like:
+
+```rust
+/// this is a doc comment
+#[doc = "still the same doc comment!"]
+/** yes, still the same */
+```
+
+The newlines were deleted at the beginning and at the end whereas they shouldn't have. This [pull request](https://github.com/rust-lang/rust/pull/92357) fixed it.
+
+### Fix `legacy_const_generic` display
+
+We fixed the display of this feature in this [pull request](https://github.com/rust-lang/rust/pull/89954).
+
+### Fix const deref methods display
+
+Methods from `Deref` cannot be called in const context and therefore shouldn't be displayed as const. This is fixed in this [pull request](https://github.com/rust-lang/rust/pull/91291).
