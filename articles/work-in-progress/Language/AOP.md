@@ -1,7 +1,12 @@
+---
+layout: post
+title: Aspect Oriented Programming (AOP)
+---
+
 # Aspect Oriented Programming (AOP) for Rust
 
 ```
-Changchun Fan, Yijun Yu
+Changchun Fan, David Wood
 Central Software Institute & Trustworthiness Software Engineering
 2012 R&D Lab, Huawei Technologies, Co.
 ```
@@ -289,4 +294,5 @@ The locations found in `search_pointcuts` are stored in a file, whose name is `c
 
 ## Update
 - [x] A fork of Rust compiler repo has been created, and to merge the pull request from F001 
-- [ ] To review the pull requests by the Rust community
+- [x] To review the pull requests by the Rust community
+- [ ] Drafting the MCP 
