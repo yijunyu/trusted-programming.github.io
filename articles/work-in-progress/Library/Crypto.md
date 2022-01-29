@@ -15,5 +15,5 @@ Huawei Technologies, Inc.
 ```
 
 ## Updates
-- [x] We plan to release them to the open-source soon.
+- [ ] We plan to release them to the open-source soon.
 
