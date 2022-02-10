@@ -33,7 +33,7 @@ localizer, etc.
   <a href="https://rustconf.com/">Rust Conference 2021</a>
   <a href="https://foundation.rust-lang.org">Huawei is one of the founding contributors to the Rust Foundation</a>
   <a href="https://2020conf.rustcc.cn">The 1st Rust China Conf 2020, Shenzhen, China</a>
-  <a href="https://www.open.ac.uk/about/employment/vacancies/phd-studentship-machine-learning-software-engineering-stemccphdstudentship">Full-time PhD on Machine Learning for Software Engineering -- Joint Research Project between Huawei and The Open University (Closing date: 7 February, 2022 - 17:00)</a>
+  <a href="https://www.open.ac.uk/about/employment/vacancies/phd-studentship-machine-learning-software-engineering-stemccphdstudentship">Full-time PhD on Machine Learning for Software Engineering -- Joint Research Project between Huawei and The Open University (Closing date: 1 September, 2022 - 17:00)</a>
 <!--
   <a href="https://www.linkedin.com/jobs/view/2703556146/">Full-time Postdoc position on Empirical Data-Driven Bug Localisation -- Joint Research Project between Huawei and The Open University</a>
 -->
