@@ -268,3 +268,39 @@ We fixed the display of this feature in this [pull request](https://github.com/r
 ### Fix const deref methods display
 
 Methods from `Deref` cannot be called in const context and therefore shouldn't be displayed as const. This is fixed in this [pull request](https://github.com/rust-lang/rust/pull/91291).
+
+### Fix panic when handling intra doc links generated from macro
+
+The problem here was that we were trying to get the position of the link from the generated macro, except that it "doesn't exist" since it comes from another place. Instead of panicking, we simply try our best to render it. It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/94478).
+
+### Fix duplicated impl links in the sidebar
+
+If two implementations have a somewhat similar form, they get generated with two different IDs. However, it wasn't the case in the sidebar. This [pull request](https://github.com/rust-lang/rust/pull/94417) fixed it.
+
+### Fix infinite redirection generation
+
+If a reexported item was in the same module, we were generating a file which was redirecting to itself, making it an infinite page reload. It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/94260).
+
+### Add crate filter parameter in URL
+
+This [pull request](https://github.com/rust-lang/rust/pull/92735) added the filtering search crate as a URL parameter so you can better give it to someone else.
+
+### Prevent lifetime elision in type alias
+
+In type aliases, the lifetime time was elided. This [pull request](https://github.com/rust-lang/rust/pull/93542) fixed it.
+
+### Fix star handling in block doc comments
+
+Little explanation first: when we merge doc comment kinds for example in:
+
+```rust
+/// he
+/**
+* hello
+*/
+#[doc = "boom"]
+```
+
+We don't want to remove the empty lines between them. However, to correctly compute the "horizontal trim", we still need it, so instead, I put back a part of the "vertical trim" directly in the "horizontal trim" computation so it doesn't impact the output buffer but allows us to correctly handle the stars.
+
+It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/93038).
