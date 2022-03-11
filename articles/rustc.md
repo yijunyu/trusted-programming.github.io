@@ -130,3 +130,7 @@ The method `Vec::retain` doesn't allow to mutate the `Vec` elements while using 
 ### (std) Add `VecDeque::retain_mut`
 
 The method `VecDeque::retain` doesn't allow to mutate the `VecDeque` elements while using this method so we added the `retain_mut` to do it in this [pull request](https://github.com/rust-lang/rust/pull/91215).
+
+### (rustc) Extend "unused doc comments" lint
+
+This [pull request](https://github.com/rust-lang/rust/pull/94529) extend the "unused doc comments" lint by checking if there are doc comments on blocks.
