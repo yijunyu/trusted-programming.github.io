@@ -168,17 +168,17 @@ Management University](http://www.mysmu.edu/faculty/lxjiang/).
 For example, initial deep code learning methods are trained and evaluated using
 the benchmarks of 52,000 C/C++ programs of 104 algorithm classes collected from
 the programming courses of Peking University. Traditionally, tree-based
-convolution neural networks (TBCNN) could achieve 94\% accuracy in algorithm
+convolution neural networks (TBCNN) could achieve 94% accuracy in algorithm
 classification for this
 dataset [(AAAI'16)](https://github.com/bdqnghi/tbcnn.tensorflow). A recent
 progress of the SOTA using abstract syntax trees at the statement level
-[(ICSE'19)](https://github.com/zhangj111/astnn) achieved 98\% accuracy. Our
-recent progress pushes the SOTA even higher to achieve 98.4\% accuracy
+[(ICSE'19)](https://github.com/zhangj111/astnn) achieved 98% accuracy. Our
+recent progress pushes the SOTA even higher to achieve 98.4% accuracy
 [(AAAI'21)](https://arxiv.org/abs/2009.09777) by an innovation on Tree-based
 Capsule Networks.  
 
 Earlier, we have used cross-language datasets to show that the learned model of one language applies to another programming language. For example, using the
-Rosetta Code datasets from Github, we show it possible to obtain 86\% accuracy
+Rosetta Code datasets from Github, we show it possible to obtain 86% accuracy
 for algorithm classification (Java to C)
 [(SANER'19)](https://github.com/bdqnghi/bi-tbcnn), and cross-language API mapping
 problems (Java to C#)
@@ -218,3 +218,4 @@ Foundation, to lead a smooth revolution to the Telecom software industry.
 # Updates
 ![]({{site.baseurl}}/images/2021-02-07/our-rust-mission-at-huawei.mp4)
 
+- Here is a demo of our [CRustS transpiler](http://185.190.206.130)
