@@ -20,4 +20,5 @@ rustup recently got some issues on freebsd, adding this [CI check](https://githu
  - [x] Publish new sysinfo version
  - [x] Update rustup dependencies to use sysinfo
  - [x] Update rustup dependencies versions
- - [ ] Add freebsd CI on rustup ([pull request](https://github.com/rust-lang/rustup/pull/2955))
+ - [x] Add freebsd CI on rustup ([pull request](https://github.com/rust-lang/rustup/pull/2955))
+ - [ ] Upload build artifacts to S3
