@@ -20,9 +20,9 @@ This [pull request](https://github.com/rust-lang/rust/pull/86892) adds both feat
 
 This [pull request](https://github.com/rust-lang/rust/pull/90630) does two things:
  * Write a parser for the rustdoc search.
- * Extend the rustdoc search capabilities.
 
 
 - [x] Code navigation
 - [x] Improve Rustdoc UI: there are four ways to enhance UI, needs to decide which one is the best
-- [ ] Implementations need to be done.
+- [x] Implementations need to be done.
+- [ ] Need to make an RFC.
