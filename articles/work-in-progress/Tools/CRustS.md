@@ -27,4 +27,4 @@ been evaluated on both open-source and commercial projects. Our solution demonst
 transformations, with function-level safe code ratios comparable to the average level of idiomatic Rust projects.
 
 ## References
-- Michael Ling, Yijun Yu, Haitao Wu, Yuan Wang. "CRustS: A transpiler from Unsafe C to Safer Rust", In: ICSE 2022. 
+- Michael Ling, Yijun Yu, Haitao Wu, Yuan Wang. "In Rust We Trust: A transpiler from Unsafe C to Safer Rust", In: ICSE 2022. paper accepted.
