@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Speed Up Compilation Time
+title: Panic Exception handling
 ---
 
-# Speed up compilation time
+# Panic Exception handling
+
+
+## Speed up compilation time
 
 ```
 Amanieu d'Antras, Yijun Yu
@@ -28,5 +31,5 @@ https://perf.rust-lang.org/compare.html?start=c9db3e0fbc84d8409285698486375f080d
 - [x] A further update by Nov 24 by the language team to decide whether the feature will be made into a default. 
 - [x] Merge in improvements has been confirmed.
 - [x] Confirmed 10% of performance gain achieved. 
-- [ ] A few more discussions on the feature.
+- [ ] Has been stablized by the next beta release (1.60.0).
 

@@ -10,6 +10,8 @@ Yijun Yu, Zipeng Zhou, David Wood
 Huawei Technology, Inc.
 ```
 
+Please contact [us](mailto:yijun.yu@huawei.com) for getting access to the tool for your Rust project.
+
 ## Update
 
 - [x] A clone detector has been created for Rust
