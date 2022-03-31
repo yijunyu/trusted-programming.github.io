@@ -13,7 +13,7 @@ Huawei Technology, Inc.
 
 # Diagnostic Translation
 
-Diagnostic translation enables rustc to emit error messages in the language of
+[Diagnostic translation](https://github.com/rust-lang/rust/pull/95512) enables rustc to emit error messages in the language of
 a user's choice, increasing Rust's accessibility to non-native speakers of
 English. Diagnostic translation is optional and will only be enabled if
 explicitly requested by the user.
