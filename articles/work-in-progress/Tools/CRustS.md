@@ -104,7 +104,7 @@ As one can see, `CRustS` alone could reduce the unsafe functions to the minimal 
 
 
 ## References
-- Michael Ling, Yijun Yu, Haitao Wu, Yuan Wang. "In Rust We Trust: A transpiler from Unsafe C to Safer Rust", In: ICSE 2022. paper accepted.
+- Michael Ling, Yijun Yu, Haitao Wu, Yuan Wang, James Cordy, Ahmed Hassan. "In Rust We Trust: A transpiler from Unsafe C to Safer Rust", In: ICSE 2022. paper accepted.
 - Mehmet Emre, Ryan Schroeder, Kyle Dewey, and Ben Hardekopf. 2021. Translating C to safer Rust. Proc. ACM Program. Lang. 5, OOPSLA, Article 121 (October 2021), 29 pages.
 
 ## Updates
