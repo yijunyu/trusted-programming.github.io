@@ -15,7 +15,7 @@ Huawei Technology, Inc.
 
 A detailed description of this feature can be found here: https://github.com/rust-lang/rust/issues/34651
 
-**Benefits: How to use split debuginfo (to improve linking time):**
+**Benefits: How to use split debuginfo (to improve linking time and reduce binary size by up to 30%):**
 If your project has multiple crates then you need a build of rustc that includes #89819 (not merged yet, will need to be built manually), if it is only one crate with no dependencies, then nightly can be used. With either of those versions, you can set `RUSTFLAGS="-Csplit-debuginfo=unpacked -Zunstable-options` to enable the split debuginfo. It's still a nightly feature, there might be bugs, if there are any, do let me know. 
 
 The following [comment](https://github.com/rust-lang/rust/pull/89819#issuecomment-941152678) describes the split debuginfo and split dwarf options available in #89819. My work only affects `-Csplit-debuginfo` on Linux, it's already stable for Windows and macOS.

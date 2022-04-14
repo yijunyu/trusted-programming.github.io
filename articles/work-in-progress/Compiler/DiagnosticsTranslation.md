@@ -26,3 +26,7 @@ will need to work to translate the actual diagnostic messages.
 
 ## Updates
 
+- [x] Initial PR has been accepted, using Fluent
+- [x] Addressing [errors: lazily load fallback fluent bundle](https://github.com/rust-lang/rust/pull/95968)
+- [ ] update of Rust language diagnostics
+- [ ] update of Rust infrastructure
