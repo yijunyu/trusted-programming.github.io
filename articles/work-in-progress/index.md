@@ -5,6 +5,12 @@ toc: true
 list_in_items: false
 ---
 
+Rust community has come up several important roadmaps, where Huawei is making substantial contributions:
+
+- [Language Roadmap](https://blog.rust-lang.org/inside-rust/2022/04/04/lang-roadmap-2024.html)
+- [Compiler Team Roadmap](https://blog.rust-lang.org/inside-rust/2022/02/22/compiler-team-ambitions-2022.html)
+- [Library Roadmap]()
+
 Here is the list of opensource work in progress by Huawei employees. If you want to look at our existing open-source contributions, take a look [here]({{ site.baseurl }}/articles/opensource-contributions.html).
 
 {% assign articles = site.pages | sort: "dir" %}
