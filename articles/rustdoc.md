@@ -304,3 +304,46 @@ Little explanation first: when we merge doc comment kinds for example in:
 We don't want to remove the empty lines between them. However, to correctly compute the "horizontal trim", we still need it, so instead, I put back a part of the "vertical trim" directly in the "horizontal trim" computation so it doesn't impact the output buffer but allows us to correctly handle the stars.
 
 It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/93038).
+
+### Fix ICE for empty doc comment with a backline
+
+When a doc comment was only containing a backline, it was triggering an internal compiler error. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95804).
+
+### Fix item information display overflow
+
+In some cases, the item information was overflowing its parent, breaking the layout. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95684).
+
+### Fix intra doc link ICE on primitive
+
+Some traits were missing for primitive types, triggering an internal compiler error when you used them. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95645).
+
+### Fix attribute string literals rendered with backslashes
+
+With the following code:
+
+```rust
+#[must_use = "this is a \
+              message"]
+pub fn f() {}
+```
+
+rustdoc was rendering the backslash too whereas it shouldn't. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95613).
+
+### Fix bad handling of hidden multiline attributes
+
+If you had a code example in a code example looking like this (note the `#` starting the two lines):
+
+```
+# #![cfg_attr(not(dox), feature(cfg_target_feature, target_feature,
+# stdsimd))]
+```
+
+rustdoc was considering them as two different items, hence generating invalid code because rustdoc handles module attributes differently when generating doctests. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95590).
+
+### Remove header field from clean::Function
+
+This [pull request](https://github.com/rust-lang/rust/pull/95096) removed a field from a rustdoc type, allowing to improve performance (up to 1.4%).
+
+### Fix rustdoc handling of auto traits
+
+Auto traits were missing the negative impls "recognition". Meaning that some `!Send` types were still being showed as implementing `Send`. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95069).
