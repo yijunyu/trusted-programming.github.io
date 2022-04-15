@@ -51,3 +51,7 @@ You can take a look at the pull request [here](https://github.com/rust-lang/docs
 ### Fix bug which prevented to click on the footer
 
 Because of how the footer is displayed on docs.rs, we was going "under" the rustdoc content. To fix it, this [pull request](https://github.com/rust-lang/docs.rs/pull/1603) made it move on top.
+
+### Fix dropdown menu display in top navbar
+
+A regression was introduced when the top navbar was improved. This [pull request](https://github.com/rust-lang/docs.rs/pull/1717) fixed it.
