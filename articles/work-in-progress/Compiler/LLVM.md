@@ -70,5 +70,6 @@ https://github.com/rust-lang/rust/issues/85133#issuecomment-904185574
 - [x] confirmed to commit on addressing these issues by Huawei's LLVM team
 - [x] Two issues have been patched on LLVM
 - [x] Evaluated on the Rust compiler, the [https://github.com/rust-lang/rust/pull/88759](pull request) has been merged into the Rust compiler, which will be available along with the next LLVM 15 release
-- [ ] LLVM team is working on the remaining 4 patches which has been evaluating it for generalizability
+- [ ] LLVM team is working on the remaining 3 patches which has been evaluating it for generalizability
+- [ ] Long-term maintenance plan is being discussed with the LLVM team
 
