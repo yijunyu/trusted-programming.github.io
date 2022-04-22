@@ -347,3 +347,7 @@ This [pull request](https://github.com/rust-lang/rust/pull/95096) removed a fiel
 ### Fix rustdoc handling of auto traits
 
 Auto traits were missing the negative impls "recognition". Meaning that some `!Send` types were still being showed as implementing `Send`. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95069).
+
+### Creating a parser for rustdoc search
+
+This **huge** [pull request](https://github.com/rust-lang/rust/pull/90630) added a parser with a defined eBNF so that it can now provide errors and equivalents to help users writing search queries.
