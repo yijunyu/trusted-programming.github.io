@@ -55,3 +55,11 @@ Because of how the footer is displayed on docs.rs, we was going "under" the rust
 ### Fix dropdown menu display in top navbar
 
 A regression was introduced when the top navbar was improved. This [pull request](https://github.com/rust-lang/docs.rs/pull/1717) fixed it.
+
+### Improve top navbar display
+
+This [pull request](https://github.com/rust-lang/docs.rs/pull/1719) improved the HTML/CSS by making it harder for the top navbar to render incorrectly by relying on `flex` display.
+
+### Make all top navbar dropdowns behave the same
+
+Some dropdown menus were working on click and some others on mouse hover. However, mouse hover doesn't work on mobile devices, making it a not so great UX. This [pull request](https://github.com/rust-lang/docs.rs/pull/1720) made all the menu dropdowns work on click.
