@@ -122,7 +122,7 @@ but will lessen the compilation time improvements.
 - [x] Support Split DWARF for crate dependencies ([#89819])
 - [x] Add `split-debuginfo` config option to rustc's bootstrap ([#95612])
 - [x] Fix `split-debuginfo` config flag on BSD platforms ([#96758])
-- [ ] Stabilize Split DWARF
+- [ ] Stabilize Split DWARF ([#98051])
 
 [#77117]: https://github.com/rust-lang/rust/pull/77117
 [#80087]: https://github.com/rust-lang/rust/pull/80087
@@ -130,4 +130,5 @@ but will lessen the compilation time improvements.
 [#96199]: https://github.com/rust-lang/rust/pull/96199
 [#95612]: https://github.com/rust-lang/rust/pull/95612
 [#96758]: https://github.com/rust-lang/rust/pull/96758
+[#98051]: https://github.com/rust-lang/rust/pull/98051
 [`thorin`]: https://github.com/rust-lang/thorin
