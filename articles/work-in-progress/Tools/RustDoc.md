@@ -22,8 +22,8 @@ It would allow to finally fix the display of type aliases of dependencies.
 
 ### Finish Rustdoc UI rework
 
- * [ ] Improve settings menu display to look like Firefox Pocket
- * [ ] Add search "helpers" to help users enter rustdoc search
+ * [x] Improve settings menu display to look like Firefox Pocket
+ * [ ] Add search "helpers" to help users enter rustdoc search (in progress)
 
 ### Continue rustdoc search improvements
 
