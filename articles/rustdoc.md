@@ -230,3 +230,205 @@ The problem was that rustdoc was only showing the direct implementation and not 
 ### Make cfg imply `doc(cfg)`
 
 When reading documentation, it is useful to know which `cfg` is needed to be able to have access to the item. Before this [pull request](https://github.com/rust-lang/rust/pull/89596), you needed to add the `doc(cfg)` attributes yourself. Now it's done automatically by rustdoc.
+
+### Refactoring/improvements of rustdoc UI
+
+We made a lot of changes in the UI to improve the browsing experience for our users while making the maintenance easier for rustdoc contributors. It is composed of multiple pull requests (the first one is the start of the big changes):
+
+ * <https://github.com/rust-lang/rust/pull/91356>
+ * <https://github.com/rust-lang/rust/pull/92764>
+ * <https://github.com/rust-lang/rust/pull/92937>
+ * <https://github.com/rust-lang/rust/pull/92673>
+ * <https://github.com/rust-lang/rust/pull/92610>
+ * <https://github.com/rust-lang/rust/pull/92404>
+ * <https://github.com/rust-lang/rust/pull/92440>
+ * <https://github.com/rust-lang/rust/pull/91905>
+ * <https://github.com/rust-lang/rust/pull/91223>
+ * <https://github.com/rust-lang/rust/pull/91225>
+ * <https://github.com/rust-lang/rust/pull/91179>
+ * <https://github.com/rust-lang/rust/pull/90983>
+ * <https://github.com/rust-lang/rust/pull/90571>
+
+### Fix invalid line removal in doc comments with different kinds
+
+In case you have a doc comment composed of different kind of doc comments like:
+
+```rust
+/// this is a doc comment
+#[doc = "still the same doc comment!"]
+/** yes, still the same */
+```
+
+The newlines were deleted at the beginning and at the end whereas they shouldn't have. This [pull request](https://github.com/rust-lang/rust/pull/92357) fixed it.
+
+### Fix `legacy_const_generic` display
+
+We fixed the display of this feature in this [pull request](https://github.com/rust-lang/rust/pull/89954).
+
+### Fix const deref methods display
+
+Methods from `Deref` cannot be called in const context and therefore shouldn't be displayed as const. This is fixed in this [pull request](https://github.com/rust-lang/rust/pull/91291).
+
+### Fix panic when handling intra doc links generated from macro
+
+The problem here was that we were trying to get the position of the link from the generated macro, except that it "doesn't exist" since it comes from another place. Instead of panicking, we simply try our best to render it. It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/94478).
+
+### Fix duplicated impl links in the sidebar
+
+If two implementations have a somewhat similar form, they get generated with two different IDs. However, it wasn't the case in the sidebar. This [pull request](https://github.com/rust-lang/rust/pull/94417) fixed it.
+
+### Fix infinite redirection generation
+
+If a reexported item was in the same module, we were generating a file which was redirecting to itself, making it an infinite page reload. It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/94260).
+
+### Add crate filter parameter in URL
+
+This [pull request](https://github.com/rust-lang/rust/pull/92735) added the filtering search crate as a URL parameter so you can better give it to someone else.
+
+### Prevent lifetime elision in type alias
+
+In type aliases, the lifetime time was elided. This [pull request](https://github.com/rust-lang/rust/pull/93542) fixed it.
+
+### Fix star handling in block doc comments
+
+Little explanation first: when we merge doc comment kinds for example in:
+
+```rust
+/// he
+/**
+* hello
+*/
+#[doc = "boom"]
+```
+
+We don't want to remove the empty lines between them. However, to correctly compute the "horizontal trim", we still need it, so instead, I put back a part of the "vertical trim" directly in the "horizontal trim" computation so it doesn't impact the output buffer but allows us to correctly handle the stars.
+
+It was fixed in this [pull request](https://github.com/rust-lang/rust/pull/93038).
+
+### Fix ICE for empty doc comment with a backline
+
+When a doc comment was only containing a backline, it was triggering an internal compiler error. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95804).
+
+### Fix item information display overflow
+
+In some cases, the item information was overflowing its parent, breaking the layout. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95684).
+
+### Fix intra doc link ICE on primitive
+
+Some traits were missing for primitive types, triggering an internal compiler error when you used them. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95645).
+
+### Fix attribute string literals rendered with backslashes
+
+With the following code:
+
+```rust
+#[must_use = "this is a \
+              message"]
+pub fn f() {}
+```
+
+rustdoc was rendering the backslash too whereas it shouldn't. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95613).
+
+### Fix bad handling of hidden multiline attributes
+
+If you had a code example in a code example looking like this (note the `#` starting the two lines):
+
+```
+# #![cfg_attr(not(dox), feature(cfg_target_feature, target_feature,
+# stdsimd))]
+```
+
+rustdoc was considering them as two different items, hence generating invalid code because rustdoc handles module attributes differently when generating doctests. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95590).
+
+### Remove header field from clean::Function
+
+This [pull request](https://github.com/rust-lang/rust/pull/95096) removed a field from a rustdoc type, allowing to improve performance (up to 1.4%).
+
+### Fix rustdoc handling of auto traits
+
+Auto traits were missing the negative impls "recognition". Meaning that some `!Send` types were still being showed as implementing `Send`. It was fixed in [this pull request](https://github.com/rust-lang/rust/pull/95069).
+
+### Creating a parser for rustdoc search
+
+This **huge** [pull request](https://github.com/rust-lang/rust/pull/90630) added a parser with a defined eBNF so that it can now provide errors and equivalents to help users writing search queries.
+
+### A lot of UI fixes
+
+ * The sidebar was badly displayed on mobile devices. Fixed in [#99713](https://github.com/rust-lang/rust/pull/99713).
+ * Fixed display of the crate filter dropdown and put back missing border color on focused search input in [#99489](https://github.com/rust-lang/rust/pull/99489).
+ * Another fix for the crate filter in [#99086](https://github.com/rust-lang/rust/pull/99086).
+ * Fixed trailing whitespaces on the `where` clause in [#98526](https://github.com/rust-lang/rust/pull/98256).
+ * Fixed trailing whitespaces on long declarations in [#98806](https://github.com/rust-lang/rust/pull/98806).
+ * Fixed display of `<details>`/`<summary>` in doc blocks in [#97429](https://github.com/rust-lang/rust/pull/97249).
+ * Fixed source code pages sidebar display in [#98671](https://github.com/rust-lang/rust/pull/98671).
+
+### Improve rustdoc source code
+
+Rustdoc has multiples stages where it transforms the information it gets from the compiler into information it can use to generate the documentation. The last step uses a trait called `Clean`. However, using this trait makes it complicated to actually understand what is the `Clean` implementation called. As such, we decided to remove it. Here are some pull requests making this cleanup:
+
+ * [#99672](https://github.com/rust-lang/rust/pull/99672)
+ * [#99638](https://github.com/rust-lang/rust/pull/99638)
+
+### Improve performance by removing type fields
+
+This [pull request](https://github.com/rust-lang/rust/pull/99598) removed fields from the `clean::Trait` struct. It allows to make the type lighter and only get this information when needed, allowing to improve performance.
+
+And this [pull request](https://github.com/rust-lang/rust/pull/99559) removed a type from the `clean::ItemKind::KeywordItem` variant.
+
+This [pull request](https://github.com/rust-lang/rust/pull/93963) replaced a field using `Option<DefId>` with a `bool` in the `clean::Type` struct, allowing to reduce the type size from 80 to 72 bytes, impacting all types which contained `clean::Type`.
+
+This [pull request](https://github.com/rust-lang/rust/pull/94053) removed the `fields_stripped` field from a few types.
+
+### Fix auto-expand in source code pages sidebar
+
+In the source code pages, the sidebar contains a tree view for the files of the crate. It auto-expands the path to the current file. However, it was also opening all other paths. It was fixed in [#99373](https://github.com/rust-lang/rust/pull/99373).
+
+### JSON output format fixes
+
+The JSON output format had a lot of issues, mostly around reexports. The solution we picked was to stop inlining reexported items directly to prevent duplicates. It was done in these pull requests:
+
+ * [#99287](https://github.com/rust-lang/rust/pull/99287)
+ * [#98577](https://github.com/rust-lang/rust/pull/98577)
+ * [#98611](https://github.com/rust-lang/rust/pull/98611)
+ * [#98053](https://github.com/rust-lang/rust/pull/98053)
+ * [#98166](https://github.com/rust-lang/rust/pull/98166)
+ * [#98195](https://github.com/rust-lang/rust/pull/98195)
+
+### Transform the settings menu into a "pocket" menu
+
+We had a lot of buttons alongside the search input: one for picking a theme, one for the settings and one for the help. We tried for some time to remove this noise and finally found a way by merging settings and themes menus into one "pocket" menu.
+
+It was done in [#96958](https://github.com/rust-lang/rust/pull/96958).
+
+Then this [pull request](https://github.com/rust-lang/rust/pull/97089) improved the display of the items in the menu.
+
+### Transform the help popup into a "pocket" menu
+
+Until this [pull request](https://github.com/rust-lang/rust/pull/98297), when you clicked on the `?` button, a popup was displayed. It was displaying a popup. Since we already transformed the settings menu into a pocket menu, it didn't make much sense to keep this popup so it was turned into a pocket menu as well.
+
+### Add macro support in jump to definition feature
+
+On the source code pages, when there is a macro, you can now jump to its definition thanks to [#91264](https://github.com/rust-lang/rust/pull/91264).
+
+### Add visual "notification" for users to know that the settings menu is loading
+
+This [pull request](https://github.com/rust-lang/rust/pull/96704) added an animation when you click on the settings button until the menu is loaded to allow the users to know that something is being done in the background.
+
+### Simplify theme CSS source code
+
+For now, rustdoc themes need to re-implement all the CSS rules from `light.css` into the new theme. We have been switching to CSS variables to make this simpler to maintain:
+
+ * [#98460](https://github.com/rust-lang/rust/pull/98460)
+ * [#99152](https://github.com/rust-lang/rust/pull/99152)
+
+### Add more semantic information to impl IDs
+
+Each impl block has an ID. However, if you have more than one, the IDs will conflict and you will end up with `impl-1`, `impl-2`, etc. This [pull request](https://github.com/rust-lang/rust/pull/98939) added more information into the impl ID to make them more predictible.
+
+### CSS cleanup
+
+There some cleanups being done recently on the CSS:
+
+ * [#99423](https://github.com/rust-lang/rust/pull/99423)
+ * [#99237](https://github.com/rust-lang/rust/pull/99237)
+ * [#99114](https://github.com/rust-lang/rust/pull/99114)

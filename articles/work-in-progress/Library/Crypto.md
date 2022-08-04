@@ -15,5 +15,5 @@ Huawei Technologies, Inc.
 ```
 
 ## Updates
-- [ ] We plan to release them to the open-source soon.
+- [ ] We plan to release them to the open-source soon and it will become part of the OpenEuler distribution.
 

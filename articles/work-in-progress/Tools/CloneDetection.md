@@ -10,11 +10,12 @@ Yijun Yu, Zipeng Zhou, David Wood
 Huawei Technology, Inc.
 ```
 
+Please contact [us](mailto:yijun.yu@huawei.com) for getting access to the tool for your Rust project.
+
 ## Update
 
 - [x] A clone detector has been created for Rust
 - [x] The clone detection results has been done on Rust compiler, revealing over 700 clone pairs
 - [x] We are coordinating an effort to refactor Rust compiler to address 15 of these clone pairs with our Rust experts
-- [x] Out of the 15 clone pairs, 1 pull request has been accepted.
-- [ ] Out of the 15 clone pairs, 2 more are being evaluated.
+- [x] Out of the 15 clone pairs, 3 pull request has been accepted.
 - [ ] The clone detection tool distribution is being evaluated.

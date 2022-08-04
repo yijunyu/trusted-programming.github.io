@@ -37,15 +37,10 @@ To be merged into stable in 3-4 months: some additional concerns for the blockin
 ## Update this week: 
 
 - [x] The inline assembly request for change (RFC) has been merged and new implementation ready for experimentation;
-
 - [x] Understood the scenarios of using inline assembler;
-
 - [x] Resolved on blocking issue, response was positive;
-
 - [x] Namespace decision to use without import (resolved); 
-
 - [x] Two issues remaining before stablilization;
-
 - [x] Got usage feedback from real users. 
 - [x] To split the feature gates to partial stabilizing, which is to be stablizing by the language team: commiting to never change the API in the future
 - [x] Finish documentation and has been stablised

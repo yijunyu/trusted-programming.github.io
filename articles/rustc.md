@@ -116,10 +116,21 @@ This [pull request](https://github.com/rust-lang/rust/pull/87607) added a a hint
 
 This [pull request](https://github.com/rust-lang/rust/pull/88619) was actually quite important: the `std::os` module was providing different information depending on whether you were building it with rustc or rustdoc. The problem is that this split prevented the usage of the rustdoc "jump to definition" feature since the paths were completely messed up.
 
-# (rustc) Emit clearer diagnostics for parens around for loop heads
+### (rustc) Emit clearer diagnostics for parens around for loop heads
 https://github.com/rust-lang/rust/pull/86422
 
-# (rustc) Recover invalid assoc type bounds using ==
+### (rustc) Recover invalid assoc type bounds using ==
 
 https://github.com/rust-lang/rust/pull/87566
 
+### (std) Add `Vec::retain_mut`
+
+The method `Vec::retain` doesn't allow to mutate the `Vec` elements while using this method so we added the `retain_mut` to do it in this [pull request](https://github.com/rust-lang/rust/pull/90772).
+
+### (std) Add `VecDeque::retain_mut`
+
+The method `VecDeque::retain` doesn't allow to mutate the `VecDeque` elements while using this method so we added the `retain_mut` to do it in this [pull request](https://github.com/rust-lang/rust/pull/91215).
+
+### (rustc) Extend "unused doc comments" lint
+
+This [pull request](https://github.com/rust-lang/rust/pull/94529) extend the "unused doc comments" lint by checking if there are doc comments on blocks.
