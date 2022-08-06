@@ -46,3 +46,4 @@ To be merged into stable in 3-4 months: some additional concerns for the blockin
 - [x] Finish documentation and has been stablised
 - [x] Follow-up work for missing parts (stabilizing everything).
 - [ ] Evaluate the usefulness with product lines 
+- [ ] Implement naked functions as a proc macro over `global_asm!`.
