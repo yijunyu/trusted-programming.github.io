@@ -65,6 +65,16 @@ languages.
       diagnostic translation effort ([link][intro_doc]).
 - [x] Started collecting list of all contributions to the diagnostic
       translation effort ([link][contributions_doc]).
+- [x] Update dev guide to refer to diagnostic structs with typed identifiers
+      ([rustc-dev-guide#1377]).
+- [x] Port most of `rustc_lint` ([#98624])
+- [x] Implement `LintDiagnostic` derive which shares infrastructure with
+      existing derive diagnostics and allows lints to be represented as
+      diagnostic structs ([#98884])
+- [x] Migrate `rustc_passes::check_attr` diagnostics ([#99213] and [#99712]);
+      add `MultiSpan` support to diagnostic derives; support warning
+      subdiagnostics in the diagnostic derive; and trigger internal lints on
+      lint construction ([#99213])
 - [ ] Finish porting diagnostics to translatable infrastructure
 - [ ] Translate all diagnostic messages to desired languages
 - [ ] Build infrastructure to ship rustc language packs via rustup (specific
@@ -82,7 +92,12 @@ languages.
 [#97948]: https://github.com/rust-lang/rust/pull/97948
 [#98420]: https://github.com/rust-lang/rust/pull/98420
 [#98428]: https://github.com/rust-lang/rust/pull/98428
+[#98624]: https://github.com/rust-lang/rust/pull/98624
+[#98884]: https://github.com/rust-lang/rust/pull/98884
+[#99213]: https://github.com/rust-lang/rust/pull/99213
+[#99712]: https://github.com/rust-lang/rust/pull/99712
 [rustc-dev-guide#1333]: https://github.com/rust-lang/rustc-dev-guide/pull/1333
 [rustc-dev-guide#1363]: https://github.com/rust-lang/rustc-dev-guide/pull/1363
+[rustc-dev-guide#1377]: https://github.com/rust-lang/rustc-dev-guide/pull/1377
 [intro_doc]: https://hackmd.io/@davidtwco/Bk0wTF2u5
 [contributions_doc]: https://hackmd.io/@davidtwco/rkXSbLg95
