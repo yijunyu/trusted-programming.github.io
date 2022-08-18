@@ -213,6 +213,10 @@ code {
     display: block;
 }
 
+.wrapper > table {
+    overflow-wrap: initial;
+}
+
 /**
  * Clearfix
  */
