@@ -196,9 +196,21 @@ code {
     max-width: var(--content-width);
     margin: auto;
     padding: 0 var(--spacing-unit);
-    overflow: auto;
+    overflow: hidden;
     padding-top: 2rem;
     padding-bottom: 2em;
+    /* We use overflow-wrap: break-word for Safari, which doesn't recognize
+       `anywhere`: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap */
+    overflow-wrap: break-word;
+    /* Then override it with `anywhere`, which is required to make non-Safari browsers break
+       more aggressively when we want them to. */
+    overflow-wrap: anywhere;
+}
+
+.wrapper > * {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
 }
 
 /**
