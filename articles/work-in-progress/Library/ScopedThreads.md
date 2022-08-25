@@ -45,5 +45,5 @@ There are some more examples with a [detailed explanation here:](https://rust-la
 
 ## Updates
 See this [issue](https://rust-lang.github.io/rfcs/3151-scoped-threads.html#guide-level-explanation).
-- [x] The feature has been merged and will be available in the 1.61.0 release.
-- [ ] Some corner cases are being checked while applying to product lines
+- [x] The feature has been merged and is available in the 1.63.0 stable release.
+- [x] Corner cases has been checked while applying to product lines
