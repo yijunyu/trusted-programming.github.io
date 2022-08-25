@@ -1,9 +1,11 @@
 # Rust_BERT extension to support CodeBERT
 
-<address>
+```
 Xiao Hang and Yijun Yu
-Huawei Technologies
-</address>
+Trusted Programming
+Trustworthiness Software Engineering & Open Source Lab
+Huawei Technologies, Inc.
+```
 
 CodeBERT is a transformer (BERT) based neural network framework pretrained on large amount of source code by Microsoft.
 It is developed on top of Python (PyTorch). As a rewrite of the inference engine, Rust_BERT could speed up the inferencing
