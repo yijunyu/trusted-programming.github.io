@@ -393,6 +393,7 @@ The JSON output format had a lot of issues, mostly around reexports. The solutio
  * [#98053](https://github.com/rust-lang/rust/pull/98053)
  * [#98166](https://github.com/rust-lang/rust/pull/98166)
  * [#98195](https://github.com/rust-lang/rust/pull/98195)
+ * [#100582](https://github.com/rust-lang/rust/pull/100582)
 
 ### Transform the settings menu into a "pocket" menu
 
@@ -420,6 +421,7 @@ For now, rustdoc themes need to re-implement all the CSS rules from `light.css` 
 
  * [#98460](https://github.com/rust-lang/rust/pull/98460)
  * [#99152](https://github.com/rust-lang/rust/pull/99152)
+ * [#100494](https://github.com/rust-lang/rust/pull/100494)
 
 ### Add more semantic information to impl IDs
 
@@ -432,3 +434,65 @@ There some cleanups being done recently on the CSS:
  * [#99423](https://github.com/rust-lang/rust/pull/99423)
  * [#99237](https://github.com/rust-lang/rust/pull/99237)
  * [#99114](https://github.com/rust-lang/rust/pull/99114)
+
+### Greatly improve error code index load time
+
+The [error code index](https://doc.rust-lang.org/nightly/error-index.html) was now way too big because it was listing all of them with their explanations, making the page size way too big. This [pull request](https://github.com/rust-lang/rust/pull/100922) solved this issue by putting all explanations into their own page.
+
+### Reduce rustdoc generated HTML pages
+
+This is a "background effort" where we try to reduce the generated HTML pages. The approach is generally to merge elements as much as possible to reduce the number of HTML tags, reducing both the file size and the DOM size. Each pull request contains the size diff.
+
+ * [#100429](https://github.com/rust-lang/rust/pull/100429)
+ * [#100775](https://github.com/rust-lang/rust/pull/100775)
+ * [#100956](https://github.com/rust-lang/rust/pull/100956)
+
+### Fix item info display
+
+There are two fixes here:
+
+ 1. On small screen, the extra item information display was broken. It was fixed in [#100718](https://github.com/rust-lang/rust/pull/100718).
+ 2. On small screen, their height and width would be completely broken. It was fixed in [#99779](https://github.com/rust-lang/rust/pull/99779).
+
+### Don't render impl blocks with doc comment if they only contain private items by default
+
+If an empty impl block has a doc comment:
+
+```rust
+pub struct Foo;
+
+/// Documentation.
+impl Foo {}
+```
+
+`rustdoc` displays it. However, if it only contains private items, it shouldn't be displayed as it's not empty. This [pull request](https://github.com/rust-lang/rust/pull/100323) fixed it.
+
+### Remove extra whitespace
+
+This is small improvement for the size of the generated HTML files: there were extra whitespace characters generated that were unneeded. This [pull request](https://github.com/rust-lang/rust/pull/99904) removed them, allowing to reduce a bit the global size.
+
+### Big source code cleanup
+
+`rustdoc` is internally converting `rustc` types into its own so they're easier to handle. To do so, we used a trait named `Clean`. However, it was making very complicated to browse the source code because we didn't know which implementation was called every time. Considering how big this change is, I split it into multiple pull requests:
+
+ * [#99638](https://github.com/rust-lang/rust/pull/99638)
+ * [#99672](https://github.com/rust-lang/rust/pull/99672)
+ * [#99850](https://github.com/rust-lang/rust/pull/99850)
+ * [#99950](https://github.com/rust-lang/rust/pull/99950)
+ * [#99980](https://github.com/rust-lang/rust/pull/99980)
+ * [#100005](https://github.com/rust-lang/rust/pull/100005)
+ * [#100057](https://github.com/rust-lang/rust/pull/100057)
+ * [#100104](https://github.com/rust-lang/rust/pull/100104)
+ * [#100138](https://github.com/rust-lang/rust/pull/100138)
+ * [#100166](https://github.com/rust-lang/rust/pull/100166)
+ * [#100193](https://github.com/rust-lang/rust/pull/100193)
+ * [#100212](https://github.com/rust-lang/rust/pull/100212)
+ * [#100281](https://github.com/rust-lang/rust/pull/100281)
+ * [#100319](https://github.com/rust-lang/rust/pull/100319)
+ * [#100370](https://github.com/rust-lang/rust/pull/100370)
+ * [#100447](https://github.com/rust-lang/rust/pull/100447)
+ * [#100523](https://github.com/rust-lang/rust/pull/100523)
+
+### Improve appearance of the search crate filter
+
+This [pull request](https://github.com/rust-lang/rust/pull/100374) improved the display of the search crate filter dropdown.
