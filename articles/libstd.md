@@ -1,6 +1,7 @@
 ---
 layout: post
-title: ScopedThreads
+title: Contributions to the Rust std library by Huawei Trusted Programming 
+toc: true
 ---
 
 # Standard Library support of Scoped Threads
@@ -41,9 +42,6 @@ fn main() {
 
 Without scoped threads, the config and state variables would have to be put in an Arc (reference-counted allocation), and the programmer would have to manually `.join()` the threads to make sure `main` doesn't end and exit the program too early. A thread scope makes this easier.
 
-There are some more examples with a [detailed explanation here:](https://rust-lang.github.io/rfcs/3151-scoped-threads.html#guide-level-explanation).
+There are some more examples with a detailed explanation [here](https://rust-lang.github.io/rfcs/3151-scoped-threads.html#guide-level-explanation).
 
-## Updates
-See this [issue](https://rust-lang.github.io/rfcs/3151-scoped-threads.html#guide-level-explanation).
-- [x] The feature has been merged and is available in the 1.63.0 stable release.
-- [x] Corner cases has been checked while applying to product lines
+See also this [issue](https://rust-lang.github.io/rfcs/3151-scoped-threads.html#guide-level-explanation).
