@@ -36,6 +36,9 @@ Complete the implementation of the parallel-queries. See the tracking issue [her
 - [ ] ensure Rayon executes all remaining work when we panic
 - [ ] refactor error message hading
 
-[ ] Solve the problem of parallel compilation efficiency and make parallel compilation the default option for the compiler
+Solve the problem of parallel compilation efficiency and make parallel compilation the default option for the compiler
+- [ ] release nightly compiler with ability to internal parallelize. See [issue](https://github.com/rust-lang/rust/issues/59667) here. [Working In Progress' PR](https://github.com/rust-lang/rust/pull/101566)
 
 [ ] Become a member of the Parallel Compilation Working Group (And the avatar is displayed on the governance page of the Rust official website :P)
+The main job of the parallel rustc wg is to enable the compiler to parallelize by default. 
+If the above [PR](https://github.com/rust-lang/rust/pull/101566) progresses, I think I can join the working group.
