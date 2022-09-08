@@ -1,18 +1,39 @@
 ---
 layout: post
 title: Contributions to the Open Source Communities by Huawei Trusted Programming
-toc: true
 list_in_items: false
 ---
 
 Here is the list of opensource projects where employees huawei contributed (if you want to see the work in progress, take a look [here]({{ site.baseurl }}/articles/work-in-progress/index.html)). Considering there are a lot of contributions overall, they are split by projects:
 
-{% for article in site.pages %}
-    {% assign dir = article.dir | replace: '/', '' | replace: '\\', '' %}
-    {% if article.layout == 'post' and dir == 'articles' and article.list_in_items != false %}
+{%- assign total = '' -%}
 
-### {{ article.name | split: ".md" | slice: 0, 1 }}
+{%- for article in site.pages -%}
+    {%- assign dir = article.dir | replace: '\\', '/' -%}
+    {%- assign check = article.dir | split:'/' -%}
 
-See the list of contributions [here]({{ site.baseurl }}{{ article.url }}).
+    {%- if check.size > 2 and check[1] == 'articles' and check[2] != 'work-in-progress' -%}
+        {% assign total = total | append: dir | append: ";" | append: article.name | append: ";" | append: article.url | append: "|" %}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- assign total = total | split: "|" | sort -%}
+{%- assign previous = "" -%}
+
+{%- for article in total -%}
+    {%- if article == "" -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- assign parts = article | split: ";" -%}
+
+    {%- if previous != parts[0] -%}
+
+{% assign part_name = parts[0] | split: "/" %}
+{% assign previous = parts[0] %}
+
+## {{ part_name[-1] }}
+
     {% endif %}
-{% endfor %}
+ * [{{ parts[1] | split: ".md" | slice: 0, 1 }}]({{ site.baseurl }}{{ parts[2] }})
+{% endfor -%}
