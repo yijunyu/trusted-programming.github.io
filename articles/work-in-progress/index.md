@@ -11,6 +11,8 @@ Rust community has come up several important roadmaps, where Huawei is making su
 - [Compiler Team Roadmap](https://blog.rust-lang.org/inside-rust/2022/02/22/compiler-team-ambitions-2022.html)
 - [Library Roadmap](https://icecube.m-ou.se/pub/rust-blog-draft/inside-rust/2022/04/20/libs-aspirations.html)
 
+The Library team is also working on setting up a team for official crates like `log`, `libc`, `cc`, and 10+ more of those, to make sure they are maintained.
+
 Here is the list of opensource work in progress by Huawei employees. If you want to look at our existing open-source contributions, take a look [here]({{ site.baseurl }}/articles/opensource-contributions.html).
 
 {% assign articles = site.pages | sort: "dir" %}

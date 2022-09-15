@@ -27,5 +27,9 @@ None of these things are trivial to fix, and all involve a trade off between com
 
 ## Updates
 
-- 
+- [x] There are now some first results of my new format_args!() implementation, that are very promising: https://github.com/rust-lang/rust/pull/101568#issuecomment-1245327485. With my changes, the compiler is now able to optimize nearly all overhead away, at least in simple cases, which wasn't possible before. A very minimal no_std `println!("hello {world}!")` program used to pull in almost 5KiB of formatting code, which has been reduced to about 100 bytes. This 98% reduction is an extreme example of course; things will be very different in different situations, but it's still a very important first result for embedded software.
+
+- [x] My compiler major change proposal (https://github.com/rust-lang/compiler-team/issues/541) for turning formatting into a native AST node has been accepted. This will allow for much more advanced optimization and code size reduction for string formatting. This means not only can we work on formatting improvements on the library side, but now also make significant improvements on the compiler side. (More work, but a lot of potential.)
+
+
 
