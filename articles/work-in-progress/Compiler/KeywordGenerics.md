@@ -1,11 +1,9 @@
 # Keyword Generics 
-<br/>
-<pre>
+```
 Bastian Kauschke (lcnr)
 Trusted Programming
 Huawei Technologies, Inc. & LCNR
-</pre>
-<br/>
+```
 
 ## Description
 
