@@ -33,3 +33,7 @@ It would allow to finally fix the display of type aliases of dependencies.
 
  * [ ] Open RFC (in progress)
  * [ ] Implement RFC
+
+### Reduce size of generated documentation
+
+ * [ ] In progress
