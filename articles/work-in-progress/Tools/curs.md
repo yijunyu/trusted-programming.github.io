@@ -1,3 +1,8 @@
+---
+layout: post
+title: Classify Unsafe Rust Code
+toc: true
+---
 # Classify Unsafe Rust Code
 
 ```
