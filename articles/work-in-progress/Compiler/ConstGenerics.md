@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Contributions to the Rust compiler
+title: Const Generics
 toc: true
 ---
 
