@@ -1,3 +1,9 @@
+---
+layout: post
+title: Keyword Generics
+toc: true
+---
+
 # Keyword Generics 
 ```
 Bastian Kauschke (lcnr)
