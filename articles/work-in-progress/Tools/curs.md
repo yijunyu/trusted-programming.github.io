@@ -1,7 +1,12 @@
+---
+layout: post
+title: Classify Unsafe Rust Code
+toc: true
+---
 # Classify Unsafe Rust Code
 
 ```
-Hang (Vincent) Xiao, Dimitris Gkoumas, Chunmiao Li, Nghi Bui, Michael Ling, and Yijun Yu
+Hang Xiao, Dimitris Gkoumas, Chunmiao Li, Nghi Bui, Michael Ling, and Yijun Yu
 Trusted Programming
 Huawei Technology Inc.
 ```
