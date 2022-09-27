@@ -15,6 +15,7 @@ Huawei Technologies, Inc. & LCNR
 Const generics allows the use of values in the type system. Most often used for arrays with a generic size: `[u32; N]` where `N` can be an arbitrary usize. It improves code clarity, reusability and the general experience of working with arrays. This can reduce heap allocations and increase performance. Changes to the standard library relying on const generics also increased the compilation speed and documentation quality.
 
 ## Rationale
+
 Const generics is part of [the Compiler Roadmap Expressiveness Aspirations](https://blog.rust-lang.org/inside-rust/2022/02/22/compiler-team-ambitions-2022.html#expressiveness-aspirations--).
 
 In version 1.51 [an MVP for const generics](https://github.com/rust-lang/rust/pull/79135) has been stablized. This allows types to be parametric only over integers, `char` and `bool`. It however forbids computations in type system constants, only allowing generic parameters `const N: usize`, meaning "this can be any constant of type `usize`", and concrete values. Constants like `N + 1` are not allowed in the type system.
@@ -51,9 +52,8 @@ struct ImageConfig {
 ```
 This would remove the need for the `Image!` macro and improve error messages.
 
-```rust
-[T; N]: Default
-```
+### Default for arrays of all sizes
+
 The Default trait is [manually implemented for arrays up to size 32](https://github.com/rust-lang/rust/blob/ccb5595df2ed412eda6444edc7eaf06f709fa79d/library/core/src/array/mod.rs#L382-L405). This both prevents some useful code from compiling, has a small negative impact on compilation speed, and makes the documentation for the Default trait harder to read.
 
 ```rust
@@ -91,3 +91,22 @@ trait Encode {
 }
 ```
 This is very desirable and useful feature but also a lot of complex issues we still have to solve. I do not intend to focus on this feature right now.
+
+## Update
+
+- [ ] `adt_const_params`
+    - [ ] finish valtree integration: reviewing and mentoring work, own PRs: [#102021] [#102355]
+    - [ ] structural match
+        - [x] wrote a [planning document](https://hackmd.io/J3H6jwwQRw-MKTnTdX3zGw)
+        - [ ] get confirmation from the relevant members of the Rust project
+        - [ ] implement the plan
+    - [ ] further implementation and design questions
+- [ ] Default for arrays of all sizes
+    - [ ] stablize [`feature(marker_trait_attr)`](https://github.com/rust-lang/rust/issues/29864)
+        - [ ] found trait system bug [#102360] we have to fix first
+    - [ ] implement this and get the approval of the relevant teams
+
+
+[#102021]: https://github.com/rust-lang/rust/pull/102021
+[#102355]: https://github.com/rust-lang/rust/pull/102355
+[#102360]: https://github.com/rust-lang/rust/issues/102360
