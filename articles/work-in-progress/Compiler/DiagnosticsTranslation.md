@@ -112,6 +112,7 @@ languages.
 [#102189]: https://github.com/rust-lang/rust/pull/102189
 [#102356]: https://github.com/rust-lang/rust/pull/102356
 [#102395]: https://github.com/rust-lang/rust/pull/102395
+[#102623]: https://github.com/rust-lang/rust/pull/102623
 [rustc-dev-guide#1333]: https://github.com/rust-lang/rustc-dev-guide/pull/1333
 [rustc-dev-guide#1363]: https://github.com/rust-lang/rustc-dev-guide/pull/1363
 [rustc-dev-guide#1377]: https://github.com/rust-lang/rustc-dev-guide/pull/1377
