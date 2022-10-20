@@ -496,3 +496,7 @@ This is small improvement for the size of the generated HTML files: there were e
 ### Improve appearance of the search crate filter
 
 This [pull request](https://github.com/rust-lang/rust/pull/100374) improved the display of the search crate filter dropdown.
+
+### Stabilize unclosed HTML tag lint
+
+This lint warns when an HTML tag in the documentation isn't closed. It was stabilized in [this pull request](https://github.com/rust-lang/rust/pull/101720).
