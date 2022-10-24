@@ -217,6 +217,10 @@ code {
     overflow-wrap: initial;
 }
 
+.wrapper ul {
+    list-style-position: inside;
+}
+
 /**
  * Clearfix
  */
