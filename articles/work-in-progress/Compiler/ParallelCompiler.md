@@ -20,6 +20,23 @@ See [compiler-team-ambitions-2022](https://blog.rust-lang.org/inside-rust/2022/0
 MCP to re-creating the parallel rustc working group
 - [ ] Complete the MCP draft on [hackmd](https://hackmd.io/@TKyxIWXBRqyDPLDPcP0qfg/parallel_rustc_mcp)
 - [ ] Send private messages to various community members to get as much support as possible
+- davidtwco √
+- Amanieu √
+- lcnr √
+- GuillaumeGomez √
+- VadimPetrochenkov √
+- lqd
+- Aaron1011
+- oli-obk
+- Kobzol
+- TaKO8Ki
+- bjorn3 (**reviewer**) √
+- cjgillot (**reviewer**)
+- nikomatsakis(**Alumni**)
+- alexcrichton(**Alumni**)
+- cuviper(**Alumni**)
+- spastorino(**Alumni**)
+- simulacrum (**Leader**)
 - [ ] Submit the MCP, discuss on Zulip
 - [ ] Get Approve
 
