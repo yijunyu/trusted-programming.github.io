@@ -25,18 +25,20 @@ MCP to re-creating the parallel rustc working group
 - lcnr √
 - GuillaumeGomez √
 - VadimPetrochenkov √
-- lqd
+- lqd √
 - Aaron1011
 - oli-obk
 - Kobzol
 - TaKO8Ki
-- bjorn3 (**reviewer**) √
-- cjgillot (**reviewer**)
+- bjorn3 (**Reviewer**) √
+- cjgillot (**Reviewer**)
 - nikomatsakis(**Alumni**)
 - alexcrichton(**Alumni**)
 - cuviper(**Alumni**)
 - spastorino(**Alumni**)
-- simulacrum (**Leader**)
+- simulacrum (**WG Leader**)
+- pnkfelix(**Compiler Team Leader**)
+- wesleywiser(**Compiler Team Leader**)
 - [ ] Submit the MCP, discuss on Zulip
 - [ ] Get Approve
 
