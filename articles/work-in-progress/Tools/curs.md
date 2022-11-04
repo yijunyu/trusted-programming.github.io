@@ -69,8 +69,7 @@ cargo run data/
 ## Updates
 
 - [x] Checked with correctness and performance on benchmarks
-- [ ] Provde Pull Request to RUST_BERT
-- [ ] Package and install into crates IO
-- [ ] Provide VSCode Plugin
+- [x] Provde Pull Request to RUST_BERT
+- [x] Package and install into crates IO
+- [x] Provide VSCode Plugin
 - [ ] Provide use cases for other CodeBERT tasks
-
