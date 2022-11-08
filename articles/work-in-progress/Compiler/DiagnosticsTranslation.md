@@ -84,7 +84,8 @@ languages.
 - [x] Extend diagnostic derive with support for enums ([#102189])
 - [x] Remove unnecessary `#[allow]`s of diagnostic migration lints ([#102356])
 - [x] Rename `typeck.ftl` to `hir_analyis.ftl` ([#102395])
-- [ ] Implement eager translation ([#102623])
+- [x] Implement eager translation ([#102623])
+- [ ] Experiment with distributing Fluent resources across crates ([#103042])
 - [ ] Finish porting diagnostics to translatable infrastructure
 - [ ] Translate all diagnostic messages to desired languages
 - [ ] Build infrastructure to ship rustc language packs via rustup (specific
@@ -113,6 +114,7 @@ languages.
 [#102356]: https://github.com/rust-lang/rust/pull/102356
 [#102395]: https://github.com/rust-lang/rust/pull/102395
 [#102623]: https://github.com/rust-lang/rust/pull/102623
+[#103042]: https://github.com/rust-lang/rust/pull/103042
 [rustc-dev-guide#1333]: https://github.com/rust-lang/rustc-dev-guide/pull/1333
 [rustc-dev-guide#1363]: https://github.com/rust-lang/rustc-dev-guide/pull/1363
 [rustc-dev-guide#1377]: https://github.com/rust-lang/rustc-dev-guide/pull/1377
