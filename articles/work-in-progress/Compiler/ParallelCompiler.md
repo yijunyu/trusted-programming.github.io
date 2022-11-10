@@ -18,48 +18,31 @@ See [compiler-team-ambitions-2022](https://blog.rust-lang.org/inside-rust/2022/0
 
 ## Updates
 MCP to re-creating the parallel rustc working group
-- [ ] Complete the MCP draft on [hackmd](https://hackmd.io/@TKyxIWXBRqyDPLDPcP0qfg/parallel_rustc_mcp)
-- [ ] Send private messages to various community members to get as much support as possible
-- davidtwco √
-- Amanieu √
-- lcnr √
-- GuillaumeGomez √
-- VadimPetrochenkov √
-- lqd √
-- Aaron1011
-- oli-obk
-- Kobzol
-- TaKO8Ki
-- bjorn3 (**Reviewer**) √
-- cjgillot (**Reviewer**)
-- nikomatsakis(**Alumni**)
-- alexcrichton(**Alumni**)
-- cuviper(**Alumni**)
-- spastorino(**Alumni**)
-- simulacrum (**WG Leader**)
-- pnkfelix(**Compiler Team Leader**)
-- wesleywiser(**Compiler Team Leader**)
-- [ ] Submit the MCP, discuss on Zulip
+- [x] Complete the MCP draft on [hackmd](https://hackmd.io/@TKyxIWXBRqyDPLDPcP0qfg/parallel_rustc_mcp)
+- [x] Send private messages to various community members to get as much support as possible
+- [x] Submit the MCP
 - [ ] Get Approve
 
 Solve the efficiency problem of parallel compiler under single thread
-- [x] Find out the reason for the loss of efficiency after using Mutex instead of RefCell in `rustc_date_structure`. 
+- [ ] Find out the reason for the loss of efficiency after using Mutex instead of RefCell in `rustc_date_structure`. 
 Refer to the perf test results [here](https://github.com/rust-lang/rust/pull/101566#issuecomment-1276331871).
 - [ ] Minimize the impact of switching to parallel mode code in the nightly compiler on compilation efficiency
 
-Other parts of the compilation process with potential for parallelization
-- [ ] Expansion and import resolving
-- [ ] Monomorphization
-- [ ] Rustdoc
+Rustc perf support
+- [ ] Measuring compiler efficiency in a multithreaded environment
+- [ ] Benchmark for parallel compiler
 
-Other supporting facilities
-- [ ] Let users switch to the parallel compiler through a rustup command
-- [ ] Perf tool and benchmark for parallel compiler
-
-Fix bugs and UI test case failures of parallel compiler. See [issues here](https://github.com/rust-lang/rust/labels/WG-compiler-parallel)
-- [x] fix 20/21 test failures. ([PR1](https://github.com/rust-lang/rust/pull/97307) [PR2](https://github.com/rust-lang/rust/pull/98570) [PR3](https://github.com/rust-lang/rust/pull/99457))
+Test for parallel compiler
+- [x] fix 20/21 UI test failures when -Zthread=1. ([PR1](https://github.com/rust-lang/rust/pull/97307) [PR2](https://github.com/rust-lang/rust/pull/98570) [PR3](https://github.com/rust-lang/rust/pull/99457))
 - [x] fix the ICE from `WorkerLocal` when query cycle error.
 - [ ] fix the test failure of `warn` from `tracing` crate.
+- [ ] collect and fix bugs for `-Zthreads=n` when n > 1
+- [ ] Diagnostics under parallel compilation enables deterministic sequential output
+
+
+Other parts of the compilation process with potential for parallelization
+- [ ] Expansion and import resolving
+- [ ] Lex parsing
 
 Update Rustc-dev-guide. 
 - [x] Update Parallel Compilation Capture. [PR](https://github.com/rust-lang/rustc-dev-guide/pull/1432)
