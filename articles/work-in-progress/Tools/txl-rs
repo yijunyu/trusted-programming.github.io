@@ -3,6 +3,13 @@ layout: post
 title: Txl wrapper for Rust
 toc: true
 ---
+
+```
+Yijun Yu
+Trusted Programming
+Huawei Technology Inc.
+```
+
 # Txl wrapper for Rust
 
 [`txl`](http://txl.ca) is a transformation system developed by James R. Cordy
