@@ -17,11 +17,17 @@ Give the Rust compiler the ability to execute in parallel to improve compilation
 See [compiler-team-ambitions-2022](https://blog.rust-lang.org/inside-rust/2022/02/22/compiler-team-ambitions-2022.html#faster-builds-aspirations--%EF%B8%8F) here.
 
 ## Updates
-MCP to re-creating the parallel rustc working group
-- [x] Complete the MCP draft on [hackmd](https://hackmd.io/@TKyxIWXBRqyDPLDPcP0qfg/parallel_rustc_mcp)
+**completed** MCP to re-creating the parallel rustc working group
+- [x] Complete the MCP draft
 - [x] Send private messages to various community members to get as much support as possible
-- [x] Submit the MCP
-- [ ] Get Approve
+- [x] Submit the [MCP](https://github.com/rust-lang/compiler-team/issues/567)
+- [x] Get Approved
+
+Become the lead of the working group
+
+- [ ] Refer to RFC to prepare materials of parallel rustc, focusing on the roadmap
+- [ ] Submit to compiler team and language team for review
+- [ ] Get Approved
 
 Solve the efficiency problem of parallel compiler under single thread
 - [ ] Find out the reason for the loss of efficiency after using Mutex instead of RefCell in `rustc_date_structure`. 
