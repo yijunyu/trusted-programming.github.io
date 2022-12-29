@@ -35,6 +35,10 @@ significantly higher safe code ratios after the transformations, with
 function-level safe code ratios comparable to the average level of idiomatic
 Rust projects.
 
+The code repository can be found at https://github.com/yijun/crusts. 
+
+# Evaluation
+
 Compared to the Laertes [OOPSLA'21], with respect to their own benchmarks, the safe ratio
 obtained by CRustS is much higher.
 
