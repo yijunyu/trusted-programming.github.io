@@ -25,10 +25,10 @@ The Library team is also working on setting up a team for official crates like `
 | Compiler 2022  | Debugging               | Initiatives | wg-debugging, improve debuginfo            | wesleywiser, pnkfelix           |                                   |
 | Compiler 2022  | Debugging               | Initiatives | wg-debugging, split debuginfo              | davidwco                        | davidwco                          |
 | Compiler 2022  | Debugging               | Initiatives | wg-debugging, trace-based debugger         | pnkfelix                        |                                   |
-| Compiler 2022  | Faster Builds           | Initiatives | performance workgroup                      | lqd, nnethercote                | lcnr, nnethercote                 |
+| Compiler 2022  | Faster Builds           | Initiatives | performance workgroup                      | lqd, nnethercote                | lcnr |
 | Compiler 2022  | Faster Builds           | Aspirations | parallel compilation                       | sparrowlii                      | sparrowlii                        |
 | Compiler 2022  | Faster Builds           | Aspirations | incremental compilation                    | cjgillot, Aaron Hill            |                                   |
-| Compiler 2022  | Faster Builds           | Aspirations | inter-crate sharing                        | nnethercote, lqd                | nnethercote                       |
+| Compiler 2022  | Faster Builds           | Aspirations | inter-crate sharing                        | nnethercote, lqd                | |
 | Compiler 2022  | Expressiveness          | Initiatives | GAT                                        | jackh726                        | lcnr                              |
 | Compiler 2022  | Expressiveness          | Initiatives | async fn traits                            | tmandry                         |                                   |
 | Compiler 2022  | Expressiveness          | Initiatives | safe transmute - zero cost type conversion | jswrenn                         |                                   |
@@ -64,7 +64,7 @@ The Library team is also working on setting up a team for official crates like `
 | Language       | Flattening the curve - Improve async support                                 | async fns in traits                                                       | lcnr                 |
 | Language       | Flattening the curve - Improve async support                                 | async drop, async closures                                                |                      |
 | Language       | Flattening the curve - Make dyn Trait more usable                            | dyn upcasting coercion initiative                                         |                      |
-| Language       | Flattening the curve - Make dyn Trait more usable                            | dyn Trait object safe                                                     | joshtriplet, m-ou-se |
+| Language       | Flattening the curve - Make dyn Trait more usable                            | dyn Trait object safe                                                     | m-ou-se |
 | Language       | Help Rust's users to help each other - Feature lifecycle                     | RFC 3240 edition-based method disambiguation                              |                      |
 | Language       | Help Rust's users to help each other - Feature lifecycle                     | release trains for all ecosystem crates                                   |                      |
 | Language       | Help Rust's users to help each other - Richer representations                | Async fn in traits                                                        | lcnr                 |
@@ -78,8 +78,8 @@ The Library team is also working on setting up a team for official crates like `
 | Language       | Help Rust's users to help each other - Interoperability                      | RFC 2492, scoped contexts and capabilities                                |                      |
 | Language       | Help Rust's users to help each other - Interoperability                      | Negative impls in coherence                                               |                      |
 | Language       | Help Rust's users to help each other - Interoperability                      | async working group's portability initiative                              |                      |
-| Language       | Help Rust's users to help each other - Interoperability                      | standard way to write performance benchmarks such as criterion            | nnethercote          |
-| Language       | Help Rust's users to help each other - Interoperability                      | better support dynamic linking with richer and safer types than the C ABI | m-ou-se, joshtriplet |
+| Language       | Help Rust's users to help each other - Interoperability                      | standard way to write performance benchmarks such as criterion            | |
+| Language       | Help Rust's users to help each other - Interoperability                      | better support dynamic linking with richer and safer types than the C ABI | m-ou-se |
 | Language       | Help the Rust project scale - Set the status at a glance                     | initiative project board                                                  |                      |
 | Language       | Help the Rust project scale - Set the status at a glance                     | backlog bonanza                                                           |                      |
 | Language       | Help the Rust project scale - Set the status at a glance                     | reduce in-flight features                                                 | lcnr                 |
@@ -109,9 +109,9 @@ The Library team is also working on setting up a team for official crates like `
 | Library        | Improving and adding new APIs                                                    | Ergonomics: abs_diff, Path::is_symlink, iter::from_fn, NonZero*::saturating_add | m-ou-se          | m-ou-se               |
 | Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: async                  |                  | m-ou-se               |
 | Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: alloc                  | Amanieu	         |                       |
-| Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: error/panic            | janelusby        | m-ou-se               |
+| Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: error/panic            |        | m-ou-se               |
 | Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: portable SIMD          |                  |                       |
-| Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: benchmarking           | nnethercote      | m-ou-se               |
+| Library        | Improving and adding new APIs                                                    | Standardizing some bigger features the ecosystems needs: benchmarking           | | m-ou-se               |
 | Library        | Reducing and improving unsafe code                                               | std::arch                                                                       | Amanieu          |                       |
 | Library        | Reducing and improving unsafe code                                               | std::simd                                                                       | sparrowlii       |                       |
 | Library        | Reducing and improving unsafe code                                               | scoped threads                                                                  | m-ou-se          | m-ou-se               |
@@ -121,7 +121,7 @@ The Library team is also working on setting up a team for official crates like `
 | Library        | Reducing and improving unsafe code                                               | NonNull and pointer methods                                                     |                  | m-ou-se               |
 | Library        | Reducing and improving unsafe code                                               | more complete interface to OsString, Path, CString                              |                  | m-ou-se               |
 | Library        | Reducing and improving unsafe code                                               | documentation for Pin and other unsafe types                                    |                  | m-ou-se               |
-| Library        | Reducing and improving unsafe code                                               | File descriptors (OwnedFd, AsFd) and handles (OwnedHandle, AsHandle)            |                  | joshtriplett, m-ou-se |
+| Library        | Reducing and improving unsafe code                                               | File descriptors (OwnedFd, AsFd) and handles (OwnedHandle, AsHandle)            |                  | m-ou-se |
 | Library        | Improving implementations within std library                                     | core::fmt, format_args!(), fmt::Arguments                                       | m-ou-se          | m-ou-se               |
 | Library        | Improving implementations within std library                                     | synchronization primitives such as Mutex, RwLock, Condvar                       | m-ou-se, Amanieu | m-ou-se, amanieu      |
 | Library        | Improving implementations within std library                                     | cleanup platform-specific code in std::sys                                      |                  | m-ou-se               |
