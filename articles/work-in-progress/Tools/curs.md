@@ -11,6 +11,8 @@ Trusted Programming
 Huawei Technology Inc.
 ```
 
+[Repo](https://github.com/trusted-programming/curs)
+
 For each function in Rust, the `unsafe` keyword utilizes the unsafe superpowers. 
 However, the `unsafe` keyword is not necessary if it can be taken out while the program is compiled successfully.
 

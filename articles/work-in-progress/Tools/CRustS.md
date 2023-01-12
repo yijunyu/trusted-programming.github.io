@@ -11,6 +11,8 @@ Trustworthiness Software Engineering & Open Source Lab
 Huawei Technologies, Inc.
 ```
 
+[CRustS Repo](https://github.com/trusted-programming/crusts)
+
 [CRustS Tool Demo](http://185.190.206.130)
 
 As a safer alternative to C, Rust is a language for programming system software

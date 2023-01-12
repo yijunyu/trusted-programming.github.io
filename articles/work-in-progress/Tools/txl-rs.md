@@ -10,6 +10,8 @@ Trusted Programming
 Huawei Technology Inc.
 ```
 
+[Repo](https://github.com/trusted-programming/txl-rs)
+
 # Txl wrapper for Rust
 
 [`txl`](http://txl.ca) is a transformation system developed by James R. Cordy
